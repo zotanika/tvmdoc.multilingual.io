@@ -2,6 +2,7 @@ TVM Multilingual Documentation
 ===============================
 
 - - -
+
 Introduction
 ------------
 This project has been established to provide a workplace for [TVM technical documentation](https://tvm.apache.org/docs/) localization.
@@ -22,6 +23,10 @@ For your convenience, please prepare the virtual environment for keeping your wo
 $ virtualenv -p python3.7 ./venv
 $ . ./venv/bin/activate
 $ pip install -r requirements.txt
+```
+One more step will be required, to make HTML preview reflecting your efforts possible:
+```
+$ . makeready.sh
 ```
 
 Target Files
