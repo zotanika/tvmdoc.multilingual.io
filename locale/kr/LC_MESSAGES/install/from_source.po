@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../install/from_source.rst:21
 msgid "Install from Source"
-msgstr ""
+msgstr "소스코드로 설치"
 
 #: ../../install/from_source.rst:22
 msgid ""

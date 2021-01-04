@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../langref/relay_type.rst:20
 msgid "Relay's Type System"
-msgstr ""
+msgstr "Relay 타입 시스템"
 
 #: ../../langref/relay_type.rst:22
 msgid ""

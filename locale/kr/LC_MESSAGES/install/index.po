@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../install/index.rst:21
 msgid "Installation"
-msgstr ""
+msgstr "설치"
 
 #: ../../install/index.rst:22
 msgid ""
@@ -29,4 +29,8 @@ msgid ""
 "runtime, please read :ref:`deploy-and-integration`. If you would like to "
 "quickly try out TVM or do demo/tutorials, checkout :ref:`docker-images`"
 msgstr ""
+"TVM을 설치하려면, :ref:`install-from-source` 을 읽어 보세요. 만일 모바일/임베디드 "
+"장치에 탑재하고자 한다면, 당신의 장치에 TVM 전체 스택을 설치할 필요는 없습니다. "
+"단지 런타임만 설치하면 됩니다. :ref:`deploy-and-integration` 를 읽어 보세요. "
+"TVM을 빠르게 체험해 보거나 간단한 데모/튜토리얼을 원한다면, :ref:`docker-images` 를 검토해 보세요. "
 

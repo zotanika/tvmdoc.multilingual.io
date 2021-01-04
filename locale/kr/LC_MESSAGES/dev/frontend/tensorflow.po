@@ -19,23 +19,23 @@ msgstr ""
 
 #: ../../dev/frontend/tensorflow.rst:19
 msgid "TensorFlow Frontend"
-msgstr ""
+msgstr "텐서플로우 프론트엔드"
 
 #: ../../dev/frontend/tensorflow.rst:21
 msgid "The TensorFlow frontend helps in importing TensorFlow models into TVM."
-msgstr ""
+msgstr "텐서플로우 프론트엔드는 텐서플로우 모델을 TVM으로 가져오는 작업을 돕습니다. "
 
 #: ../../dev/frontend/tensorflow.rst:23
 msgid "Supported versions:"
-msgstr ""
+msgstr "지원되는 버젼:"
 
 #: ../../dev/frontend/tensorflow.rst:25
 msgid "1.12 and below"
-msgstr ""
+msgstr "1.12 이상"
 
 #: ../../dev/frontend/tensorflow.rst:27
 msgid "Tested models:"
-msgstr ""
+msgstr "확인된 모델:"
 
 #: ../../dev/frontend/tensorflow.rst:29
 msgid "Inception (V1/V2/V3/V4)"
@@ -59,11 +59,11 @@ msgstr ""
 
 #: ../../dev/frontend/tensorflow.rst:36
 msgid "Preparing a Model for Inference"
-msgstr ""
+msgstr "추론을 위한 모델 준비하기"
 
 #: ../../dev/frontend/tensorflow.rst:39
 msgid "Remove Unneeded Nodes"
-msgstr ""
+msgstr "불필요한 노드 제거"
 
 #: ../../dev/frontend/tensorflow.rst:41
 msgid ""
@@ -71,10 +71,12 @@ msgid ""
 "inference, but unfortunately will leave some remaining. The nodes that "
 "should be manually removed are:"
 msgstr ""
+"내보내기 프로세스로 추론에 불필요한 많은 노드들이 제거될 것이지만, "
+"유감스럽게도 몇몇 노드는 여전히 남아있을 겁니다. 이렇게 손수 제거해야 하는 노드들은 : "
 
 #: ../../dev/frontend/tensorflow.rst:43
 msgid "Dropout, including `Dropout`_ and `DropoutWrapper`_"
-msgstr ""
+msgstr "Dropout, `Dropout`_ 과 `DropoutWrapper`_ 포함"
 
 #: ../../dev/frontend/tensorflow.rst:44
 msgid "`Assert`_"
@@ -82,7 +84,7 @@ msgstr ""
 
 #: ../../dev/frontend/tensorflow.rst:51
 msgid "Convert None Dimensions to Constants"
-msgstr ""
+msgstr "None 차원을 상수로 치환"
 
 #: ../../dev/frontend/tensorflow.rst:53
 msgid ""
@@ -92,10 +94,14 @@ msgid ""
 "shape like ``(1,20)``. The model should be modified accordingly to ensure"
 " that these shapes match throughout the graph."
 msgstr ""
+"TVM은 동적 변화 텐서에 대해서는 최저한으로만 지원합니다. ``None`` 차원은 상수들로 "
+"교체되어야 합니다. 예컨대 어떤 모델이 ``(None,20)`` 모양의 입력을 받을 수 있다면, "
+"그 입력은 ``(1,20)`` 와 같은 모양으로 치환되어야 합니다. 그에 따라 모델 역시 그래프 "
+"전체에서 동작에 문제가 없도록 수정되어야 합니다. "
 
 #: ../../dev/frontend/tensorflow.rst:56
 msgid "Export"
-msgstr ""
+msgstr "내보내기"
 
 #: ../../dev/frontend/tensorflow.rst:58
 msgid ""
@@ -104,6 +110,10 @@ msgid ""
 "needed by the TensorFlow frontend can be extracted from the active "
 "session, or by using the `TFParser`_ helper class."
 msgstr ""
+"텐서플로우 프론트엔드는 유효한 입력 포맷으로서 동결(frozen)된 protobuf (.pb) 나 "
+"저장된 모델을 기대하며, 현재로서는 체크포인트(.ckpt)는 지원하지 않습니다. "
+"텐서플로우 프론트엔드가 필요로 하는 graphdef는 액티브 세션이나 `TFParser`_ 헬퍼 "
+"클래스를 사용해서 추출할 수 있습니다."
 
 #: ../../dev/frontend/tensorflow.rst:62
 msgid ""
@@ -113,6 +123,11 @@ msgid ""
 "into the graph. Here is one function to export a model as a protobuf "
 "given a session:"
 msgstr ""
+"모델은 추론을 위해 쓰일 수 있도록 변형을 거쳐 내보내기가 되어야 합니다. ""
+"the model for inference. It is also important to set "
+"```add_shapes=True``` 로 설정하는 것도 중요한데, as this will embed the output shapes of each node "
+"into the graph. Here is one function to export a model as a protobuf "
+"given a session:"
 
 #: ../../dev/frontend/tensorflow.rst:96
 msgid ""
@@ -120,14 +135,17 @@ msgid ""
 "<https://github.com/tensorflow/models/tree/master/research/slim"
 "#exporting-the-inference-graph>`_."
 msgstr ""
+"또다른 방법은 `내보내기와 그래프 동결"
+"<https://github.com/tensorflow/models/tree/master/research/slim"
+"#exporting-the-inference-graph>`_ 입니다."
 
 #: ../../dev/frontend/tensorflow.rst:99
 msgid "Import the Model"
-msgstr ""
+msgstr "모델 불러들이기"
 
 #: ../../dev/frontend/tensorflow.rst:102
 msgid "Explicit Shape:"
-msgstr ""
+msgstr "명시적인 모양:"
 
 #: ../../dev/frontend/tensorflow.rst:104
 msgid ""
@@ -140,7 +158,7 @@ msgstr ""
 
 #: ../../dev/frontend/tensorflow.rst:107
 msgid "Data Layout"
-msgstr ""
+msgstr "데이터 레이아웃"
 
 #: ../../dev/frontend/tensorflow.rst:109
 msgid ""
@@ -149,26 +167,31 @@ msgid ""
 "can automatically convert the model's data layout by passing the argument"
 " ```layout='NCHW'``` to ```from_tensorflow```."
 msgstr ""
+"대부분의 텐서플로우 모델은 NHWC 레이아웃으로 배포됩니다. NCHW 레이아웃은 특히 GPU 상에서 "
+"더 나은 성능을 보여준다고 알려져 있습니다. 텐서플로우 프론트엔드는 ```layout='NCHW'``` 와 "
+"```from_tensorflow``` 인자를 넘겨 받으면 모델의 데이터 레이아웃을 자동으로 변형할 수 있습니다. "
 
 #: ../../dev/frontend/tensorflow.rst:112
 msgid "Best Practices"
-msgstr ""
+msgstr "모범 사례"
 
 #: ../../dev/frontend/tensorflow.rst:114
 msgid ""
 "Use static tensor shapes instead of dynamic shapes (remove ```None``` "
 "dimensions)."
 msgstr ""
+"동적 모양 대신 정적 모양 텐서를 사용해 주세요 (```None``` 차원은 제거해 주세요)"
 
 #: ../../dev/frontend/tensorflow.rst:115
 msgid ""
 "Use static RNN instead of dynamic RNN, as ```TensorArray``` isn't "
 "supported yet."
 msgstr ""
+"다이내믹 RNN 대신 정적 RNN을 사용해 주세요. ```TensorArray``` 는 아직 미지원입니다."
 
 #: ../../dev/frontend/tensorflow.rst:118
 msgid "Supported Ops"
-msgstr ""
+msgstr "지원 가능 연산"
 
 #: ../../dev/frontend/tensorflow.rst:120
 msgid "Abs"

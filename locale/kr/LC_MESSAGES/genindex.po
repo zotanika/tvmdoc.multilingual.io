@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../genindex.rst:19
 msgid "Index"
-msgstr ""
+msgstr "인덱스"
 

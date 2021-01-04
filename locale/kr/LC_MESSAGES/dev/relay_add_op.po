@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/relay_add_op.rst:21
 msgid "Adding an Operator to Relay"
-msgstr ""
+msgstr "Relay에 연산자 추가하기"
 
 #: ../../dev/relay_add_op.rst:23
 msgid ""
@@ -27,26 +27,30 @@ msgid ""
 "need to be registered in Relay in order to ensure that they will be "
 "integrated into Relay's type system."
 msgstr ""
+"Relay IR 내에서 TVM 연산자를 사용하려면, "
+"해당 연산자들이 Relay 타입 체계에 통합될 수 있도록 Relay에 등록될 필요가 있습니다."
 
 #: ../../dev/relay_add_op.rst:27
 msgid "Registering an operator requires three steps:"
-msgstr ""
+msgstr "연산자 등록은 세 단계가 필요합니다. "
 
 #: ../../dev/relay_add_op.rst:29
 msgid ""
 "Using the ``RELAY_REGISTER_OP`` macro in C++ to register the operator's "
 "arity and type information"
 msgstr ""
+"연산자의 항 수(arity)와 타입 정보를 등록하기 위해 ``RELAY_REGISTER_OP`` C++ 매크로 사용하기"
 
 #: ../../dev/relay_add_op.rst:30
 msgid ""
 "Defining a C++ function to produce a call node for the operator and "
 "registering a Python API hook for the function"
 msgstr ""
+"연산자에 대한 콜 노드를 산출하는 C++ 함수를 정의하고 해당 함수를 후킹(hook)하는 파이썬 API 등록하기"
 
 #: ../../dev/relay_add_op.rst:31
 msgid "Wrapping the above Python API hook in a neater interface"
-msgstr ""
+msgstr "상기 파이썬 API 후크(hook)를 보다 깔끔한 인터페이스로 래핑하기"
 
 #: ../../dev/relay_add_op.rst:33
 msgid ""
@@ -54,16 +58,20 @@ msgid ""
 " two steps, while ``python/tvm/relay/op/tensor.py`` gives examples of the"
 " last."
 msgstr ""
+"처음 두 단계의 예시는 ``src/relay/op/tensor/binary.cc`` 파일에서, "
+"마지막 단계 예시는 ``python/tvm/relay/op/tensor.py`` 파일에서 각각 참고할 수 있습니다."
 
 #: ../../dev/relay_add_op.rst:39
 msgid "Registering an Operator"
-msgstr ""
+msgstr "연산자 등록하기"
 
 #: ../../dev/relay_add_op.rst:41
 msgid ""
 "TVM already has an operator registry, but Relay cannot properly "
 "incorporate TVM operators without additional type information."
 msgstr ""
+"TVM은 이미 연산자 레지스트리를 보유하고 있으나, 추가적인 타입 정보 없이는 Relay가 "
+"TVM 연산자를 적절히 활용하지 못합니다."
 
 #: ../../dev/relay_add_op.rst:44
 msgid ""
@@ -85,26 +93,35 @@ msgid ""
 "underlying data type, and finally ensures that the shape of the output "
 "type is the broadcast of the input types' shapes."
 msgstr ""
+"For example, see ``src/relay/op/type_relations.h`` and their "
+"implementations. E.g., ``BroadcastRel`` takes two input types and an "
+"output type, checks that they are all tensor types with the same "
+"underlying data type, and finally ensures that the shape of the output "
+"type is the broadcast of the input types' shapes."
 
 #: ../../dev/relay_add_op.rst:60
 msgid ""
 "It may be necessary to add another type relation to ``type_relations.h`` "
 "if the existing ones do not capture the behavior of the desired operator."
 msgstr ""
+"It may be necessary to add another type relation to ``type_relations.h`` "
+"if the existing ones do not capture the behavior of the desired operator."
 
 #: ../../dev/relay_add_op.rst:63
 msgid ""
 "The ``RELAY_REGISTER_OP`` macro in C++ allows a developer to specify the "
 "following information about an operator in Relay:"
 msgstr ""
+"The ``RELAY_REGISTER_OP`` macro in C++ allows a developer to specify the "
+"following information about an operator in Relay:"
 
 #: ../../dev/relay_add_op.rst:66
 msgid "Arity (number of arguments)"
-msgstr ""
+msgstr "항 수(인자의 수)"
 
 #: ../../dev/relay_add_op.rst:67
 msgid "Names and descriptions for positional arguments"
-msgstr ""
+msgstr "위치규정 인자의 명칭과 서술"
 
 #: ../../dev/relay_add_op.rst:68
 msgid ""
@@ -188,7 +205,7 @@ msgstr ""
 
 #: ../../dev/relay_add_op.rst:172
 msgid "Adding a Gradient in Python"
-msgstr ""
+msgstr "파이썬으로 기울기(Gradient) 추가하기"
 
 #: ../../dev/relay_add_op.rst:174
 msgid ""
@@ -196,6 +213,8 @@ msgid ""
 "``python/tvm/relay/op/_tensor_grad.py``. We will walk through two "
 "representative examples: ``sigmoid`` and ``multiply``."
 msgstr ""
+"파이썬 기울기 연산자의 모음은 ``python/tvm/relay/op/_tensor_grad.py`` 에서 찾아볼 수 있습니다. "
+"대표적인 두 가지 예제로서 ``sigmoid`` 와 ``multiply`` 를 대상으로 다뤄보겠습니다."
 
 #: ../../dev/relay_add_op.rst:185
 msgid ""
@@ -205,6 +224,11 @@ msgid ""
 "operator's i'th input. In general, the gradient will return a list with "
 "as many elements as there are inputs to the base operator."
 msgstr ""
+"The inputs here are the original operator ``orig`` and a gradient "
+"``grad`` to accumulate into. What we return is a list, where the element "
+"at the i'th index is the derivative of the operator with respect to the "
+"operator's i'th input. In general, the gradient will return a list with "
+"as many elements as there are inputs to the base operator."
 
 #: ../../dev/relay_add_op.rst:191
 msgid ""

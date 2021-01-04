@@ -19,19 +19,19 @@ msgstr ""
 
 #: ../../faq.rst:20
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "자주 묻는 질문(FAQ)"
 
 #: ../../faq.rst:24
 msgid "How to Install"
-msgstr ""
+msgstr "설치"
 
 #: ../../faq.rst:25
 msgid "See :ref:`installation`."
-msgstr ""
+msgstr ":ref:`installation` 항목을 보세요."
 
 #: ../../faq.rst:29
 msgid "How to add a new Hardware Backend"
-msgstr ""
+msgstr "새로운 하드웨어 백엔드 추가하기"
 
 #: ../../faq.rst:31
 msgid ""
@@ -39,34 +39,43 @@ msgid ""
 "the code by setting the correct target triple as in "
 ":py:mod:`~tvm.target`."
 msgstr ""
+"만일 타겟 하드웨어 백엔드가 LLVM을 지원한다면, :py:mod:`~tvm.target` 에 적절한 "
+"타겟 트리플을 지정함으로써 곧바로 코드를 생성할 수 있습니다."
 
 #: ../../faq.rst:33
 msgid ""
 "If the target hardware is a GPU, try to use the cuda, opencl or vulkan "
 "backend."
 msgstr ""
+"만일 타겟 하드웨어가 GPU라면, CUDA, opencl 혹은 vulkan 백엔드 활용을 고려해 보세요."
 
 #: ../../faq.rst:34
 msgid ""
 "If the target hardware is a special accelerator, checkout :ref:`vta-"
 "index` and :ref:`relay-bring-your-own-codegen`."
 msgstr ""
+"만일 타겟 하드웨어가 특수한 가속기라면, :ref:`vta-index` 와 :ref:`relay-bring-your-own-codegen` "
+"를 먼저 참고하세요."
 
 #: ../../faq.rst:36
 msgid ""
 "For all of the above cases, You may want to add target specific "
 "optimization templates using AutoTVM, see :ref:`tutorials-autotvm-sec`."
 msgstr ""
+"위 모든 사례에 대해, AutoTVM을 활용해 해당 타겟에 특화된 최적화 템플릿을 추가하고 "
+"싶을 수 있습니다. :ref:`tutorials-autotvm-sec` 를 참조하세요."
 
 #: ../../faq.rst:38
 msgid ""
 "Besides using LLVM's vectorization, we can also embed micro-kernels to "
 "leverage hardware intrinsics, see :ref:`tutorials-tensorize`."
 msgstr ""
+"LLVM의 벡터화 처리 대신, 하드웨어 인트린직들을 활용하기 위한 마이크로 커널을 "
+"삽입할 수도 있습니다. :ref:`tutorials-tensorize` 를 참조하세요."
 
 #: ../../faq.rst:43
 msgid "TVM's relation to Other IR/DSL Projects"
-msgstr ""
+msgstr "TVM과 타 IR/DSL 프로젝트와의 관계"
 
 #: ../../faq.rst:44
 msgid ""
@@ -76,6 +85,10 @@ msgid ""
 " perform generic optimizations such as memory reuse, layout "
 "transformation and automatic differentiation."
 msgstr ""
+"딥러닝 시스템에서 IR의 추상화는 대개 두 부류로 나눌 수 있습니다. "
+"텐서플로우의 XLA와 인텔의 ngraph는 둘 다 계산 그래프 표현 형식을 취합니다. "
+"이러한 표현은 고수준으로서, 메모리 재사용, 레이아웃 변형, 자동 미분 등의 "
+"일반적인 최적화를 수행하는 데에 유용합니다."
 
 #: ../../faq.rst:49
 msgid ""
@@ -89,10 +102,19 @@ msgid ""
 " backends and embedding with frameworks to provide end-to-end compilation"
 " stack."
 msgstr ""
+"TVM은 저수준의 표현 형식을 도입했습니다. 이는 메모리 레이아웃의 선택, 병렬화 패턴, "
+"국소성과 하드웨어에 밀착한 프리미티브를 명시적으로 표현하는 데에 유리합니다. "
+"이러한 IR은 타겟 하드웨어에 보다 밀접합니다. "
+"저수준 IR의 설계에는 할라이드(Halide), 다크룸(darkroom) 등과 같은 기존의 이미지 "
+"처리 언어와, loopy와 같은 루프 변형 도구, 다면체 기반 분석(polyhedra-based analysis) "
+"등의 아이디어가 차용되었습니다. "
+"특히, 딥러닝 작업 부하(e.g. 회귀)의 표현, 서로 다른 하드웨어 백엔드를 위한 최적화와 "
+"이를 단-대-단(end-to-end) 컴파일레이션 스택으로 제공할 수 있도록 프레임워크화하는 "
+"데에 집중합니다."
 
 #: ../../faq.rst:60
 msgid "TVM's relation to libDNN, cuDNN"
-msgstr ""
+msgstr "TVM과 libDNN, cuDNN과의 관계"
 
 #: ../../faq.rst:61
 msgid ""
@@ -102,12 +124,15 @@ msgid ""
 "crafting and add these as primitives in DSL. See also top for recipes of "
 "operators in TVM."
 msgstr ""
+"TVM은 외부 호출의 형태로 이들 라이브러리와 상호작용할 수 있습니다. TVM의 목표 중 하나는 "
+"고성능 커널을 생성하는 데에 있습니다. 손수 커널을 빚어내면서 얻게 되는 기교를 DSL 내의 "
+"프리미티브로 반영함으로써 TVM은 점진적으로 진화할 것입니다. "
+"TVM의 연산자들의 레시피는 상단을 참조하세요. "
 
 #: ../../faq.rst:68
 msgid "Security"
-msgstr ""
+msgstr "보안"
 
 #: ../../faq.rst:69
 msgid "See :ref:`dev-security`"
-msgstr ""
-
+msgstr ":ref:`dev-security` 를 참조하세요."

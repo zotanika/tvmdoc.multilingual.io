@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../langref/relay_op.rst:19
 msgid "Relay Core Tensor Operators"
-msgstr ""
+msgstr "Relay 핵심 텐서 연산자"
 
 #: ../../langref/relay_op.rst:21
 msgid ""

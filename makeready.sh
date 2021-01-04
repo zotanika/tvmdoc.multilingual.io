@@ -22,7 +22,7 @@ fi
 cd $TVM_BUILD_PATH
 make -j8
 cd $TVMDOC_BUILD_PATH
-ln -s $CURR_PATH/locales $TVMDOC_BUILD_PATH/locales
+ln -s $CURR_PATH/locale $TVMDOC_BUILD_PATH/locale
 
 cd $CURR_PATH
 echo "Finishing to prepare TVM working desk!"

@@ -19,55 +19,66 @@ msgstr ""
 
 #: ../../contribute/pull_request.rst:19
 msgid "Submit a Pull Request"
-msgstr ""
+msgstr "반영 요청 제출"
 
 #: ../../contribute/pull_request.rst:21
 msgid ""
 "This is a quick guide to submit a pull request, please also refer to the "
 "detailed guidelines."
 msgstr ""
+"반영 요청을 제출하기 위한 퀵 가이드입니다. 더 자세한 가이드라인도 참고하세요."
 
 #: ../../contribute/pull_request.rst:23
 msgid ""
 "Before submit, please rebase your code on the most recent version of "
 "main, you can do it by"
 msgstr ""
+"제출 전에, 메인의 최신 버전 위에 당신의 코드가 반영되도록 리베이스 해주세요. "
+"아래와 같이 하면 됩니다: "
 
 #: ../../contribute/pull_request.rst:31
 msgid ""
 "Make sure code style check pass by typing the following command, and all "
 "the existing test-cases pass."
 msgstr ""
+"아래 명령을 입력하여 코딩 스타일 체크를 통과하는지, 기존의 테스트 케이스들을 "
+"모두 통과하는지 확인해 주세요. "
 
 #: ../../contribute/pull_request.rst:46
 msgid ""
 "When the clang-format lint check fails, run git-clang-format as follows "
 "to automatically reformat your code:"
 msgstr ""
+"clang-format lint 체크가 실패하는 경우, 아래와 같이 git-clang-format 을 실행하여 "
+"당신의 코드를 자동으로 재포맷하세요: "
 
 #: ../../contribute/pull_request.rst:54
 msgid "Add test-cases to cover the new features or bugfix the patch introduces."
-msgstr ""
+msgstr "패치에 제안된 버그 픽스나 신규 기능을 검증하는 테스트 케이스를 추가하세요. "
 
 #: ../../contribute/pull_request.rst:55
 msgid "Document the code you wrote, see more at :ref:`doc_guide`"
-msgstr ""
+msgstr ":ref:`doc_guide` 를 참고하여 작성한 코드를 문서화해 주세요. "
 
 #: ../../contribute/pull_request.rst:56
 msgid "Send the pull request and fix the problems reported by automatic checks."
-msgstr ""
+msgstr "반영 요청을 전송하고 자동화 체커에 의해 보고된 문제점을 고쳐 주세요. "
 
 #: ../../contribute/pull_request.rst:57
 msgid ""
 "Request code reviews from other contributors and improves your patch "
 "according to feedbacks."
 msgstr ""
+"다른 컨트리뷰터들에게 코드 리뷰를 요청하고, 그들의 피드백을 받아 당신의 패치를 "
+"개선해 주세요. "
 
 #: ../../contribute/pull_request.rst:59
 msgid ""
 "To get your code reviewed quickly, we encourage you to help review "
 "others' code so they can do the favor in return."
 msgstr ""
+"당신의 코드가 빨리 리뷰될 수 있도록, 당신 역시 상호 호혜에 따라 다른 사람들의 "
+"코드를 리뷰하는 것을 권장합니다. "
 
 #: ../../contribute/pull_request.rst:60
 msgid ""
@@ -76,18 +87,21 @@ msgid ""
 " as possible before the review. We highly value patches that can get in "
 "without extensive reviews."
 msgstr ""
+"코드 리뷰는 양치는 과정과 같습니다. 양치기(shepherd)들은 컨트리뷰터들의 코드의 질을 "
+"향상시키기도록 돕습니다. 보다 적극적으로 이 과정을 다룸으로써 코드를 가급적 리뷰 단계 이전에 "
+"최대한 개선하고자 합니다. 우리는 치밀한 리뷰 없이도 받아들여질 수 있는 패치를 높게 평가합니다. "
 
 #: ../../contribute/pull_request.rst:63
 msgid "The detailed guidelines and summarizes useful lessons."
-msgstr ""
+msgstr "상세한 가이드라인과 유용한 레슨을 요약해 주세요. "
 
 #: ../../contribute/pull_request.rst:65
 msgid "The patch can be merged after the reviewers approve the pull request."
-msgstr ""
+msgstr "패치는 리뷰어들이 반영 요청을 승인한 후에 머지될 수 있습니다. "
 
 #: ../../contribute/pull_request.rst:70
 msgid "CI Environment"
-msgstr ""
+msgstr "CI 환경"
 
 #: ../../contribute/pull_request.rst:71
 msgid ""
@@ -96,6 +110,9 @@ msgid ""
 "environment and make use of pre-cached image, all of the CI images are "
 "built and maintained by committers."
 msgstr ""
+"다수의 머신에 탑재될 수 있는 안정적인 CI 환경을 구축하기 위해 도커 컨테이너가 "
+"사용됩니다. 우리는 상대적으로 더 안정적인 CI 환경과 미리 캐시된 이미지의 재활용을 선호하므로, "
+"모든 CI 이미지들은 커미터에 의해 직접 빌드되고 관리됩니다. "
 
 #: ../../contribute/pull_request.rst:76
 msgid ""

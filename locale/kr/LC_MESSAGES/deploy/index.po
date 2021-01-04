@@ -19,27 +19,29 @@ msgstr ""
 
 #: ../../deploy/index.rst:21
 msgid "Deploy and Integration"
-msgstr ""
+msgstr "구현과 탑재"
 
 #: ../../deploy/index.rst:23
 msgid ""
 "This page contains guidelines on how to deploy TVM to various platforms "
 "as well as how to integrate it with your project."
 msgstr ""
+"이 페이지는 TVM을 다양한 플랫폼에 탑재하고 당신의 프로젝트에 적용하는 방법에 대한 가이드라인을 담고 있습니다. "
 
 #: ../../deploy/index.rst:28
 msgid ""
 "Unlike traditional deep learning frameworks. TVM stack is divided into "
 "two major components:"
 msgstr ""
+"전통적인 딥러닝 프레임워크와는 달리, TVM 스택은 두가지의 주요 컴포넌트로 나눌 수 있습니다: "
 
 #: ../../deploy/index.rst:30
 msgid "TVM compiler, which does all the compilation and optimizations"
-msgstr ""
+msgstr "TVM 컴파일러, 컴파일레이션과 최적화 전체를 담당합니다. "
 
 #: ../../deploy/index.rst:31
 msgid "TVM runtime, which runs on the target devices."
-msgstr ""
+msgstr "TVM 런타임, 타겟 장치에서 구동됩니다. "
 
 #: ../../deploy/index.rst:33
 msgid ""
@@ -49,12 +51,17 @@ msgid ""
 "deployed on the target device. We only need to use a light-weight runtime"
 " API that can be integrated into various platforms."
 msgstr ""
+"컴파일된 모듈을 적용하기 위해서 타겟 장치에서 TVM 전체 스택을 빌드할 필요는 **없습니다**. "
+"TVM 컴파일러 스택은 데스크탑에서만 빌드하면 됩니다. 그것을 활용해 타겟 장치에 적재될 "
+"모듈을 크로스컴파일하세요. 우리는 다양한 플랫폼에 적용될 수 있는 가벼운 런타임 API를 사용하기만 하면 됩니다. "
 
 #: ../../deploy/index.rst:36
 msgid ""
 "For example, you can run the following commands to build the runtime API "
 "on a Linux based embedded system such as Raspberry Pi:"
 msgstr ""
+"예컨대, 라즈베리 파이와 같은 리눅스 기반의 임베디드 시스템에서의 런타임 API를 빌드하기 위해 "
+"다음과 같은 명령들을 실행할 수 있습니다: "
 
 #: ../../deploy/index.rst:49
 msgid ""
@@ -63,6 +70,9 @@ msgid ""
 "`config.cmake` to enable these options. After you get the TVM runtime "
 "library, you can link the compiled library"
 msgstr ""
+"`make runtime` 명령은 런타임 라이브러리만 빌드한다는 것에 유념하세요. 만일 OpenCL과 같은 "
+"추가적인 런타임을 포함해야 한다면, `config.cmake` 을 수정함으로써 그러한 옵션들을 활성화할 수 있습니다. "
+"TVM 런타임 라이브러리를 만들고 나면, 컴파일된 라이브러리를 링크할 수 있습니다. "
 
 #: ../../deploy/index.rst:54
 msgid ""
@@ -70,6 +80,8 @@ msgid ""
 "on embedded devices is through TVM's RPC API. Here are the links to the "
 "related tutorials."
 msgstr ""
+"임베디드 장치에서 TVM 커널들을 시험, 튜닝, 벤치마크 하기에 가장 쉬우면서도 추천할 수 있는 방법은 "
+"TVM의 RPC API를 활용하는 것입니다. 관련 튜토리얼들로 이동하기 위한 링크들은 여기 있습니다. "
 
 #: ../../deploy/index.rst:58
 msgid ":ref:`tutorial-cross-compilation-and-rpc`"
@@ -85,4 +97,5 @@ msgid ""
 "model on the target device without relying on RPC. see the following "
 "resources on how to do so."
 msgstr ""
-
+"튜닝과 벤치마크가 끝났다면, 이제 RPC의 도움 없이 타겟 장치에 모델을 탑재해야 할 것입니다. "
+"어떻게 하면 되는지 다음 자료들을 확인해 보세요. "

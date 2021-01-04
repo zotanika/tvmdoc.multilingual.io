@@ -23,7 +23,7 @@ msgstr ""
 
 #: of tvm.relay:1
 msgid "The Relay IR namespace containing the IR definition and compiler."
-msgstr ""
+msgstr "IR 정의와 컴파일러를 포괄하는 Relay IR 네임 스페이스"
 
 #: of tvm.relay:1
 msgid "**Functions:**"
@@ -1297,7 +1297,7 @@ msgstr ""
 
 #: of sys.setrecursionlimit:1:<autosummary>:1 tvm.relay.expr.Call:1
 msgid "Function call node in Relay."
-msgstr ""
+msgstr "Relay 내의 함수 콜 노드"
 
 #: of sys.setrecursionlimit:1:<autosummary>:1
 msgid ":obj:`Let <tvm.relay.Let>`\\ \\(variable\\, value\\, body\\)"

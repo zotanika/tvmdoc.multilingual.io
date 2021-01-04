@@ -23,7 +23,7 @@ msgstr ""
 
 #: of tvm.contrib.graph_runtime:1
 msgid "Minimum graph runtime that executes graph containing TVM PackedFunc."
-msgstr ""
+msgstr "TVM PackedFunc를 적재한 그래프를 실행하는 최소 그래프 런타임"
 
 #: of tvm.contrib.graph_runtime.create:1
 msgid "Create a runtime executor module given a graph and module."

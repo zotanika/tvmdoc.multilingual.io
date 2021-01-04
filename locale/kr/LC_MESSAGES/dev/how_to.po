@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: ../../dev/how_to.rst:21
-msgid "Developer How-To Guide"
+msgid "개발자 입문 가이드"
 msgstr ""
 
 #: ../../dev/how_to.rst:22
@@ -26,4 +26,5 @@ msgid ""
 "This section contains a collection of tips about how to work on various "
 "areas of the TVM stack."
 msgstr ""
+"이 섹션에는 TVM 스택의 다양한 분야에서 일하고자 할 때 유용한 개발팁들이 실려 있습니다."
 

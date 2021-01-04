@@ -18,8 +18,8 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: ../../contribute/release_process.rst:21
-msgid "Apache TVM Release Process"
-msgstr ""
+msgid "Apache TVM (incubating) Release Process"
+msgstr "아파치 TVM (인큐베이팅) 릴리즈 절차"
 
 #: ../../contribute/release_process.rst:23
 msgid ""
@@ -29,19 +29,19 @@ msgstr ""
 
 #: ../../contribute/release_process.rst:25
 msgid "Preparing release notes"
-msgstr ""
+msgstr "릴리즈 노트 준비하기"
 
 #: ../../contribute/release_process.rst:26
 msgid "Preparing your setup"
-msgstr ""
+msgstr "셋업 준비하기"
 
 #: ../../contribute/release_process.rst:27
 msgid "Preparing for release candidates"
-msgstr ""
+msgstr "릴리즈 후보들을 위한 준비"
 
 #: ../../contribute/release_process.rst:29
 msgid "Cutting a release branch"
-msgstr ""
+msgstr "릴리즈 브랜치 가지 치기"
 
 #: ../../contribute/release_process.rst:30
 msgid "Informing the community of timing"

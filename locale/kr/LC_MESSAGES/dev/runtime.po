@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/runtime.rst:21
 msgid "TVM Runtime System"
-msgstr ""
+msgstr "TVM 런타임 시스템"
 
 #: ../../dev/runtime.rst:23
 msgid ""
@@ -27,40 +27,45 @@ msgid ""
 "development and deployment. In this note, we explain the key elements of "
 "the TVM runtime."
 msgstr ""
+"TVM은 컴파일러 스택의 개발과 탑재에 다수의 프로그래밍 언어를 사용할 수 있도록 지원합니다. "
+"이 문서에서는, TVM 런타임의 핵심 요소를 설명하겠습니다. "
 
 #: ../../dev/runtime.rst:28
 msgid "We need to satisfy quite a few interesting requirements:"
-msgstr ""
+msgstr "우선 만족되어야 할 몇 가지의 흥미로운 요구 사항이 있습니다. "
 
 #: ../../dev/runtime.rst:30
 msgid ""
 "Deployment: invoke the compiled function from python/javascript/c++ "
 "language."
 msgstr ""
+"탑재: python/javascript/c++ 언어로 컴파일된 함수를 불러올 수 있을 것. "
 
 #: ../../dev/runtime.rst:31
 msgid "Debug: define a function in python and call that from a compiled function."
-msgstr ""
+msgstr "디버그: 파이썬으로 정의한 함수를 컴파일된 함수에서 부를 수 있을 것. "
 
 #: ../../dev/runtime.rst:32
 msgid ""
 "Link: write driver code to call device specific code (CUDA) and call it "
 "from compiled host function."
 msgstr ""
+"링크: 장치에 특화된 코드(CUDA)를 호출하는 드라이버 코드를 쓰고, 컴파일된 호스트 함수에서 부를 수 있을 것. "
 
 #: ../../dev/runtime.rst:33
 msgid "Prototype: define an IR pass from python and call that from C++ backend."
-msgstr ""
+msgstr "프로토타입: 파이썬으로 IR 패스를 정의하고 C++ 백엔드에서 부를 수 있을 것. "
 
 #: ../../dev/runtime.rst:34
 msgid "Expose: compiler stack developed in c++ to front-end (i.e, python)"
-msgstr ""
+msgstr "노출: C++로 개발된 컴파일러 스택을 프론트 엔드(i.e, python)로 노출할 것. "
 
 #: ../../dev/runtime.rst:35
 msgid ""
 "Experiment: ship a compiled function to an embedded device to directly "
 "run there."
 msgstr ""
+"실험: 컴파일된 함수를 임베디드 장치로 내보내어 직접 실행할 수 있을 것. "
 
 #: ../../dev/runtime.rst:37
 msgid ""
@@ -68,6 +73,8 @@ msgid ""
 "another. We also want the runtime core to be minimal to deploy to "
 "embedded devices."
 msgstr ""
+"우리는 어떤 언어로든 함수를 정의할 수 있고, 또 다른 어떤 언어로도 호출할 수 있기를 원합니다. "
+"또한 임베디드 장치 탑재에 필요한 런타임 코어도 최소화하고 싶습니다. "
 
 #: ../../dev/runtime.rst:43
 msgid "PackedFunc"
@@ -78,6 +85,8 @@ msgid ""
 "`PackedFunc`_ is a simple but elegant solution we find to solve the "
 "challenges listed. The following code block provides an example in C++"
 msgstr ""
+"`PackedFunc`_ 은 위에 나열된 장애물들을 극복하기 위해 고안된, 간단하지만 우아한 해답입니다. "
+"다음의 코드 블록은 C++로 쓰여진 예시입니다. "
 
 #: ../../dev/runtime.rst:68
 msgid ""
@@ -88,6 +97,12 @@ msgid ""
 "return. Under the hood, when we call a PackedFunc, it packs the input "
 "arguments to TVMArgs on stack, and gets the result back via TVMRetValue."
 msgstr ""
+"위의 코드 블록에서, PackedFunc인 MyAdd를 정의했습니다. 입력 인자를 나타내는 ``args`` 와 "
+"반환값을 나타내는 ``rv`` 의 두 인자를 취하죠. "
+"이 함수는 형식이 소거되었으며, 달리 말해 함수 시그너쳐에 넘겨 받을 입력 타입이나 돌려줄 타입에 대한 "
+"제약이 없다는 뜻입니다. 
+"실질적으로는, 우리가 PackedFunc를 호출할 때, 입력 인자는 스택 상의 TVMArgs으로 묶고, 결과는 "
+"TVMRetValue를 통해 돌려받습니다. "
 
 #: ../../dev/runtime.rst:74
 msgid ""
@@ -97,6 +112,10 @@ msgid ""
 "code for each new type function created. The following example registers "
 "PackedFunc in C++ and calls from python."
 msgstr ""
+"C++의 템플릿 트릭 덕분에 우리는 PackedFunc를 그냥 보통의 함수처럼 호출할 수 있습니다. "
+"형식소거가 갖는 성질로 인해, 새로운 타입의 함수를 만들 때마다 별도의 절충 코드를 만들어 넣지 않아도 "
+"파이썬과 같은 동적 언어로부터 PackedFunc를 호출할 수 있습니다. "
+"이어지는 예시에서 PackedFunc를 C++로 등록하고 파이썬에서 호출합니다."
 
 #: ../../dev/runtime.rst:91
 msgid ""
@@ -104,26 +123,28 @@ msgid ""
 "structure. We restrict a list of possible types which can be passed. Here"
 " are the common ones:"
 msgstr ""
+"PackedFunc 마법의 대부분은 ``TVMArgs`` 와 ``TVMRetValue`` 구조체에 숨어 있습니다. "
+"우리는 넘겨줘도 되는 가능한 타입의 리스트를 제한합니다. 가장 흔한 것들은 이렇습니다: "
 
 #: ../../dev/runtime.rst:95
 msgid "int, float and string"
-msgstr ""
+msgstr "int, float 와 string"
 
 #: ../../dev/runtime.rst:96
 msgid "PackedFunc itself"
-msgstr ""
+msgstr "PackedFunc 자체"
 
 #: ../../dev/runtime.rst:97
 msgid "Module for compiled modules"
-msgstr ""
+msgstr "컴파일된 모듈을 나타내는 Module"
 
 #: ../../dev/runtime.rst:98
 msgid "DLTensor* for tensor object exchange"
-msgstr ""
+msgstr "텐서 객체 교환을 나타내는 DLTensor* "
 
 #: ../../dev/runtime.rst:99
 msgid "TVM Object to represent any object in IR"
-msgstr ""
+msgstr "IR 내의 임의의 객체에 대응하는 TVM Object"
 
 #: ../../dev/runtime.rst:101
 msgid ""
@@ -132,12 +153,17 @@ msgid ""
 "the use-case of deep learning deployment as most functions only take "
 "DLTensor or numbers."
 msgstr ""
+"이 제약은 구현 작업을 별도의 직렬화 없이 간단하게 만들어 줍니다. "
+"단순화된 것처럼 보여도, PackedFunc은 대부분의 함수가 DLTensor나 숫자만을 받아들이는 "
+"딥러닝 탑재 시나리오에서 제 역할을 하기 충분합니다. "
 
 #: ../../dev/runtime.rst:105
 msgid ""
 "Since one PackedFunc can take another PackedFunc as an argument, we can "
 "pass functions from python (as PackedFunc) to C++."
 msgstr ""
+"PackedFunc은 또다른 PackedFunc을 인자로 받아들일 수 있기 때문에, 파이썬에서 C++로 함수를(PackedFunc로서) "
+"넘겨줄 수 있습니다. "
 
 #: ../../dev/runtime.rst:129
 msgid ""
@@ -146,22 +172,28 @@ msgid ""
 "`javascript`_. This philosophy of embedded API is very like Lua, except "
 "that we don't have a new language but use C++."
 msgstr ""
+"TVM은 PackedFunc를 임의의 언어로 옮겨심을 수 있도록 하는 `최소한의 C API` 를 제공합니다. "
+"파이썬 뿐 아니라, 현재까지 우리는 `java` 와 `javascript` 까지 지원합니다. 임베디드 API에 대한 "
+"이러한 철학은 Lua와 닮았습니다. 새 언어를 만들지 않고 C++를 쓴다는 것만 빼면 말이죠. "
 
 #: ../../dev/runtime.rst:139
 msgid ""
 "One fun fact about PackedFunc is that we use it for both compiler and "
 "deployment stack."
 msgstr ""
+"PackedFunc에 대한 재밌는 점 하나는, 컴파일러와 탑재 스택 모두에 사용된다는 것입니다. "
 
 #: ../../dev/runtime.rst:141
 msgid ""
 "All TVM's compiler pass functions are exposed to frontend as PackedFunc, "
 "see `here`_"
 msgstr ""
+"모든 TVM의 컴파일러 패스 함수들은 PackedFunc로서 프론트엔드에 노출됩니다. "
+"`여기`_를 보세요 "
 
 #: ../../dev/runtime.rst:142
 msgid "The compiled module also returns the compiled function as PackedFunc"
-msgstr ""
+msgstr "컴파일된 모듈 또한 PackedFunc 형식으로 컴파일된 함수를 반환합니다. "
 
 #: ../../dev/runtime.rst:146
 msgid ""
@@ -169,6 +201,9 @@ msgid ""
 "deployment runtime. The resulting runtime takes around 200K - 600K "
 "depending on how many runtime driver modules (e.g., CUDA) get included."
 msgstr ""
+"런타임을 최소한으로 유지하기 위해, IR 오브젝트 지원을 탑재 런타임에서 배제했습니다. "
+"결과적으로 런타임은 얼마나 많은 런타임 드라이버 모듈 (e.g., CUDA)을 포함하느냐에 따라 "
+"약 200K - 600K 정도의 크기에 수납됩니다. "
 
 #: ../../dev/runtime.rst:148
 msgid ""
@@ -178,6 +213,11 @@ msgid ""
 "glue in TVM where we use it extensively to support our compiler and "
 "deployment."
 msgstr ""
+"스택에 저장하는 값들이 많지 않다면 PackedFunc를 호출하는 추가적인 오버헤드는 작습니다. "
+" So it is OK as long as we"
+" don't wrap small functions. In summary, the PackedFunc is the universal "
+"glue in TVM where we use it extensively to support our compiler and "
+"deployment."
 
 #: ../../dev/runtime.rst:153
 msgid "Module"

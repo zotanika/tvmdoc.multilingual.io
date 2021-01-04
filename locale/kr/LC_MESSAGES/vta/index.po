@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../vta/index.rst:21
 msgid "VTA: Deep Learning Accelerator Stack"
-msgstr ""
+msgstr "VTA: 딥러닝 가속기 스택"
 
 #: ../../vta/index.rst:23
 msgid ""
@@ -31,48 +31,56 @@ msgid ""
 "that includes hardware design, drivers, a JIT runtime, and an optimizing "
 "compiler stack based on TVM."
 msgstr ""
+"다목적 텐서 가속기(VTA)는 완전한 TVM 기반 컴파일러 스택이 지원되는 공개, 범용, "
+"커스터마이징 가능한 딥러닝 가속기입니다. "
+"VTA는 주류 딥러닝 가속기들이 공통적으로 갖는 두드러진 특성들을 잘 드러낼 수 있도록 디자인되었습니다. "
+"TVM과 VTA는 함께 "
+"하드웨어 디자인, 드라이버, JIT 런타임, 그리고 TVM에 기반한 컴파일러의 최적화를 망라하는 "
+"하드웨어-소프트웨어 종단간 딥러닝 시스템 스택을 실현합니다."
 
 #: ../../vta/index.rst:29
 msgid "VTA has the following key features:"
-msgstr ""
+msgstr "VTA는 다음과 같은 중요 특성들을 갖습니다:"
 
 #: ../../vta/index.rst:31
 msgid "Generic, modular, open-source hardware."
-msgstr ""
+msgstr "일반화, 모듈화, 오픈소스 기반 하드웨어"
 
 #: ../../vta/index.rst:32
 msgid "Streamlined workflow to deploy to FPGAs."
-msgstr ""
+msgstr "FPGA 탑재를 위한 간결한 워크플로우"
 
 #: ../../vta/index.rst:33
 msgid "Simulator support to prototype compilation passes on regular workstations."
-msgstr ""
+msgstr "표준적인 워크스테이션에서 컴파일 패스를 프로토타이핑하는 시뮬레이터 지원."
 
 #: ../../vta/index.rst:34
 msgid ""
 "Pynq-based driver and JIT runtime for both simulated and FPGA hardware "
 "back-end."
 msgstr ""
+"시뮬레이션과 FPGA 하드웨어 백엔드 양방 모두를 위한 Pynq 기반 드라이버와 JIT 런타임."
 
 #: ../../vta/index.rst:35
 msgid "End to end TVM stack integration."
-msgstr ""
+msgstr "종단간(end-to-end) TVM 스택 통합 적용"
 
 #: ../../vta/index.rst:37
 msgid "This page contains links to all the resources related to VTA:"
-msgstr ""
+msgstr "이 페이지는 VTA에 관련된 모든 리소스로의 링크를 수록하고 있습니다:"
 
 #: ../../vta/index.rst:49
 msgid "Literature"
-msgstr ""
+msgstr "문헌"
 
 #: ../../vta/index.rst:51
 msgid "Read the VTA `release blog post`_."
-msgstr ""
+msgstr "TVA `발행 블로그 포스트`_ 를 읽어 보세요."
 
 #: ../../vta/index.rst:52
 msgid ""
 "Read the VTA tech report: `An Open Hardware Software Stack for Deep "
 "Learning`_."
 msgstr ""
+"VTA 기술 보고서: `딥러닝을 위한 오픈 하드웨어 소프트웨어 스택`_ 을 읽어 보세요."
 

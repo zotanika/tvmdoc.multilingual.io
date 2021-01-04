@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../langref/relay_pattern.rst:21
 msgid "Pattern Matching in Relay"
-msgstr ""
+msgstr "Relay에서의 패턴 매칭"
 
 #: ../../langref/relay_pattern.rst:23
 msgid ""

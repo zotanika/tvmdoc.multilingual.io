@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../vta/install.rst:19
 msgid "VTA Installation Guide"
-msgstr ""
+msgstr "VTA 설치 가이드"
 
 #: ../../vta/install.rst:21
 msgid "We present three installation guides, each extending on the previous one:"

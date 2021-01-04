@@ -19,23 +19,24 @@ msgstr ""
 
 #: ../../api/links.rst:19
 msgid "Links to Other API References"
-msgstr ""
+msgstr "다른 API 참조를 위한 링크"
 
 #: ../../api/links.rst:21
 msgid ""
 "This page contains links to API references that are build with different "
 "doc build system."
 msgstr ""
+"이 페이지에는 다른 문서 생성 시스템으로 만들어진 API 참조를 위한 링크들이 실려 있습니다."
 
 #: ../../api/links.rst:23
 msgid "`C++ doyxgen API <doxygen/index.html>`_"
-msgstr ""
+msgstr "`C++ doyxgen API <doxygen/index.html>`_"
 
 #: ../../api/links.rst:24
 msgid "`Typescript typedoc API <typedoc/index.html>`_"
-msgstr ""
+msgstr "`Typescript typedoc API <typedoc/index.html>`_"
 
 #: ../../api/links.rst:25
 msgid "`Java Javadoc API <javadoc/index.html>`_"
-msgstr ""
+msgstr "`Java Javadoc API <javadoc/index.html>`_"
 

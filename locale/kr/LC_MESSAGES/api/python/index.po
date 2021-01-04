@@ -19,5 +19,5 @@ msgstr ""
 
 #: ../../api/python/index.rst:19
 msgid "Python API"
-msgstr ""
+msgstr "파이썬 API"
 

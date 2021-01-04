@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../langref/relay_expr.rst:20
 msgid "Expressions in Relay"
-msgstr ""
+msgstr "Relay 표현식"
 
 #: ../../langref/relay_expr.rst:22
 msgid ""
@@ -27,10 +27,12 @@ msgid ""
 "describe the different expressions in Relay and give details of their "
 "semantics."
 msgstr ""
+"Relay IR은 순수한 형식 중심적 언어입니다. 아래 섹션에서 Relay의 여러 표현식들을 서술하고, 
+"각 시멘틱에 대한 세부 내용을 제공합니다. "
 
 #: ../../langref/relay_expr.rst:26
 msgid "Dataflow and Control Fragments"
-msgstr ""
+msgstr "데이터 플로우와 제어 구문"
 
 #: ../../langref/relay_expr.rst:28
 msgid ""

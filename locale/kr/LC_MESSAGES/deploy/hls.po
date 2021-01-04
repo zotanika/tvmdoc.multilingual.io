@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../deploy/hls.rst:20
 msgid "HLS Backend Example"
-msgstr ""
+msgstr "HLS 백엔드 예제"
 
 #: ../../deploy/hls.rst:22
 msgid ""

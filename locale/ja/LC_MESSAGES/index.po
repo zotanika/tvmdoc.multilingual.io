@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../index.rst:38
 msgid "How to"
-msgstr ""
+msgstr "入門"
 
 #: ../../index.rst:48
 msgid "Tutorials"
-msgstr ""
+msgstr "チュートリアル"
 
 #: ../../index.rst:56
 msgid "References"
-msgstr ""
+msgstr "参照"
 
 #: ../../index.rst:65
 msgid "Deep Dive"

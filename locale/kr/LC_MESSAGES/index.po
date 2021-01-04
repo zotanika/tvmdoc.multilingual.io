@@ -19,27 +19,27 @@ msgstr ""
 
 #: ../../index.rst:38
 msgid "How to"
-msgstr ""
+msgstr "입문"
 
 #: ../../index.rst:48
 msgid "Tutorials"
-msgstr ""
+msgstr "튜토리얼"
 
 #: ../../index.rst:56
 msgid "References"
-msgstr ""
+msgstr "참고 자료"
 
 #: ../../index.rst:65
 msgid "Deep Dive"
-msgstr ""
+msgstr "심층 해설"
 
 #: ../../index.rst:72
 msgid "MISC"
-msgstr ""
+msgstr "기타"
 
 #: ../../index.rst:19
 msgid "TVM Documentation"
-msgstr ""
+msgstr "TVM 문서"
 
 #: ../../index.rst:21
 msgid ""
@@ -48,34 +48,39 @@ msgid ""
 "productivity-focused deep learning frameworks, and the performance- or "
 "efficiency-oriented hardware backends."
 msgstr ""
+"TVM은 CPU, GPU 등의 범용 하드웨어 및 특수한 가속기들을 위한 공개 딥러닝 컴파일러 "
+"스택입니다. TVM의 목표는 생산성 위주의 딥러닝 프레임워크와 성능 혹은 효율성을 최우선 "
+"하는 하드웨어 백엔드 사이의 간극을 최대한 좁히는 것입니다. "
 
 #: ../../index.rst:25
 msgid "Get Started"
-msgstr ""
+msgstr "시작하기"
 
 #: ../../index.rst:27
 msgid "Follow the :doc:`instructions <install/index>` to install TVM."
-msgstr ""
+msgstr "TVM을 설치하려면 :doc:`instructions <install/index>` 을 따르세요."
 
 #: ../../index.rst:28
-msgid "Checkout the :doc:`tutorials <tutorials/index>`."
-msgstr ""
+msgid "Checkout the :doc:`Tutorials <tutorials/index>`."
+msgstr ":doc:`Tutorials <tutorials/index>` 을 먼저 확인하세요."
 
 #: ../../index.rst:31
 msgid "For Developers"
-msgstr ""
+msgstr "개발자 자료"
 
 #: ../../index.rst:33
 msgid ""
 ":doc:`dev/index` is useful for developers who want to understand the "
 "architecture of TVM and/or actively develop on the project."
 msgstr ""
+":doc:`dev/index` 는 TVM 아키텍쳐를 이해하고 이 프로젝트에 적극적으로 참여하고자 "
+"하는 개발자들에게 유용합니다."
 
 #: ../../index.rst:35
 msgid ":doc:`dev/how_to` gives quick development tips on various topics."
-msgstr ""
+msgstr ":doc:`dev/how_to` 에서 다양한 토픽에 대한 개발팁을 얻으세요."
 
 #: ../../index.rst:82
 msgid "Index"
-msgstr ""
+msgstr "인덱스"
 

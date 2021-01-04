@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/relay_add_pass.rst:21
 msgid "Adding a Compiler Pass to Relay"
-msgstr ""
+msgstr "Relay에 컴파일러 패스 추가하기"
 
 #: ../../dev/relay_add_pass.rst:23
 msgid ""
@@ -30,20 +30,26 @@ msgid ""
 "important built-in features (e.g., autodiff and type inference) are "
 "nothing more than \"standard\" compiler passes."
 msgstr ""
+"컴파일러 패스는 Relay의 기능 추가와 Relay 프로그램 상의 최적화를 수행하기 위한 "
+"주요 인터페이스입니다. 컴파일러 패스를 작성함으로써 목적에 따라서는 AST 혹은 AST에 "
+"관한 수집 정보도 변경할 수 있습니다. 사실, Relay의 가장 중요한 몇몇 빌트인 기능 "
+"(e.g., 자동비교와 타입 추론)들조차도 \"표준\" 컴파일러 패스의 중요도엔 미치지 못합니다. "
 
 #: ../../dev/relay_add_pass.rst:30
 msgid "At a high level, there are two key components to writing a pass:"
-msgstr ""
+msgstr "고수준에서, 패스를 작성하기 위한 두 가지 중요 요소가 있습니다:"
 
 #: ../../dev/relay_add_pass.rst:32
 msgid "Creating one or more C++ classes that traverse the program"
-msgstr ""
+msgstr "프로그램 전체를 가로지르는 하나 이상의 C++ 클래스 만들기"
 
 #: ../../dev/relay_add_pass.rst:33
 msgid ""
 "Wrapping the traversal implementation and its metadata in the pass "
 "manager API so it can neatly interface with the :ref:`pass-infra`"
 msgstr ""
+"가로지르기 구현과 그에 상응하는 패스 매니저 API 내의 메타데이터를 함께 래핑해서 "
+":ref:`pass-infra` 와 깔끔하게 인터페이스되도록 하기"
 
 #: ../../dev/relay_add_pass.rst:35
 msgid ""
@@ -51,6 +57,9 @@ msgid ""
 "compiler pass. Then, we'll walk through a concrete example of the "
 "constant-folding pass in Relay."
 msgstr ""
+"To begin, we'll give an overview of the key mechanisms for writing a "
+"compiler pass. Then, we'll walk through a concrete example of the "
+"constant-folding pass in Relay."
 
 #: ../../dev/relay_add_pass.rst:40
 msgid "AST Traversers"

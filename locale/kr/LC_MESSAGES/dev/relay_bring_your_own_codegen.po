@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/relay_bring_your_own_codegen.rst:22
 msgid "Bring Your Own Codegen To TVM"
-msgstr ""
+msgstr "당신의 codegen을 TVM에 도입하기"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:24
 msgid ""
@@ -39,6 +39,18 @@ msgid ""
 "operators with extremely high performance, but fallback unsupported "
 "operators to general devices like CPU/GPU."
 msgstr ""
+"딥러닝의 작업부하를 의식한 하드웨어 장치들이 늘어나면서, 다양한 장치에서 고성능을 "
+"달성하기 위해 사용자에게 요구되는 지식도 늘어나고 있습니다. "
+"데이터 과학자들이 새로운 모델을 고안할 때 성능 걱정은 하지 않아도 되도록, 하드웨어 "
+"백엔드 공급자들은 자주 사용되는 딥러닝 연산과 함께 MKLDNN이나 cuDNN과 같은 "
+"라이브러리를 제공하거나, TensorRT와 같이 사용자로 하여금 그들의 모델을 특정한 "
+"방식으로 기술하도록 유도하여 고성능을 달성하는 프레임워크를 제공하곤 합니다. "
+"하지만 새로운 라이브러리나 장치로 일을 하려고 할 때, 사용자들은 여전히 새로운 "
+"프로그래밍 인터페이스를 배워야 합니다. 따라서, 통합 프로그래밍 인터페이스에 대한 "
+"요구는 나날이 커져가고 있습니다. 이는 1) 모든 사용자와 하드웨어 백엔드 공급자들이 "
+"동등한 입장에 서도록 하며, 2) 폭넓게 사용되는 몇몇 연산만 극단적인 고성능으로 "
+"처리하되 지원되지 않는 연산은 CPU/GPU와 같은 범용장치로 전가하는 특수한 하드웨어나 "
+"라이브러리까지도 대응할 수 있는 유연한 솔루션을 제공하기 위한 것입니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:26
 msgid ""
@@ -48,10 +60,14 @@ msgid ""
 "guide covers two types of codegen based on different graph "
 "representations you need:"
 msgstr ""
+"이 개발자 가이드에서는, 하드웨어 백엔드 공급자로서의 당신이 얼마나 쉽게 당신의 "
+"codegen을 구현하고 그것을 당신의 하드웨어 장치/라이브러리를 지원하기 위한 Relay 백엔드 "
+"컴파일러로서 등록할 수 있는지 보일 것입니다. "
+"이 가이드는 당신이 대응해야 하는 그래프 표현들에 기반한 두 종류의 codegen에 대해 다룹니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:28
 msgid "**1. You want to generate C code.**"
-msgstr ""
+msgstr "**1. C 코드를 생성하고 싶은 경우**"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:30
 msgid ""
@@ -65,10 +81,18 @@ msgid ""
 "demonstrate how to implement a C code generator for your hardware in the "
 "following section."
 msgstr ""
+"당신의 하드웨어가 인텔 CPU를 위한 CBLAS/MKL이나 NVIDIA GPU를 위한 CUBLAS처럼 "
+"이미 잘 최적화된 C/C++ 라이브러리를 보유하고 있다면, 잘 찾아왔습니다. "
+"다행스럽게도, C 소스 코드 모듈은 TVM 런타임 모듈과 완전 호환되며, 이는 생성된 "
+"코드가 적절한 컴파일 플래그가 설정된 어떠한 C/C++ 컴파일러로도 컴파일 될 수 있다는 "
+"의미입니다. 따라서 당신이 해야 할 일은 서브그래프에 대응하는 C 코드를 생성하는 "
+"codegen을 구현하고 C 소스 모듈을 TVM 런타임 모듈에 이식하는 것 뿐입니다. "
+"당신의 하드웨어를 위한 C 코드 생성기를 어떻게 구현하면 되는지, 다음 섹션에서 "
+"보여 드리겠습니다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:32
 msgid "**2. You want to generate any other graph representations.**"
-msgstr ""
+msgstr "**2. 다른 그래프 표현을 생성하고 싶을 경우**"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:34
 msgid ""
@@ -79,6 +103,11 @@ msgid ""
 "execution engine for your hardware, such as TensorRT for GPU, then this "
 "is a solution you can consider."
 msgstr ""
+"당신의 하드웨어는 JSON 등과 같은 다른 형식의 그래프 표현을 요구할 수도 있습니다. "
+"이 경우, 당신은 codegen 뿐 아니라 TVM 런타임이 그래프 표현을 어떻게 실행해야 "
+"할지 알려주기 위한 맞춤형 TVM 런타임 모듈도 구현해야 합니다. GPU를 위한 TensorRT "
+"처럼, 당신의 하드웨어에 맞는 그래프 실행 엔진을 이미 보유하고 있다면, 고려해 "
+"볼 수 있는 솔루션입니다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:36
 msgid ""
@@ -87,10 +116,14 @@ msgid ""
 "tutorial for end-users to annotate and launch a specific codegen is "
 "**here (TBA)**."
 msgstr ""
+"codegen과 런타임 구현을 마친 후, 당신의 고객들로 하여금 그들의 모델을 당신의 맞춤형 "
+"태그화 함께 가공(annotate)하도록 유도하여, 활용이 가능하게 해줘야 합니다. "
+"최종 사용자가 직접 특정한 codegen을 가공(annotate)하고 론칭할 수 있도록 돕는 "
+"튜토리얼은 **여기(TBA)** 에 있습니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:40
 msgid "Implement a C Codegen"
-msgstr ""
+msgstr "C codegen 구현하기"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:42
 msgid ""
@@ -99,6 +132,10 @@ msgid ""
 "codegen does not depend on third-party libraries. Instead, we manually "
 "implement two macros in C:"
 msgstr ""
+"여기서, 사전 구현된 연산자 함수들과 함께 C 코드를 생성하는 codegen을 구현하는 법을 "
+"설명하겠습니다. 불필요하게 복잡해지지 않도록, 예제 codegen은 "
+"서드파티 라이브러리의 의존성이 없도록 했습니다. 대신 C로 쓰인 매크로 두 개를 "
+"구현하겠습니다:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:63
 msgid ""
@@ -106,28 +143,36 @@ msgid ""
 "tensors. For example, given a subgraph as follows. Assuming all inputs "
 "are 2-D tensors with shape (10, 10)."
 msgstr ""
+"두 매크로를 이용해 1-D와 2-D 텐서에 대한 이항 연산자를 만들어 낼 수 있습니다. "
+"예컨대, 다음과 같은 서브그래프가 주어졌다고 합시다. 모든 입력은 (10, 10) 모양의 "
+"2-D 텐서라고 가정합니다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:77
 msgid ""
 "Our goal is to generate the following compilable code to execute the "
 "subgraph:"
 msgstr ""
+"우리의 목표는 다음과 같이 서브그래프를 실행할 수 있는 컴파일 가능한 코드를 "
+"생성하는 것입니다:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:132
 msgid "Here we highlight the notes marked in the above code:"
-msgstr ""
+msgstr "위 코드에 표기해 둔 Note들에 주목해 봅시다:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:134
 msgid ""
 "**Note 1** is the function implementation for the three nodes in the "
 "subgraph."
 msgstr ""
+"**Note 1** 은 서브그래프의 세 노드에 대한 함수 구현입니다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:136
 msgid ""
 "**Note 2** is a function to execute the subgraph by allocating "
 "intermediate buffers and invoking corresponding functions."
 msgstr ""
+"**Note 2** 은 중간 매개 버퍼를 할당하여 서브그래프를 실행하고 각 노드에 "
+"대응하는 함수들을 호출하는 함수입니다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:138
 msgid ""
@@ -142,6 +187,14 @@ msgid ""
 "with the rest parts of the graph and export a single library for "
 "deployment."
 msgstr ""
+"**Note 3** 는 TVM 런타임 호환 래퍼(wrapper)입니다. 이 함수는 입력 텐서의 "
+"리스트와 출력 텐서(마지막 인자)를 받아들여, 적절한 데이터 형으로 캐스팅하고, "
+"Note 2에 기술된 서브그래프 함수를 불러냅니다. "
+"추가로 ``TVM_DLL_EXPORT_TYPED_FUNC`` 는, 모든 텐서들을 통합 함수 인자인 "
+"``TVMArgs`` 로 묶고 이를 인자로 받아들이는 함수 ``gcc_0`` 를 생성합니다. "
+"결과적으로 TVM 런타임은 부가적인 노력 없이 직접 ``gcc_0`` 를 호출하여 서브그래프를 "
+"실행할 수 있습니다. 위와 같이 생성된 코드로, TVM은 그래프의 나머지 부분들과 같이 "
+"컴파일 할 수 있으며, 탑재를 위한 단일 라이브러리를 내보낼 수 있습니다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:140
 msgid ""
@@ -153,12 +206,20 @@ msgid ""
 "<https://github.com/apache/tvm/blob/main/src/relay/backend/contrib/codegen_c/codegen.cc>`_."
 " Feel free to check this file for a complete implementation."
 msgstr ""
+"이 섹션의 나머지 부분에서 상기 코드를 생성하기 위한 codegen을 단계별로 "
+"구현해 보겠습니다. 당신의 codegen은 "
+"``src/relay/backend/contrib/<your-codegen-name>/`` 에 위치해야 합니다. "
+"우리 예제에서는, codegen을 \"codegen_c\" 로 명명하고 "
+"`/src/relay/backend/contrib/codegen_c/ <https://github.com/apache"
+"/tvm/blob/main/src/relay/backend/contrib/codegen_c/codegen.cc>`_ 아래에 두기로 "
+"하겠습니다. 완성된 구현이 궁금하다면 이 파일을 찾아봐도 좋습니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:142
 msgid ""
 "Specifically, we are going to implement two classes in this file and here"
 " is their relationship:"
 msgstr ""
+"이 파일에서 두 특정 클래스들을 구현해 보겠습니다. 다음은 이들 사이의 관계입니다: "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:153
 msgid ""
@@ -173,16 +234,27 @@ msgid ""
 "generation implementation. The following sections will implement these "
 "two classes in the bottom-up order."
 msgstr ""
+"Relay 그래프의 한 함수(서브그래프)가 등록된 컴파일러 태그(이 예제에서는 ``ccompiler`` )"
+"로 주석이 붙어 있다는 것을 TVM 백엔드가 발견하면, TVM 백엔드는 "
+"``CSourceCodegen`` 를 호출하고 서브그래프를 넘깁니다. "
+" ``CSourceCodegen`` 의 멤버 함수 ``CreateCSourceModule`` 는 1) "
+"서브그래프에 대한 C 코드를 생성하고, 2) 생성된 C 코드를 TVM 백엔드가 컴파일하고 "
+"탑재할 수 있도록 C 소스 런타임 모듈로 포장합니다. "
+"특히 C 코드 생성은 ``CodegenC`` 클래스에 대해 투명성을 띄는데, 왜냐하면 CodegenC가 "
+"코드 생성 구현을 손쉽게 만드는 다수의 유용한 유틸리티를 제공하기 때문입니다. "
+"이어지는 섹션에서 이 두 클래스들을 상향식으로 구현해 보겠습니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:156
 msgid "Implement CodegenC"
-msgstr ""
+msgstr "CodegenC 구현"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:158
 msgid ""
 "In ``src/relay/backend/contrib/codegen_c/codegen.cc``, we first create a "
 "codegen class skeleton under the namespace of ``tvm.relay.contrib``:"
 msgstr ""
+"``src/relay/backend/contrib/codegen_c/codegen.cc`` 에서 우선 "
+"``tvm.relay.contrib`` 네임 스페이스 하에서 codegen 클래스 스켈레톤을 생성합니다:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:204
 msgid ""
@@ -193,10 +265,15 @@ msgid ""
 "``gcc_0`` in the above example. As can be seen, we only need to implement"
 " three functions in this codegen class to make it work."
 msgstr ""
+"``CodegenC`` 클래스는 두 클래스를 상속하는데: ``ExprVisitor`` 는 서브그래프를 "
+"횡단하며 필요한 정보를 모으고 ``gcc_0_`` 와 같은 서브그래프 함수를 생성하는 "
+"기능을 제공하고; ``CodegenCBase`` 는 상기 예제의 ``gcc_0`` 와 같은 래퍼 함수를 "
+"생성하기 위한 유틸리티와 기능을 제공합니다. "
+"보다시피 codegen 클래스를 작동하게 만드려면 세 함수만 구현하면 됩니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:207
 msgid "Code Generation for Operators"
-msgstr ""
+msgstr "연산자에 대한 코드 생성"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:209
 msgid ""
@@ -207,14 +284,19 @@ msgid ""
 "operators in topological order. We implement this function step-by-step "
 "as follows."
 msgstr ""
+"먼저 ``VisitExpr_(const CallNode* call)`` 를 구현합니다. 이 함수는 서브그래프를 "
+"횡단하는 동안 모든 호출 노드를 방문합니다. 각 호출 노드는 당신의 하드웨어에 위임하고 "
+"싶은 연산자들을 담고 있습니다. 따라서 위상학적 순위에 따라 그에 상응하는 C 코드를 적합한 "
+"연산자들로 생성해야 합니다. "
+"이 함수를 다음과 같이 단계별로 구현해 봅시다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:211
 msgid "**1. Generate the function declaration**"
-msgstr ""
+msgstr "**1. 함수 선언 생성**"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:213
 msgid "Example Result: ``GCC_BINARY_OP_2D(gcc_0_0, *, 10, 10);``"
-msgstr ""
+msgstr "결과 예시: ``GCC_BINARY_OP_2D(gcc_0_0, *, 10, 10);``"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:215
 msgid ""
@@ -223,6 +305,10 @@ msgid ""
 " and 3) the input tensor shape (e.g., ``(10, 10)``). Fortunately, this "
 "information can be obtained easily from ``CallNode``:"
 msgstr ""
+"함수 선언을 생성하려면, 위와 같이 1) 함수 이름 (e.g., ``gcc_0_0``), "
+"2) 연산자 타입(e.g., ``*``), 그리고 3) 입력 텐서 모양(e.g., ``(10, 10)``). "
+"이 필요합니다. 다행스럽게도, 이러한 정보는 ``CallNode`` 로부터 쉽게 얻을 수 "
+"있습니다:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:248
 msgid ""
@@ -232,14 +318,18 @@ msgid ""
 "we need to do is having them compiled by GCC. The rest implementation of "
 "``VisitExpr_(const CallNode* call)`` also follow this concept."
 msgstr ""
+"보다시피, 생성된 코드를 클래스 멤버 변수 ``func_decl_`` 에 푸쉬(push_back) 합니다. "
+"이는 전체 서브그래프를 횡단하고 나면 필요한 함수 선언은 모두 수집이 끝나고, 남은 일은 "
+"GCC에 의해 컴파일되도록 하는 것 뿐이라는 의미입니다. "
+"``VisitExpr_(const CallNode* call)`` 의 나머지 구현도 이러한 컨셉을 따릅니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:250
 msgid "**2. Generate the function call**"
-msgstr ""
+msgstr "**2. 함수 콜 생성**"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:252
 msgid "Example Result: ``gcc_0_0(buf_1, gcc_input3, out);``"
-msgstr ""
+msgstr "결과 예시: ``gcc_0_0(buf_1, gcc_input3, out);``"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:254
 msgid ""
@@ -247,10 +337,13 @@ msgid ""
 " call with proper inputs and outputs. To know which inputs or buffers we "
 "should put when calling this function, we have to visit its arguments:"
 msgstr ""
+"함수 선언 생성 다음에, 적절한 입출력을 갖는 함수 콜을 생성할 필요가 있습니다. "
+"이 함수를 호출할 때 어떤 입력이나 버퍼를 집어넣어야 할지 위해서는 "
+"함수의 인자로 주어지는 노드들을 방문해 봐야 합니다:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:272
 msgid "Again, we want to highlight the notes in the above code:"
-msgstr ""
+msgstr "위 코드에서 Note를 다시 주목해 봅시다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:274
 msgid ""
@@ -260,6 +353,10 @@ msgid ""
 "sure every node updates a class variable ``out_`` before leaving the "
 "visitor. Here is an illustration:"
 msgstr ""
+"**Note 1**: ``VisitExpr(call->args[i])`` 는 현재 함수의 인자 노드를 방문하기 "
+"위한 재귀 호출입니다. 인자 노드는 다른 노드의 출력이나 입력 텐서일 수 있습니다. "
+"이 구현 예제에서, 모든 노드는 방문자가 떠나기 전에 클래스 변수 ``out_`` 를 반드시 "
+"업데이트 하도록 합니다. 이를 도시한 그림입니다: "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:285
 msgid ""
@@ -270,6 +367,11 @@ msgid ""
 "at ``out_``. You will find out how we update ``out_`` at the end of this "
 "section as well as the next section."
 msgstr ""
+"위 그림에서, 클래스 변수 ``out_`` 는 인자 노드를 방문하기 전에는 비어 있다가, "
+"방문 후에는 ``arg_node`` 의 출력 버퍼명과 크기로 채워집니다. "
+"인자 노드 방문을 끝마치면, 최종적으로 ``out_`` 를 살펴봄으로써 어떤 입력 버퍼가 "
+"적합한지 알 수 있게 됩니다. 이 섹션의 마지막과 다음 섹션에 걸쳐 우리가 어떻게 ``out_`` 를 "
+"업데이트 하는지 알아보겠습니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:287
 msgid ""
@@ -282,14 +384,20 @@ msgid ""
 "every call node (next step) and copy the result in the very last buffer "
 "to the output tensor."
 msgstr ""
+"**Note 2**: 이 단계에서 함수 콜 문자열을 닫지 않았다는 것을 알아챘을 것입니다. "
+"이 지점의 함수 콜 문자열은 ``gcc_0_0(buf_1, gcc_input3`` 와 같은 꼴입니다. 왜냐하면 "
+"이 콜에 대한 마지막 인자(i.e., 출력)을 아직 집어 넣지 못했기 때문입니다. "
+"함수 콜의 출력은 할당된 임시 버퍼나 서브그래프의 출력일 수 있습니다. 이 예제에서는 간단히 "
+"모든 콜 노드(다음 단계)를 위한 출력 버퍼를 할당하고 최종적인 버퍼의 결과물을 "
+"출력 텐서에 복사하는 걸로 하겠습니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:289
 msgid "**3. Generate the output buffer**"
-msgstr ""
+msgstr "**3. 출력 버퍼 생성**"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:291
 msgid "Example Result: ``float* buf_0 = (float*)malloc(4 * 100);``"
-msgstr ""
+msgstr "결과 예시: ``float* buf_0 = (float*)malloc(4 * 100);``"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:293
 msgid ""
@@ -298,6 +406,9 @@ msgid ""
 "results. To generate the buffer, we extract the shape information to "
 "determine the buffer type and size:"
 msgstr ""
+"앞 단계에서 언급했듯이, 서브그래프의 입출력 텐서 뿐 아니라, 중간 결과를 보존해 두기 위한 "
+"버퍼가 필요할 수 있습니다. 버퍼를 생성하기 위해 버퍼의 타입과 크기를 결정하는 모양 정보를 "
+"추출하겠습니다: "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:316
 msgid ""
@@ -305,10 +416,12 @@ msgid ""
 "call string and push the generated function call to a class variable "
 "``ext_func_body``."
 msgstr ""
+"출력 버퍼를 할당한 다음, 함수 콜 문자열을 닫을 수 있게 되었습니다. 완성된 함수 콜을 "
+"클래스 변수 ``ext_func_body`` 에 푸쉬(push_back)합니다."
 
 #: ../../dev/relay_bring_your_own_codegen.rst:323
 msgid "**4. Update output buffer**"
-msgstr ""
+msgstr "**4. 출력 버퍼 업데이트**"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:325
 msgid ""
@@ -316,6 +429,8 @@ msgid ""
 "as its input, know which buffer it should take, we need to update the "
 "class variable ``out_`` before leaving this visit function:"
 msgstr ""
+"현재 콜 노드의 출력을 입력으로 받는 다음 노드로 하여금 어떤 버퍼를 취해야 하는지, "
+"이 방문 함수를 떠나기 전에 클래스 변수 ``out_`` 를 업데이트 할 필요가 있습니다:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:332
 msgid ""
@@ -323,10 +438,12 @@ msgid ""
 "class. In the next two sections, we just need to make up some minor "
 "missing parts in this function."
 msgstr ""
+"축하합니다! 방금 이 클래스의 가장 어려운 함수를 막 끝냈습니다. "
+"다음 두 섹션에서는 이 함수에서 누락되어 있는 몇몇 사소한 부분들을 채워넣을 것입니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:335
 msgid "Code Generation for Input Variables"
-msgstr ""
+msgstr "입력 변수를 위한 코드 생성"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:337
 msgid ""
@@ -336,6 +453,9 @@ msgid ""
 "section, we demonstrate how to handle other nodes by taking ``VarNode`` "
 "as an example."
 msgstr ""
+"콜 노드(이전 섹션의 두번째 단계)의 인자 노드를 방문함으로써 입력 버퍼 정보를 수집했고, "
+"그 인자가 또 다른 콜 노드(네번째 단계)일 경우를 다뤄 보았음을 떠올려 봅시다. "
+"이 섹션에서는 ``VarNode`` 를 예시로 취하여 다른 노드들을 다루는 방법을 설명하겠습니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:339
 msgid ""
@@ -345,6 +465,10 @@ msgid ""
 " the name hint so that the descendant call nodes can generate the correct"
 " function call."
 msgstr ""
+"``VarNode`` 는 모델에서 입력 텐서를 나타냅니다. 이것이 갖는 유일한 중요 정보는 이름 힌트 "
+"(e.g., ``data``, ``weight``, 등) 입니다. ``VarNode`` 에 방문할 때, 이름 힌트를 "
+"넘겨줌으로써 후속 콜 노드가 정확한 함수 콜을 생성할 수 있도록, 클래스 변수 ``out_`` 를 "
+"간단히 업데이트합니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:349
 msgid ""
@@ -353,10 +477,13 @@ msgid ""
 " of nodes, such as ``TupleNode``, then you also need to visit them and "
 "bypass the output buffer information."
 msgstr ""
+"이 예제에서 오프로딩되는 서브그래프는 오직 콜 노드와 변수 노드만 갖는다고 가정한다는 것에 "
+"유의하세요. 만일 당신의 서브그래프가 ``TupleNode`` 처럼 또 다른 타입의 노드를 포함한다면, "
+"거기에도 방문하고 출력 버퍼 정보를 우회해야 할 필요가 있습니다. "
 
 #: ../../dev/relay_bring_your_own_codegen.rst:352
 msgid "Code Emitting"
-msgstr ""
+msgstr "코드 출력"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:354
 msgid ""
@@ -369,12 +496,23 @@ msgid ""
 "``JitImpl``, to generate the function. For example, we can invoke "
 "``JitImpl`` as follows:"
 msgstr ""
+"이 codegen 클래스의 마지막 부분은 서브그래프를 위한 C 함수를 출력하고 우리가 함수 몸체로서 "
+"막 생성한 C 코드를 활용하는 ``JIT`` 함수입니다. 이전 섹션에서 우리가 생성한 서브그래프 "
+"함수에 더해 TVM 런타임이 데이터를 주고 받기 위해 통합 인자
+"Remember, in addition to the subgraph function we "
+"generated in the previous sections, we also need a wrapper function with "
+"a unified argument for TVM runtime to invoke and pass data. Fortunately, "
+"the base class we inherited already provides an implementation, "
+"``JitImpl``, to generate the function. For example, we can invoke "
+"``JitImpl`` as follows:"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:364
 msgid ""
 "The above call will generate three functions (one from the TVM wrapper "
 "macro):"
 msgstr ""
+"The above call will generate three functions (one from the TVM wrapper "
+"macro):"
 
 #: ../../dev/relay_bring_your_own_codegen.rst:366
 msgid ""

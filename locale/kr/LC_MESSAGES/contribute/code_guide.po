@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../contribute/code_guide.rst:21
 msgid "Code Guide and Tips"
-msgstr ""
+msgstr "코딩 가이드와 개발팁"
 
 #: ../../contribute/code_guide.rst:23
 msgid ""
@@ -27,22 +27,24 @@ msgid ""
 "contributors. Most of them are summarized through lessons during the "
 "contributing and process."
 msgstr ""
+"이 문서는 리뷰어와 컨트리뷰터를 위해 TVM 코드베이스의 개발팁을 기록하기 위해 사용됩니다. "
+"대부분은 개발 기여 절차에서 얻은 교훈들을 요약한 것입니다. "
 
 #: ../../contribute/code_guide.rst:28
 msgid "C++ Code Styles"
-msgstr ""
+msgstr "C++ 코딩 스타일"
 
 #: ../../contribute/code_guide.rst:29
 msgid "Use the Google C/C++ style."
-msgstr ""
+msgstr "구글 C/C++ 스타일을 준수하세요."
 
 #: ../../contribute/code_guide.rst:30
 msgid "The public facing functions are documented in doxygen format."
-msgstr ""
+msgstr "외부로 드러나는 함수들은 doxygen 포맷으로 문서화되어야 합니다."
 
 #: ../../contribute/code_guide.rst:31
 msgid "Favor concrete type declaration over ``auto`` as long as it is short."
-msgstr ""
+msgstr "너무 길어지지만 않는다면 ``auto`` 보다는 확실한 타입 선언을 선호합니다."
 
 #: ../../contribute/code_guide.rst:32
 msgid ""
@@ -51,10 +53,12 @@ msgid ""
 " move, pass by value is better than pass by const reference in such "
 "cases."
 msgstr ""
+"값을 넘기기보다는 const 참조(e.g. ``const Expr&``)를 넘기길 선호합니다. "
+"함수가 복제 생성자나 이동(move)으로 값을 소비할 때에는 예외인데, 그런 경우는 const 참조 넘기기보다 값 넘기기가 더 낫습니다. "
 
 #: ../../contribute/code_guide.rst:35
 msgid "Favor ``const`` member function when possible."
-msgstr ""
+msgstr "가급적 ``const`` 멤버 함수를 선호합니다. "
 
 #: ../../contribute/code_guide.rst:37
 msgid ""
@@ -63,18 +67,22 @@ msgid ""
 " use the same version of the clang-format as the main one. You can also "
 "use the following command via docker."
 msgstr ""
+"코딩 스타일을 강제하기 위해 `clang-format` 을 사용합니다. clang-format의 버젼별 차이가 있으므로, "
+"동일 버젼의 clang-format을 메인으로 활용하는 것을 권장합니다. docker를 통해 다음 명령을 사용할 수도 있습니다. "
 
 #: ../../contribute/code_guide.rst:47
 msgid ""
 "clang-format is also not perfect, when necessary, you can use disble "
 "clang-format on certain code regions."
 msgstr ""
+"clang-format이 완벽한 것은 아니므로, 어떤 코드 영역에서는 부득이하게 clang-format을 비활성화할 수도 있습니다. "
 
 #: ../../contribute/code_guide.rst:58
 msgid ""
 "Because clang-format may not recognize macros, it is recommended to use "
 "macro like normal function styles."
 msgstr ""
+"clang-format이 매크로를 인식하지 못할 수도 있습니다. 매크로를 닮은 일반 함수 스타일을 사용하길 권고합니다. "
 
 #: ../../contribute/code_guide.rst:79
 msgid "Python Code Styles"

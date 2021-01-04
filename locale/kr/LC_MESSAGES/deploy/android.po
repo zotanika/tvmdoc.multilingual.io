@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../deploy/android.rst:19
 msgid "Deploy to Android"
-msgstr ""
+msgstr "안드로이드에 탑재하기"
 
 #: ../../deploy/android.rst:22
 msgid "Build model for Android Target"
-msgstr ""
+msgstr "안드로이드 타겟을 위한 모델 빌드"
 
 #: ../../deploy/android.rst:24
 msgid ""
@@ -31,16 +31,19 @@ msgid ""
 "like android_rpc. The code below will save the compilation output which "
 "is required on android target."
 msgstr ""
+"안드로이드 타겟을 위한 모델의 Relay 컴파일은 android_rpc의 경우과 같은 절차를 따른다고 "
+"할 수 있습니다. 아래의 코드는 안드로이드 타겟이 필요로 하는 컴파일 결과물을 저장하게 됩니다. "
 
 #: ../../deploy/android.rst:36
 msgid ""
 "deploy_lib.so, deploy_graph.json, deploy_param.params will go to android "
 "target."
 msgstr ""
+"deploy_lib.so, deploy_graph.json, deploy_param.params 이 안드로이트 타겟에 올라가게 됩니다."
 
 #: ../../deploy/android.rst:39
 msgid "TVM Runtime for Android Target"
-msgstr ""
+msgstr "안드로이드 타겟을 위한 TVM 런타임"
 
 #: ../../deploy/android.rst:41
 msgid ""
@@ -52,4 +55,11 @@ msgid ""
 "<https://github.com/apache/tvm/blob/main/apps/android_deploy/app/src/main/java/org/apache/tvm/android/demo/MainActivity.java>`_"
 " sample source."
 msgstr ""
+"안드로이드 타겟 용으로 CPU/OpenCL 버전 친화적인 TVM 런타임을 빌드하려면 `여기 <https://github.com/apache/incubator-"
+"tvm/blob/main/apps/android_deploy/README.md#build-and-installation>`_ 를 참조하세요. "
+"안드로이드 자바 TVM API로 모델을 읽어들이고 실행하려면 
+"android java TVM API to load model & execute can be referred at this "
+"`자바 <https://github.com/apache/incubator-"
+"tvm/blob/main/apps/android_deploy/app/src/main/java/org/apache/tvm/android/demo/MainActivity.java>`_"
+" 샘플 소스코드를 참조하세요. "
 

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../install/nnpack.rst:20
 msgid "NNPACK Contrib Installation"
-msgstr ""
+msgstr "NNPACK 배포판 설치"
 
 #: ../../install/nnpack.rst:22
 msgid ""
@@ -29,6 +29,10 @@ msgid ""
 "_MXNet_ can speed up the execution on multi-core CPU computers, including"
 " laptops and mobile devices."
 msgstr ""
+"`NNPACK <https://github.com/Maratyszcza/NNPACK>`_ 은 신경망의 계산을 가속하는 "
+"소프트웨어 패키지로 x86-64,ARMv7, ARM64 아키텍쳐 CPU에서 동작합니다. "
+"NNPACK을 활용함으로써, _MXNet_ 같은 고수준 라이브러리를 랩탑이나 모바일 장치를 포함한 "
+"멀티코어 CPU 컴퓨터에서 실행 속도를 향상시킬 수 있습니다. "
 
 #: ../../install/nnpack.rst:29
 msgid ""
@@ -36,6 +40,9 @@ msgid ""
 "reference and comparison purpose. For regular use prefer native tuned TVM"
 " implementation."
 msgstr ""
+"AS TVM already has natively tuned schedules, NNPACK is here mainly for "
+"reference and comparison purpose. For regular use prefer native tuned TVM"
+" implementation."
 
 #: ../../install/nnpack.rst:32
 msgid ""

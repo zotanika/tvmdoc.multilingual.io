@@ -19,13 +19,15 @@ msgstr ""
 
 #: ../../deploy/integrate.rst:19
 msgid "Integrate TVM into Your Project"
-msgstr ""
+msgstr "프로젝트에 TVM 탑재하기"
 
 #: ../../deploy/integrate.rst:21
 msgid ""
 "TVM's runtime is designed to be lightweight and portable. There are "
 "several ways you can integrate TVM into your project."
 msgstr ""
+"TVM's runtime is designed to be lightweight and portable. There are "
+"several ways you can integrate TVM into your project."
 
 #: ../../deploy/integrate.rst:24
 msgid ""

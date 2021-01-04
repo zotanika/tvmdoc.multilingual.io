@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../deploy/arm_compute_lib.rst:19
 msgid "Relay Arm :sup:`®` Compute Library Integration"
-msgstr ""
+msgstr "Relay ARM :sup:`®` 컴퓨트 라이브러리 적용"
 
 #: ../../deploy/arm_compute_lib.rst:20
 msgid "**Author**: `Luke Hutton <https://github.com/lhutton1>`_"
-msgstr ""
+msgstr "**저자**: `Luke Hutton <https://github.com/lhutton1>`_
 
 #: ../../deploy/arm_compute_lib.rst:23
 msgid "Introduction"
-msgstr ""
+msgstr "소개"
 
 #: ../../deploy/arm_compute_lib.rst:25
 msgid ""
@@ -37,10 +37,13 @@ msgid ""
 "library. By offloading select operators from a relay graph to ACL we can "
 "achieve a performance boost on such devices."
 msgstr ""
+"ARM 컴퓨트 라이브러리(ACL)는 ARM CPU와 GPU에 맞는 가속 커널을 제공하는 오픈 소스 프로젝트입니다. "
+"현재 연산자들의 작업부하를 ACL로 넘겨 라이브러리 내에 손수 작업된 어셈블러 루틴을 활용하도록 구현되어 있는 상태입니다. "
+"Relay 그래프로부터 선택된 연산자들을 ACL로 오프로딩함으로써, 해당 장치들에서 성능 향상의 혜택을 얻을 수 있습니다. "
 
 #: ../../deploy/arm_compute_lib.rst:31
 msgid "Installing Arm Compute Library"
-msgstr ""
+msgstr "ARM 컴퓨트 라이브러리 설치"
 
 #: ../../deploy/arm_compute_lib.rst:33
 msgid ""
@@ -49,10 +52,15 @@ msgid ""
 "and look for the \"Model name\" of the CPU. You can then use this to "
 "determine the architecture by looking online."
 msgstr ""
+"ARM 컴퓨트 라이브러리를 설치하기 전에, 어떤 아키텍쳐를 위해 빌드할 것인지 알아두는 것이 중요합니다. "
+"이걸 확인하는 한가지 방법은 `lscpu` 를 사용해서 CPU의 \"Model name\" 을 찾아보는 겁니다. "
+"
+"of the CPU. You can then use this to "
+"determine the architecture by looking online."
 
 #: ../../deploy/arm_compute_lib.rst:37
 msgid "We recommend two different ways to build and install ACL:"
-msgstr ""
+msgstr "두 가지 방법으로 ACL을 빌드하고 설치하는 걸 추천합니다. "
 
 #: ../../deploy/arm_compute_lib.rst:39
 msgid ""
@@ -73,6 +81,9 @@ msgid ""
 "require and make sure they are visible to cmake. This can be done like "
 "so:"
 msgstr ""
+"혹은, https://github.com/ARM-software/ComputeLibrary/releases 에서 미리 빌드된 바이너리들을 다운로드받아 사용할 수 있습니다. "
+"이 패키지를 사용할 때, 당신이 필요로 하는 아키텍쳐에 맞게 바이너리를 선택하고, cmake에서 인식되는지 확인할 필요가 있습니다. "
+"아래와 같이 하세요: "
 
 #: ../../deploy/arm_compute_lib.rst:55
 msgid ""
@@ -133,7 +144,7 @@ msgstr ""
 
 #: ../../deploy/arm_compute_lib.rst:90
 msgid "Usage"
-msgstr ""
+msgstr "사용법"
 
 #: ../../deploy/arm_compute_lib.rst:94
 msgid "This section may not stay up-to-date with changes to the API."
@@ -147,18 +158,21 @@ msgid ""
 "computed via TVM. (For this example we will use a single max_pool2d "
 "operator)."
 msgstr ""
+"Relay 그래프를 생성하세요. 전체 그래프일 수도 있고 단 하나의 연산자일 수도 있습니다. "
+"요컨대 아무 그래프나 입력될 수 있다는 뜻입니다. ACL 구현은 지원되는 연산자만 골라내어 옮겨받을 수 있도록 하고, "
+"반면 나머지는 그냥 TVM에서 계산될 것입니다(이 예제에서 우리는 max_pool2d 연산 하나만 사용할 것입니다)."
 
 #: ../../deploy/arm_compute_lib.rst:119
 msgid "Annotate and partition the graph for ACL."
-msgstr ""
+msgstr "ACL을 위해 그래프를 가공하고(annotate) 분할하기"
 
 #: ../../deploy/arm_compute_lib.rst:127
 msgid "Build the Relay graph."
-msgstr ""
+msgstr "Relay 그래프 빌드"
 
 #: ../../deploy/arm_compute_lib.rst:136
 msgid "Export the module."
-msgstr ""
+msgstr "모듈 내보내기"
 
 #: ../../deploy/arm_compute_lib.rst:145
 msgid ""
@@ -167,10 +181,12 @@ msgid ""
 "using the RPC mechanism: "
 "https://tvm.apache.org/docs/tutorials/get_started/cross_compilation_and_rpc.html"
 msgstr ""
+"추론을 실행하세요. 이는 ARM 장치에서 수행되어야 합니다. x86 장치에서 컴파일하고 AArch64 장치에서 실행하고자 한다면, "
+"RPC 메커니즘 활용을 고려해 보세요. 이를 위한 튜토리얼은 https://tvm.apache.org/docs/tutorials/get_started/cross_compilation_and_rpc.html 입니다. "
 
 #: ../../deploy/arm_compute_lib.rst:161
 msgid "More examples"
-msgstr ""
+msgstr "더 많은 예제"
 
 #: ../../deploy/arm_compute_lib.rst:162
 msgid ""
@@ -181,38 +197,45 @@ msgid ""
 "`test_config.json` to configure how a remote device is created in "
 "`infrastructure.py` and, as a result, how runtime tests will be run."
 msgstr ""
+"위의 예제는 ACL이 하나의 Maxpool2D를 어떻게 오프로딩하는지 보여주는 기초적인 예제였습니다. "
+"만일 각각의 구현된 연산자나 신경망 전체에 대한 더 많은 예제를 보고 싶다면, 
+"`tests/python/contrib/test_arm_compute_lib` 의 테스트 스크립트를 참고하세요. "
+"여기서 당신은 `test_config.json` 을 변경해 `infrastructure.py` 에서 어떻게 리모트 장치를 생성할지, "
+"달리 말해 어떻게 런타임 테스트를 수행할지 설정할 수 있습니다. "
 
 #: ../../deploy/arm_compute_lib.rst:168
 msgid "An example configuration for `test_config.json`:"
-msgstr ""
+msgstr "`test_config.json` 설정 예시:"
 
 #: ../../deploy/arm_compute_lib.rst:170
 msgid ""
 "connection_type - The type of RPC connection. Options: local, tracker, "
 "remote."
 msgstr ""
+"connection_type - RPC 연결 타입. 옵션: local, tracker, remote."
 
 #: ../../deploy/arm_compute_lib.rst:171
 msgid "host - The host device to connect to."
-msgstr ""
+msgstr "host - 연결할 호스트 장치"
 
 #: ../../deploy/arm_compute_lib.rst:172
 msgid "port - The port to use when connecting."
-msgstr ""
+msgstr "port - 연결에 사용할 포트"
 
 #: ../../deploy/arm_compute_lib.rst:173
 msgid "target - The target to use for compilation."
-msgstr ""
+msgstr "target - 컴파일에 사용할 타겟"
 
 #: ../../deploy/arm_compute_lib.rst:174
 msgid "device_key - The device key when connecting via a tracker."
-msgstr ""
+msgstr "device_key - 트래커를 통해 연결할 때 필요한 장치 키"
 
 #: ../../deploy/arm_compute_lib.rst:175
 msgid ""
 "cross_compile - Path to cross compiler when connecting from a non-arm "
 "platform e.g. aarch64-linux-gnu-g++."
 msgstr ""
+"cross_compile - 非ARM 플랫폼 e.g. aarch64-linux-gnu-g++ 일 경우의 크로스 컴파일러 경로."
 
 #: ../../deploy/arm_compute_lib.rst:190
 msgid "Operator support"

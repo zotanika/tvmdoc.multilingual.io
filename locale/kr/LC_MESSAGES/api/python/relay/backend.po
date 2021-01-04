@@ -23,19 +23,19 @@ msgstr ""
 
 #: of tvm.relay.backend:1
 msgid "Backend codegen modules for relay."
-msgstr ""
+msgstr "Relay를 위한 백엔드 codegen 모듈"
 
 #: of tvm.relay.backend.interpreter:1
 msgid "The Python interface to the Relay reference interpreter."
-msgstr ""
+msgstr "Relay 레퍼런스 인터프리터로의 파이썬 인터페이스 "
 
 #: of tvm.relay.backend.interpreter.Executor:1
 msgid "An abstract interface for executing Relay programs."
-msgstr ""
+msgstr "Relay 프로그램을 실행하기 위한 추상 인터페이스 "
 
 #: of tvm.relay.backend.interpreter.Executor.evaluate:1
 msgid "Evaluate a Relay expression on the executor."
-msgstr ""
+msgstr "executor 상에서 Relay 표현식 평가하기"
 
 #: of tvm.relay.backend.compile_engine.CCacheKey
 #: tvm.relay.backend.compile_engine.CompileEngine.jit
@@ -195,6 +195,8 @@ msgid ""
 "based on AutoTVM profile results. If no AutoTVM profile result is found, "
 "it'll choose the implementation with highest plevel."
 msgstr ""
+"만일 use_autotvm 이 참이라면, AutoTVM 프로파일 결과에 기반한 최고의 구현을 찾기 시작할 것입입니다. "
+"AutoTVM 프로파일 결과가 발견되지 않는다면, 가장 높은 plevel의 구현을 선정할 것입니다. "
 
 #: of tvm.relay.backend.compile_engine.select_implementation:7
 msgid ""

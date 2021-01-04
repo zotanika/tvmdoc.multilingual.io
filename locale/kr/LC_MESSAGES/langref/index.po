@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../langref/index.rst:19
 msgid "Language Reference"
-msgstr ""
+msgstr "언어 레퍼런스"
 
 #: ../../langref/index.rst:20
 msgid ""

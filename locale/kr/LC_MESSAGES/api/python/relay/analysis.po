@@ -23,7 +23,7 @@ msgstr ""
 
 #: of tvm.relay.analysis:1
 msgid "The Relay IR namespace containing the analysis passes."
-msgstr ""
+msgstr "분석 패스를 포함하는 Relay IR 네임스페이스"
 
 #: of tvm.relay.analysis:1
 msgid "**Classes:**"
@@ -38,7 +38,7 @@ msgstr ""
 #: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1
 #: tvm.relay.analysis:1:<autosummary>:1
 msgid "Class to represent a relay expression split into regions."
-msgstr ""
+msgstr "여러 영역으로 분할되는 relay 표현을 나타내기 위한 클래스"
 
 #: of tvm.relay.analysis:1:<autosummary>:1
 msgid ":obj:`CallGraph <tvm.relay.analysis.CallGraph>`\\ \\(module\\)"
@@ -47,7 +47,7 @@ msgstr ""
 #: of tvm.relay.analysis.call_graph.CallGraph:1
 #: tvm.relay.analysis:1:<autosummary>:1
 msgid "Class to represent a call graph."
-msgstr ""
+msgstr "호출 그래프를 표현하기 위한 클래스"
 
 #: of tvm.relay.analysis:1:<autosummary>:1
 msgid ":obj:`Feature <tvm.relay.analysis.Feature>`\\ \\(value\\)"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: of tvm.relay.analysis:1
 msgid "**Functions:**"
-msgstr ""
+msgstr "**함수:**"
 
 #: of tvm.relay.analysis.annotated_regions.AnnotatedRegionSet:1:<autosummary>:1
 msgid ""

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../vta/dev/index.rst:19
 msgid "VTA Design and Developer Guide"
-msgstr ""
+msgstr "VTA 디자인과 개발자 가이드"
 
 #: ../../vta/dev/index.rst:21
 msgid "This developer guide details the complete VTA-TVM hardware-software stack."

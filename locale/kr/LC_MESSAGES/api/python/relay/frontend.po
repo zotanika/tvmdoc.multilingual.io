@@ -491,6 +491,9 @@ msgid ""
 "framework. TODO(@gussmith23 @hypercubestart) Add link to documentation "
 "when it exists"
 msgstr ""
+"이 패스는 BYOD(Bring Your Own Datatypes) 프레임워크의 사용자들에게 유용할 것입니다. "
+"TODO(@gussmith23 @hypercubestart) Add link to documentation "
+"when it exists"
 
 #: of
 #: tvm.relay.frontend.change_datatype._wrap_class_function_pass.<locals>.PyFunctionPass:7

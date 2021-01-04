@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/benchmark.rst:20
 msgid "Benchmark Performance Log Format"
-msgstr ""
+msgstr "벤치마크 성능 로그 포맷"
 
 #: ../../dev/benchmark.rst:21
 msgid ""
@@ -28,10 +28,13 @@ msgid ""
 "experiment reproduction, data for nightly perf regression, and the "
 "separation of logging/visualization efforts."
 msgstr ""
+"이 페이지에서는 통합 벤치마크 로그 포맷을 위한 스키마 v0.1에 대해 설명합니다. "
+"이 스키마는 타 프레임워크/런타임과의 보다 쉬운 상호 참조, 재현 실험, 자동화된 성능 "
+"회귀 분석을 위한 데이터, 로깅과 시각화 작업의 분리를 보다 쉽게 할 수 있게 합니다."
 
 #: ../../dev/benchmark.rst:24
 msgid "Log Format Overview"
-msgstr ""
+msgstr "로그 포맷 개요"
 
 #: ../../dev/benchmark.rst:26
 msgid ""

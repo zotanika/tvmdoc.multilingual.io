@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/codebase_walkthrough.rst:20
 msgid "TVM Codebase Walkthrough by Example"
-msgstr ""
+msgstr "예제로 TVM 코드베이스 익히기"
 
 #: ../../dev/codebase_walkthrough.rst:22
 msgid ""
@@ -31,38 +31,48 @@ msgid ""
 " purpose is to let new developers and interested users dive into the "
 "codebase more quickly."
 msgstr ""
+"새로운 코드베이스에 익숙해지기란 언제나 도전입니다. 특히나 TVM 처럼 서로 다른 요소들이 "
+"직관적이지 않은 방식으로 상호 작용하는 코드베이스들은 더욱 그렇죠. "
+"이 가이드에서 우리는 간단한 예제를 통해 컴파일레이션 파이프라인을 구성하는 핵심 요소들을 "
+"묘사해 보려고 합니다. 중요한 단계 단계마다 코드베이스의 어느 위치에 구현되어 있는지도 "
+"소개하겠습니다. 목표는 새로운 개발자들과 TVM에 흥미를 가진 사용자들이 코드베이스에 더 빨리 "
+"빠져들게 돕는 것입니다."
 
 #: ../../dev/codebase_walkthrough.rst:26
 msgid "Codebase Structure Overview"
-msgstr ""
+msgstr "코드베이스 구조 개요"
 
 #: ../../dev/codebase_walkthrough.rst:28
 msgid ""
 "At the root of the TVM repository, we have following subdirectories that "
 "together comprise a bulk of the codebase."
 msgstr ""
+"TVM 저장소 맨 위에서부터, 아래와 같은 서브디렉터리들이 코드베이스 덩어리를 함께 구성합니다. "
 
 #: ../../dev/codebase_walkthrough.rst:30
 msgid "``src`` - C++ code for operator compilation and deployment runtimes."
-msgstr ""
+msgstr "``src`` - 연산자 컴파일레이션과 탑재 런타임을 위한 C++ 코드."
 
 #: ../../dev/codebase_walkthrough.rst:31
 msgid ""
 "``src/relay`` - Implementation of Relay, a new functional IR for deep "
 "learning framework."
 msgstr ""
+"``src/relay`` - 딥러닝을 위한 새로운 함수형 IR인 Relay의 구현체."
 
 #: ../../dev/codebase_walkthrough.rst:32
 msgid ""
 "``python`` - Python frontend that wraps C++ functions and objects "
 "implemented in ``src``."
 msgstr ""
+"``python`` - ``src`` 에 구현된 C++ 함수와 객체를 포장한 파이썬 프론트엔드."
 
 #: ../../dev/codebase_walkthrough.rst:33
 msgid ""
 "``src/topi`` - Compute definitions and backend schedules for standard "
 "neural network operators."
 msgstr ""
+"``src/topi`` - 표준 신경망 연산자를 위한 컴퓨트 정의와 백엔드 스케줄."
 
 #: ../../dev/codebase_walkthrough.rst:35
 msgid ""
@@ -74,24 +84,32 @@ msgid ""
 "node are registered in ``src/relay/op``. Implementations of operators are"
 " in ``topi``, and they are coded in either C++ or Python."
 msgstr ""
+"표준 딥러닝 용어를 빌면, ``src/relay`` 는 계산 그래프를 관리하는 컴포넌트이며, "
+"그래프 내의 노드들의 컴파일과 실행에는 ``src`` 의 나머지 부분에 구현되어 있는 "
+"인프라스트럭쳐가 활용됩니다. "
+"``python`` 은 사용자들이 컴파일할 때 사용할 수 있는 C++ API와 드라이버 코드들의 "
+"파이썬 바인딩을 제공합니다. 각 노드에 대응하는 연산자들은 ``src/relay/op`` 안에 등록되어 "
+"있으며, C++이나 파이썬 코드로 구현된 연산자들은 ``topi`` 에 위치합니다. "
 
 #: ../../dev/codebase_walkthrough.rst:37
 msgid ""
 "When a user invokes graph compilation by ``relay.build(...)``, the "
 "following sequence of actions happens for each node in the graph:"
 msgstr ""
+"사용자가 ``relay.build(...)`` 로 그래프 컴파일을 개시하면, 그래프 안의 각 노드에 "
+"대해 다음과 같은 일련의 동작들이 이어집니다: "
 
 #: ../../dev/codebase_walkthrough.rst:39
 msgid "Look up an operator implementation by querying the operator registry"
-msgstr ""
+msgstr "연산자 레지스트리에 질의하여 연산자 구현을 검색"
 
 #: ../../dev/codebase_walkthrough.rst:40
 msgid "Generate a compute expression and a schedule for the operator"
-msgstr ""
+msgstr "연사자에 대한 컴퓨트 표현과 스케줄을 생성"
 
 #: ../../dev/codebase_walkthrough.rst:41
 msgid "Compile the operator into object code"
-msgstr ""
+msgstr "연산자를 객체코드로 컴파일"
 
 #: ../../dev/codebase_walkthrough.rst:43
 msgid ""
@@ -103,10 +121,15 @@ msgid ""
 " a Python module. For example, the convolution operator is implemented in"
 " Python, and its implementation is invoked from C++ code in Relay."
 msgstr ""
+"TVM 코드베이스의 재밌는 점 하나는 C++과 파이썬의 상호운용성이 일방적이지 않다는 것입니다. "
+"일반적으로 무거운 작업을 수행하는 코드는 C++로 구현되고 파이썬 바인딩은 사용자 인터페이스를 "
+"위해 제공되지요. TVM에서도 마찬가지입니다만, TVM 코드베이스에서는 C++ 코드 역시 파이썬 모듈에 "
+"정의되어 있는 함수를 호출할 수 있습니다. 예를 들어, 합성곱(convolution) 연산은 파이썬 모듈에 "
+"정의되어 있는데, Relay에서는 C++ 코드가 이 구현을 불러올 수 있습니다. "
 
 #: ../../dev/codebase_walkthrough.rst:47
 msgid "Vector Add Example"
-msgstr ""
+msgstr "벡터합 예제"
 
 #: ../../dev/codebase_walkthrough.rst:49
 msgid ""
@@ -114,6 +137,8 @@ msgid ""
 "example is vector addition, which is covered in detail in :ref:`tutorial-"
 "tensor-expr-get-started`"
 msgstr ""
+"저수준 TVM API를 직접 사용하는 간단한 예로 벡터합을 들어 보겠습니다. "
+":ref:`tutorial-tensor-expr-get-started` 에서 자세하게 다뤄집니다 "
 
 #: ../../dev/codebase_walkthrough.rst:58
 msgid ""
@@ -125,6 +150,11 @@ msgid ""
 "definition of Python ``Tensor`` type below, you can see it is a subclass "
 "of ``Object``."
 msgstr ""
+"여기서 ``A``, ``B``, ``C`` 의 타입은 ``python/tvm/te/tensor.py`` 에 정의된 "
+"``tvm.tensor.Tensor`` 입니다. 파이썬 ``Tensor`` 는 ``include/tvm/te/tensor.h`` 와 "
+"``src/te/tensor.cc`` 에 구현되어 있는 C++ ``Tensor`` 로 뒷받침됩니다. TVM 내의 모든 "
+"파이썬 타입들은 같은 명칭으로 내장되어 있는 C++ 타입에 대응하는 핸들로 봐도 됩니다. "
+"일단 파이썬 ``Tensor`` 의 정의를 살펴보면, ``Object`` 의 서브클래스임을 알 수 있습니다."
 
 #: ../../dev/codebase_walkthrough.rst:69
 msgid ""
@@ -133,6 +163,9 @@ msgid ""
 "not straightforward. It is briefly covered in :ref:`tvm-runtime-system`, "
 "and details are in ``python/tvm/_ffi/`` if you are interested."
 msgstr ""
+"객체 프로토콜은 C++ 타입들을 파이썬과 같은 프론트엔드 언어에 노출시키기 위한 기반이 됩니다. "
+"TVM이 파이썬 래핑을 구현한 방법은 직관적이지 않습니다. :ref:`tvm-runtime-system` 에 개략적으로, "
+"``python/tvm/_ffi/`` 에서 자세히 다루고 있으니 흥미가 있다면 참조하세요."
 
 #: ../../dev/codebase_walkthrough.rst:71
 msgid ""
@@ -144,6 +177,12 @@ msgid ""
 "also checkout `FFI Navigator <https://github.com/tqchen/ffi-navigator>`_ "
 "which allows you to navigate between python and c++ FFI calls."
 msgstr ""
+"C++ 함수들을 :ref:`tvm-runtime-system-packed-func` 의 형태로 프론트엔드 언어에 "
+"노출시키기 위해 ``TVM_REGISTER_*`` 매크로가 쓰입니다. "
+"``PackedFunc`` 은 TVM이 C++와 파이썬의 상호운용성을 실현하는 데에 필요한 또다른 메커니즘입니다. "
+"특히 이것은 C++ 코드베이스에서 파이썬 함수를 쉽게 부를 수 있게 만듭니다. "
+"파이썬과 C++ FFI 호출 사이를 오갈 수 있게 하는 `FFI 네이게이터 <https://github.com/tqchen/ffi-navigator>` "
+"도 확인해 보세요."
 
 #: ../../dev/codebase_walkthrough.rst:74
 msgid ""
@@ -154,6 +193,11 @@ msgid ""
 "``input_tensors()`` method, which returns a list of input ``Tensor`` to "
 "it. This way we can keep track of dependencies between ``Operation``."
 msgstr ""
+"``Tensor`` 객체는 자신과 결부된 ``Operation`` 객체를 가지며, ``python/tvm/te/tensor.py``, "
+"``include/tvm/te/operation.h``, ``src/tvm/te/operation`` 서브디렉터리에 정의됩니다. "
+"``Tensor`` 는 자신의 ``Operation`` 객체의 출력입니다. 반면 각 ``Operation`` 객체는 "
+"자신에게 입력되는 ``Tensor`` 리스트를 반환하는 ``input_tensors()`` 메서드를 가집니다. "
+"이로써 ``Operation`` 사이의 의존성을 추적할 수 있습니다. "
 
 #: ../../dev/codebase_walkthrough.rst:76
 msgid ""

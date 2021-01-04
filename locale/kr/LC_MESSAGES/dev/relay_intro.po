@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/relay_intro.rst:21
 msgid "Introduction to Relay IR"
-msgstr ""
+msgstr "Relay IR 소개"
 
 #: ../../dev/relay_intro.rst:22
 msgid ""
@@ -28,16 +28,19 @@ msgid ""
 "programming language background and deep learning framework developers "
 "who are familiar with the computational graph representation."
 msgstr ""
+"이 아티클은 Relay IR -- 2세대 NNVM 을 소개합니다. 단, 프로그래밍 언어의 배경 지식을 갖췄거나 "
+"계산 그래프 표현에 익숙한 딥러닝 프레임워크 개발자들을 독자로 간주합니다. "
 
 #: ../../dev/relay_intro.rst:26
 msgid ""
 "We briefly summarize the design goal here, and will touch upon these "
 "points in the later part of the article."
 msgstr ""
+"우선 디자인 목표를 간략히 요약하고, 이 아티클의 나머지 부분에서 각 부분에 대해 자세히 다루겠습니다. "
 
 #: ../../dev/relay_intro.rst:28
 msgid "Support traditional data flow-style programming and transformations."
-msgstr ""
+msgstr "전통적인 데이터 플로우 스타일 프로그래밍과 변형을 지원"
 
 #: ../../dev/relay_intro.rst:29
 msgid ""

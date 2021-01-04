@@ -23,11 +23,11 @@ msgstr ""
 
 #: ../../docstring of tvm.relay.nn:1
 msgid "Neural network related operators."
-msgstr ""
+msgstr "뉴럴렛 관련 연산자"
 
 #: ../../docstring of tvm.relay.nn:1
 msgid "**Classes:**"
-msgstr ""
+msgstr "**클래스:**"
 
 #: ../../docstring of tvm.relay.nn:1:<autosummary>:1
 msgid ":obj:`Expr <tvm.relay.nn.Expr>`\\"

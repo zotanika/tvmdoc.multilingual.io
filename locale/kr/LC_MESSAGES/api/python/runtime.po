@@ -23,7 +23,7 @@ msgstr ""
 
 #: of tvm.runtime:1
 msgid "TVM runtime namespace."
-msgstr ""
+msgstr "TVM 런타임 네임스페이스 "
 
 #: of tvm.runtime:1
 msgid "**Classes:**"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: of tvm._ffi.runtime_ctypes.DataType:1 tvm.runtime:1:<autosummary>:1
 msgid "TVM datatype structure"
-msgstr ""
+msgstr "TVM 데이터타입 구조체"
 
 #: of tvm.runtime:1:<autosummary>:1
 msgid ":obj:`DataTypeCode <tvm.runtime.DataTypeCode>`\\ \\(\\)"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: of tvm._ffi.runtime_ctypes.DataTypeCode:1 tvm.runtime:1:<autosummary>:1
 msgid "DataType code in DLTensor."
-msgstr ""
+msgstr "DLTensor의 DataType 코드"
 
 #: of tvm.runtime:1:<autosummary>:1
 msgid ""
@@ -259,6 +259,8 @@ msgid ""
 "provide a type-erased interface, you can call function with positional "
 "arguments."
 msgstr ""
+"함수는 TVM에서 프론트엔드와 백엔드를 이어주는 핵심적인 역할을 합니다. 함수는 형식소거된 "
+"인터페이스를 제공하며, 당신은 위치규정 인자와 함께 함수를 호출할 수 있습니다. "
 
 #: of tvm.runtime.packed_func.PackedFunc:6
 msgid ""
@@ -665,6 +667,8 @@ msgid ""
 "**ftimer** -- The function that takes same argument as func and returns a"
 " ProfileResult. The ProfileResult reports `repeat` time costs in seconds."
 msgstr ""
+"**ftimer** -- func 형식의 인자를 받아 ProfileResult를 반환하는 함수. "
+" ProfileResult는 초 단위로 `repeat` 회수 비용을 보고합니다. "
 
 #: of tvm.runtime.module.Module.export_library:3
 msgid ""
