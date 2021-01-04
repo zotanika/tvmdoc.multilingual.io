@@ -14,7 +14,10 @@ make -e SPHINXOPS="-D language='ja'" html
 git checkout -- $TVMDOC_BUILD_PATH/conf.py
 
 echo "Dumping HTML artifacts to docs for github pages hosting..."
-cp -rf $TVMDOC_BUILD_PATH/_build/html/* $CURR_PATH/docs 
+if [ ! -d $CURR_PATH/docs ]; then
+    mkdir $CURR_PATH/docs
+fi
+cp -rf $TVMDOC_BUILD_PATH/_build/html/* $CURR_PATH/docs
 
 cd $CURR_PATH
 echo "Done!"
