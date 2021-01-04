@@ -27,4 +27,4 @@ gluoncv
 opencv-python
 dgl
 openpyxl
-
+xgboost
