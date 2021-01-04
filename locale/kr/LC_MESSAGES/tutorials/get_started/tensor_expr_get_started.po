@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_tutorials_get_started_tensor_expr_get_started.py>` to "
+"download the full example code"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:24
+msgid "Get Started with Tensor Expression"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:25
+msgid "**Author**: `Tianqi Chen <https://tqchen.github.io>`_"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:27
+msgid ""
+"This is an introductory tutorial to the Tensor expression language in "
+"TVM. TVM uses a domain specific tensor expression for efficient kernel "
+"construction."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:30
+msgid ""
+"In this tutorial, we will demonstrate the basic workflow to use the "
+"tensor expression language."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:60
+msgid "Vector Add Example"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:61
+msgid ""
+"In this tutorial, we will use a vector addition example to demonstrate "
+"the workflow."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:68
+msgid "Describe the Computation"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:69
+msgid ""
+"As a first step, we need to describe our computation. TVM adopts tensor "
+"semantics, with each intermediate result represented as a multi-"
+"dimensional array. The user needs to describe the computation rule that "
+"generates the tensors."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:74
+msgid ""
+"We first define a symbolic variable n to represent the shape. We then "
+"define two placeholder Tensors, A and B, with given shape (n,)"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:77
+msgid ""
+"We then describe the result tensor C, with a compute operation.  The "
+"compute function takes the shape of the tensor, as well as a lambda "
+"function that describes the computation rule for each position of the "
+"tensor."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:82
+msgid ""
+"No computation happens during this phase, as we are only declaring how "
+"the computation should be done."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:102
+msgid "Out:"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:114
+msgid "Schedule the Computation"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:115
+msgid ""
+"While the above lines describe the computation rule, we can compute C in "
+"many ways since the axis of C can be computed in a data parallel manner."
+"  TVM asks the user to provide a description of the computation called a "
+"schedule."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:120
+msgid ""
+"A schedule is a set of transformation of computation that transforms the "
+"loop of computations in the program."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:123
+msgid ""
+"After we construct the schedule, by default the schedule computes C in a "
+"serial manner in a row-major order."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:148
+msgid ""
+"We used the split construct to split the first axis of C, this will split"
+" the original iteration axis into product of two iterations. This is "
+"equivalent to the following code."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:179
+msgid ""
+"Finally we bind the iteration axis bx and tx to threads in the GPU "
+"compute grid. These are GPU specific constructs that allow us to generate"
+" code that runs on GPU."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:202
+msgid "Compilation"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:203
+msgid ""
+"After we have finished specifying the schedule, we can compile it into a "
+"TVM function. By default TVM compiles into a type-erased function that "
+"can be directly called from the python side."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:207
+msgid ""
+"In the following line, we use tvm.build to create a function. The build "
+"function takes the schedule, the desired signature of the function "
+"(including the inputs and outputs) as well as target language we want to "
+"compile to."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:212
+msgid ""
+"The result of compilation fadd is a GPU device function (if GPU is "
+"involved) as well as a host wrapper that calls into the GPU function.  "
+"fadd is the generated host wrapper function, it contains a reference to "
+"the generated device function internally."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:261
+msgid "Run the Function"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:262
+msgid ""
+"The compiled TVM function is exposes a concise C API that can be invoked "
+"from any language."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:265
+msgid ""
+"We provide a minimal array API in python to aid quick testing and "
+"prototyping. The array API is based on the `DLPack "
+"<https://github.com/dmlc/dlpack>`_ standard."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:268
+msgid "We first create a GPU context."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:269
+msgid "Then tvm.nd.array copies the data to the GPU."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:270
+msgid "fadd runs the actual computation."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:271
+msgid ""
+"asnumpy() copies the GPU array back to the CPU and we can use this to "
+"verify correctness"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:291
+msgid "Inspect the Generated Code"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:292
+msgid ""
+"You can inspect the generated code in TVM. The result of tvm.build is a "
+"TVM Module. fadd is the host module that contains the host wrapper, it "
+"also contains a device module for the CUDA (GPU) function."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:296
+msgid "The following code fetches the device module and prints the content code."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:313
+msgid "Code Specialization"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:315
+msgid ""
+"As you may have noticed, the declarations of A, B and C all take the same"
+" shape argument, n. TVM will take advantage of this to pass only a single"
+" shape argument to the kernel, as you will find in the printed device "
+"code. This is one form of specialization."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:320
+msgid ""
+"On the host side, TVM will automatically generate check code that checks "
+"the constraints in the parameters. So if you pass arrays with different "
+"shapes into fadd, an error will be raised."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:324
+msgid ""
+"We can do more specializations. For example, we can write :code:`n = "
+"tvm.runtime.convert(1024)` instead of :code:`n = te.var(\"n\")`, in the "
+"computation declaration. The generated function will only take vectors "
+"with length 1024."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:333
+msgid "Save Compiled Module"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:334
+msgid ""
+"Besides runtime compilation, we can save the compiled modules into a file"
+" and load them back later. This is called ahead of time compilation."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:337
+msgid "The following code first performs the following steps:"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:339
+msgid "It saves the compiled host module into an object file."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:340
+msgid "Then it saves the device module into a ptx file."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:341
+msgid "cc.create_shared calls a compiler (gcc) to create a shared library"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:365
+msgid "Module Storage Format"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:367
+msgid ""
+"The CPU (host) module is directly saved as a shared library (.so). There "
+"can be multiple customized formats of the device code. In our example, "
+"the device code is stored in ptx, as well as a meta data json file. They "
+"can be loaded and linked separately via import."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:376
+msgid "Load Compiled Module"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:377
+msgid ""
+"We can load the compiled module from the file system and run the code. "
+"The following code loads the host and device module separately and re-"
+"links them together. We can verify that the newly loaded function works."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:406
+msgid "Pack Everything into One Library"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:407
+msgid ""
+"In the above example, we store the device and host code separately. TVM "
+"also supports export everything as one shared library. Under the hood, we"
+" pack the device modules into binary blobs and link them together with "
+"the host code. Currently we support packing of Metal, OpenCL and CUDA "
+"modules."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:426
+msgid "Runtime API and Thread-Safety"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:428
+msgid ""
+"The compiled modules of TVM do not depend on the TVM compiler. Instead, "
+"they only depend on a minimum runtime library. The TVM runtime library "
+"wraps the device drivers and provides thread-safe and device agnostic "
+"calls into the compiled functions."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:433
+msgid ""
+"This means that you can call the compiled TVM functions from any thread, "
+"on any GPUs."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:440
+msgid "Generate OpenCL Code"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:441
+msgid ""
+"TVM provides code generation features into multiple backends, we can also"
+" generate OpenCL code or LLVM code that runs on CPU backends."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:444
+msgid ""
+"The following code blocks generate OpenCL code, creates array on an "
+"OpenCL device, and verifies the correctness of the code."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:468
+msgid "Summary"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:469
+msgid ""
+"This tutorial provides a walk through of TVM workflow using a vector add "
+"example. The general workflow is"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:472
+msgid "Describe your computation via a series of operations."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:473
+msgid "Describe how we want to compute use schedule primitives."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:474
+msgid "Compile to the target function we want."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:475
+msgid "Optionally, save the function to be loaded later."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:477
+msgid ""
+"You are more than welcome to checkout other examples and tutorials to "
+"learn more about the supported operations, scheduling primitives and "
+"other features in TVM."
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:495
+msgid ""
+":download:`Download Python source code: tensor_expr_get_started.py "
+"<tensor_expr_get_started.py>`"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:501
+msgid ""
+":download:`Download Jupyter notebook: tensor_expr_get_started.ipynb "
+"<tensor_expr_get_started.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/get_started/tensor_expr_get_started.rst:508
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

@@ -1,0 +1,429 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../api/python/relay/vision.rst:20
+msgid "tvm.relay.vision"
+msgstr ""
+
+#: ../../docstring of tvm.relay.vision:1
+msgid "Vision network related operators."
+msgstr ""
+
+#: ../../docstring of tvm.relay.vision:1
+msgid "**Functions:**"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ""
+":obj:`get_valid_counts <tvm.relay.vision.get_valid_counts>`\\ \\(data\\, "
+"score\\_threshold\\[\\, ...\\]\\)"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid "Get valid count of bounding boxes given a score threshold."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ""
+":obj:`multibox_prior <tvm.relay.vision.multibox_prior>`\\ \\(data\\[\\, "
+"sizes\\, ratios\\, steps\\, ...\\]\\)"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:1
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid "Generate prior(anchor) boxes from data, sizes and ratios."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ""
+":obj:`multibox_transform_loc <tvm.relay.vision.multibox_transform_loc>`\\"
+" \\(cls\\_prob\\, loc\\_pred\\, ...\\)"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:1
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid "Location transformation for multibox detection"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ""
+":obj:`non_max_suppression <tvm.relay.vision.non_max_suppression>`\\ "
+"\\(data\\, valid\\_count\\, indices\\)"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+#: tvm.relay.op.vision.nms.non_max_suppression:1
+msgid "Non-maximum suppression operator for object detection."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ""
+":obj:`proposal <tvm.relay.vision.proposal>`\\ \\(cls\\_prob\\, "
+"bbox\\_pred\\, im\\_info\\, ...\\)"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+#: tvm.relay.op.vision.rcnn.proposal:1
+msgid "Proposal operator."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ""
+":obj:`roi_align <tvm.relay.vision.roi_align>`\\ \\(data\\, rois\\, "
+"pooled\\_size\\, spatial\\_scale\\)"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+#: tvm.relay.op.vision.rcnn.roi_align:1
+msgid "ROI align operator."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ""
+":obj:`roi_pool <tvm.relay.vision.roi_pool>`\\ \\(data\\, rois\\, "
+"pooled\\_size\\, spatial\\_scale\\)"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+#: tvm.relay.op.vision.rcnn.roi_pool:1
+msgid "ROI pool operator."
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid ":obj:`yolo_reorg <tvm.relay.vision.yolo_reorg>`\\ \\(data\\, stride\\)"
+msgstr ""
+
+#: ../../docstring of
+#: tvm.relay.op.vision.nms.get_valid_counts:1:<autosummary>:1
+msgid "Yolo reorg operation used in darknet models."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:1
+msgid ""
+"Get valid count of bounding boxes given a score threshold. Also moves "
+"valid boxes to the top of input data."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior
+#: tvm.relay.op.vision.multibox.multibox_transform_loc
+#: tvm.relay.op.vision.nms.get_valid_counts
+#: tvm.relay.op.vision.nms.non_max_suppression
+#: tvm.relay.op.vision.rcnn.proposal tvm.relay.op.vision.rcnn.roi_align
+#: tvm.relay.op.vision.rcnn.roi_pool tvm.relay.op.vision.yolo.yolo_reorg
+msgid "Parameters"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:4
+msgid "Input data. 3-D tensor with shape [batch_size, num_anchors, 6]."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:6
+msgid "Lower limit of score for valid bounding boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:8
+#: tvm.relay.op.vision.nms.non_max_suppression:32
+msgid "index of the class categories, -1 to disable."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:10
+#: tvm.relay.op.vision.nms.non_max_suppression:30
+msgid "Index of the scores/confidence of boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior
+#: tvm.relay.op.vision.multibox.multibox_transform_loc
+#: tvm.relay.op.vision.nms.get_valid_counts
+#: tvm.relay.op.vision.nms.non_max_suppression
+#: tvm.relay.op.vision.rcnn.proposal tvm.relay.op.vision.rcnn.roi_align
+#: tvm.relay.op.vision.rcnn.roi_pool tvm.relay.op.vision.yolo.yolo_reorg
+msgid "Returns"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:13
+msgid ""
+"* **valid_count** (*relay.Expr*) -- 1-D tensor for valid number of boxes."
+" * **out_tensor** (*relay.Expr*) -- Rearranged data tensor. * "
+"**out_indices** (*relay.Expr*) -- Indices in input data"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:13
+msgid "**valid_count** (*relay.Expr*) -- 1-D tensor for valid number of boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:14
+msgid "**out_tensor** (*relay.Expr*) -- Rearranged data tensor."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.get_valid_counts:15
+msgid "**out_indices** (*relay.Expr*) -- Indices in input data"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:3
+#: tvm.relay.op.vision.yolo.yolo_reorg:24
+msgid "The input data tensor."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:5
+msgid "Tuple of sizes for anchor boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:7
+msgid "Tuple of ratios for anchor boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:9
+msgid "Priorbox step across y and x, -1 for auto calculation."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:11
+msgid "Priorbox center offsets, y and x respectively."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:13
+#: tvm.relay.op.vision.multibox.multibox_transform_loc:9
+msgid "Whether to clip out-of-boundary boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior:16
+msgid ""
+"**out** -- 3-D tensor with shape [1, h_in * w_in * (num_sizes + "
+"num_ratios - 1), 4]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_prior
+#: tvm.relay.op.vision.multibox.multibox_transform_loc
+#: tvm.relay.op.vision.nms.non_max_suppression
+#: tvm.relay.op.vision.rcnn.proposal tvm.relay.op.vision.rcnn.roi_align
+#: tvm.relay.op.vision.rcnn.roi_pool tvm.relay.op.vision.yolo.yolo_reorg
+msgid "Return type"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:3
+msgid "Class probabilities."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:5
+msgid "Location regression predictions."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:7
+msgid "Prior anchor boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:11
+msgid "Threshold to be a positive prediction."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:13
+msgid "variances to be decoded from box regression output."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.multibox.multibox_transform_loc:16
+msgid "**ret**"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:3
+msgid ""
+"3-D tensor with shape [batch_size, num_anchors, 6] or [batch_size, "
+"num_anchors, 5]. The last dimension should be in format of [class_id, "
+"score, box_left, box_top, box_right, box_bottom] or [score, box_left, "
+"box_top, box_right, box_bottom]. It could be the second output out_tensor"
+" of get_valid_counts."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:10
+msgid ""
+"1-D tensor for valid number of boxes. It could be the output valid_count "
+"of get_valid_counts."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:13
+msgid ""
+"2-D tensor with shape [batch_size, num_anchors], represents the index of "
+"box in original data. It could be the third output out_indices of "
+"get_valid_counts. The values in the second dimension are like the output "
+"of arange(num_anchors) if get_valid_counts is not used before "
+"non_max_suppression."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:19
+msgid ""
+"Max number of output valid boxes for each instance. Return all valid "
+"boxes if the value of max_output_size is less than 0."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:22
+#: tvm.relay.op.vision.rcnn.proposal:17
+msgid "Non-maximum suppression threshold."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:24
+msgid "Suppress all detections regardless of class_id."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:26
+msgid "Keep maximum top k detections before nms, -1 for no limit."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:28
+msgid "The starting index of the consecutive 4 coordinates."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:34
+msgid "Whether to return box indices in input data."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:36
+msgid "Whether to move all valid bounding boxes to the top."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.nms.non_max_suppression:39
+msgid ""
+"**out** -- return relay.Expr if return_indices is disabled, a 3-D tensor "
+"with shape [batch_size, num_anchors, 6] or [batch_size, num_anchors, 5]. "
+"If return_indices is True, return relay.Tuple of two 2-D tensors, with "
+"shape [batch_size, num_anchors] and [batch_size, num_valid_anchors] "
+"respectively."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:3
+msgid "4-D tensor with shape [batch, 2 * num_anchors, height, width]."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:5
+msgid "4-D tensor with shape [batch, 4 * num_anchors, height, width]."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:7
+msgid ""
+"2-D tensor with shape [batch, 3]. The last dimension should be in format "
+"of [im_height, im_width, im_scale]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:10
+msgid "Scales of anchor windows."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:12
+msgid "Ratios of anchor windows."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:14
+msgid ""
+"The size of the receptive field each unit in the convolution layer of the"
+" rpn, for example the product of all stride's prior to this layer."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:19
+msgid "Number of top scoring boxes to apply NMS. -1 to use all boxes."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:21
+msgid "Number of top scoring boxes to keep after applying NMS to RPN proposals."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:23
+msgid "Minimum height or width in proposal."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:25
+msgid "Usage of IoU loss."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.proposal:28
+msgid ""
+"**output** -- 2-D tensor with shape [batch * rpn_post_nms_top_n, 5]. The "
+"last dimension is in format of [batch_index, w_start, h_start, w_end, "
+"h_end]."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:3
+#: tvm.relay.op.vision.rcnn.roi_pool:3
+msgid "4-D tensor with shape [batch, channel, height, width]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:5
+#: tvm.relay.op.vision.rcnn.roi_pool:5
+msgid ""
+"2-D tensor with shape [num_roi, 5]. The last dimension should be in "
+"format of [batch_index, w_start, h_start, w_end, h_end]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:8
+#: tvm.relay.op.vision.rcnn.roi_pool:8
+msgid "output size"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:10
+#: tvm.relay.op.vision.rcnn.roi_pool:10
+msgid ""
+"Ratio of input feature map height (or w) to raw image height (or w). "
+"Equals the reciprocal of total stride in convolutional layers, which "
+"should be in range (0.0, 1.0]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:13
+msgid "Optional sampling ratio of ROI align, using adaptive size by default."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.rcnn.roi_align:16
+#: tvm.relay.op.vision.rcnn.roi_pool:14
+msgid ""
+"**output** -- 4-D tensor with shape [num_roi, channel, pooled_size, "
+"pooled_size]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:1
+msgid ""
+"Yolo reorg operation used in darknet models. This layer shuffles the "
+"input tensor values based on the stride value. Along with the shuffling, "
+"it does the shape transform. If '(n, c, h, w)' is the data shape and 's' "
+"is stride, output shape is '(n, c*s*s, h/s, w/s)'."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:6
+msgid "Example:"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:22
+msgid "stride=1 has no significance for reorg operation."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:26
+msgid "The stride value for reorganisation."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.vision.yolo.yolo_reorg:29
+msgid "**ret** -- The computed result."
+msgstr ""
+

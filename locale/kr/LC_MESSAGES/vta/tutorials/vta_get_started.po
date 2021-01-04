@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../vta/tutorials/vta_get_started.rst:13
+msgid ""
+"Click :ref:`here <sphx_glr_download_vta_tutorials_vta_get_started.py>` to"
+" download the full example code"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:24
+msgid "Get Started with VTA"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:25
+msgid "**Author**: `Thierry Moreau <https://homes.cs.washington.edu/~moreau/>`_"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:27
+msgid ""
+"This is an introduction tutorial on how to use TVM to program the VTA "
+"design."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:29
+msgid ""
+"In this tutorial, we will demonstrate the basic TVM workflow to implement"
+" a vector addition on the VTA design's vector ALU. This process includes "
+"specific scheduling transformations necessary to lower computation down "
+"to low-level accelerator operations."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:34
+msgid ""
+"To begin, we need to import TVM which is our deep learning optimizing "
+"compiler. We also need to import the VTA python package which contains "
+"VTA specific extensions for TVM to target the VTA design."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:60
+msgid "Loading in VTA Parameters"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:61
+msgid ""
+"VTA is a modular and customizable design. Consequently, the user is free "
+"to modify high-level hardware parameters that affect the hardware design "
+"layout. These parameters are specified in the :code:`vta_config.json` "
+"file by their :code:`log2` values. These VTA parameters can be loaded "
+"with the :code:`vta.get_env` function."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:69
+msgid ""
+"Finally, the TVM target is also specified in the :code:`vta_config.json` "
+"file. When set to *sim*, execution will take place inside of a behavioral"
+" VTA simulator. If you want to run this tutorial on the Pynq FPGA "
+"development platform, follow the *VTA Pynq-Based Testing Setup* guide."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:92
+msgid "FPGA Programming"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:93
+msgid ""
+"When targeting the Pynq FPGA development board, we need to configure the "
+"board with a VTA bitstream."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:155
+msgid "Computation Declaration"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:156
+msgid ""
+"As a first step, we need to describe our computation. TVM adopts tensor "
+"semantics, with each intermediate result represented as multi-dimensional"
+" array. The user needs to describe the computation rule that generates "
+"the output tensors."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:161
+msgid ""
+"In this example we describe a vector addition, which requires multiple "
+"computation stages, as shown in the dataflow diagram below. First we "
+"describe the input tensors :code:`A` and :code:`B` that are living in "
+"main memory. Second, we need to declare intermediate tensors "
+":code:`A_buf` and :code:`B_buf`, which will live in VTA's on-chip "
+"buffers. Having this extra computational stage allows us to explicitly "
+"stage cached reads and writes. Third, we describe the vector addition "
+"computation which will add :code:`A_buf` to :code:`B_buf` to produce "
+":code:`C_buf`. The last operation is a cast and copy back to DRAM, into "
+"results tensor :code:`C`."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:180
+msgid "Input Placeholders"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:181
+msgid ""
+"We describe the placeholder tensors :code:`A`, and :code:`B` in a tiled "
+"data format to match the data layout requirements imposed by the VTA "
+"vector ALU."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:184
+msgid ""
+"For VTA's general purpose operations such as vector adds, the tile size "
+"is :code:`(env.BATCH, env.BLOCK_OUT)`. The dimensions are specified in "
+"the :code:`vta_config.json` configuration file and are set by default to "
+"a (1, 16) vector."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:190
+msgid ""
+"In addition, A and B's data types also needs to match the "
+":code:`env.acc_dtype` which is set by the :code:`vta_config.json` file to"
+" be a 32-bit integer."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:211
+msgid "Copy Buffers"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:212
+msgid ""
+"One specificity of hardware accelerators, is that on-chip memory has to "
+"be explicitly managed. This means that we'll need to describe "
+"intermediate tensors :code:`A_buf` and :code:`B_buf` that can have a "
+"different memory scope than the original placeholder tensors :code:`A` "
+"and :code:`B`."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:218
+msgid ""
+"Later in the scheduling phase, we can tell the compiler that "
+":code:`A_buf` and :code:`B_buf` will live in the VTA's on-chip buffers "
+"(SRAM), while :code:`A` and :code:`B` will live in main memory (DRAM). We"
+" describe A_buf and B_buf as the result of a compute operation that is "
+"the identity function. This can later be interpreted by the compiler as a"
+" cached read operation."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:239
+msgid "Vector Addition"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:240
+msgid ""
+"Now we're ready to describe the vector addition result tensor :code:`C`, "
+"with another compute operation. The compute function takes the shape of "
+"the tensor, as well as a lambda function that describes the computation "
+"rule for each position of the tensor."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:245
+msgid ""
+"No computation happens during this phase, as we are only declaring how "
+"the computation should be done."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:264
+msgid "Casting the Results"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:265
+msgid ""
+"After the computation is done, we'll need to send the results computed by"
+" VTA back to main memory."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:272
+msgid "**Memory Store Restrictions**"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:274
+msgid ""
+"One specificity of VTA is that it only supports DRAM stores in the narrow"
+" :code:`env.inp_dtype` data type format. This lets us reduce the data "
+"footprint for memory transfers (more on this in the basic matrix multiply"
+" example)."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:279
+msgid ""
+"We perform one last typecast operation to the narrow input activation "
+"data format."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:295
+msgid "This concludes the computation declaration part of this tutorial."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:300
+msgid "Scheduling the Computation"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:301
+msgid ""
+"While the above lines describes the computation rule, we can obtain "
+":code:`C` in many ways. TVM asks the user to provide an implementation of"
+" the computation called *schedule*."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:306
+msgid ""
+"A schedule is a set of transformations to an original computation that "
+"transforms the implementation of the computation without affecting "
+"correctness. This simple VTA programming tutorial aims to demonstrate "
+"basic schedule transformations that will map the original schedule down "
+"to VTA hardware primitives."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:316
+msgid "Default Schedule"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:317
+msgid ""
+"After we construct the schedule, by default the schedule computes "
+":code:`C` in the following way:"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:333
+msgid ""
+"Although this schedule makes sense, it won't compile to VTA. In order to "
+"obtain correct code generation, we need to apply scheduling primitives "
+"and code annotation that will transform the schedule into one that can be"
+" directly lowered onto VTA hardware intrinsics. Those include:"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:339
+msgid ""
+"DMA copy operations which will take globally-scoped tensors and copy "
+"those into locally-scoped tensors."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:341
+msgid "Vector ALU operations that will perform the vector add."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:346
+msgid "Buffer Scopes"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:347
+msgid ""
+"First, we set the scope of the copy buffers to indicate to TVM that these"
+" intermediate tensors will be stored in the VTA's on-chip SRAM buffers. "
+"Below, we tell TVM that :code:`A_buf`, :code:`B_buf`, :code:`C_buf` will "
+"live in VTA's on-chip *accumulator buffer* which serves as VTA's general "
+"purpose register file."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:353
+msgid "Set the intermediate tensors' scope to VTA's on-chip accumulator buffer"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:367
+msgid "DMA Transfers"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:368
+msgid ""
+"We need to schedule DMA transfers to move data living in DRAM to and from"
+" the VTA on-chip buffers. We insert :code:`dma_copy` pragmas to indicate "
+"to the compiler that the copy operations will be performed in bulk via "
+"DMA, which is common in hardware accelerators."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:389
+msgid "ALU Operations"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:390
+msgid ""
+"VTA has a vector ALU that can perform vector operations on tensors in the"
+" accumulator buffer. In order to tell TVM that a given operation needs to"
+" be mapped to the VTA's vector ALU, we need to explicitly tag the vector "
+"addition loop with an :code:`env.alu` pragma."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:411
+msgid "This concludes the scheduling portion of this tutorial."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:416
+msgid "TVM Compilation"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:417
+msgid ""
+"After we have finished specifying the schedule, we can compile it into a "
+"TVM function. By default TVM compiles into a type-erased function that "
+"can be directly called from python side."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:421
+msgid ""
+"In the following line, we use :code:`tvm.build` to create a function. The"
+" build function takes the schedule, the desired signature of the "
+"function(including the inputs and outputs) as well as target language we "
+"want to compile to."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:437
+msgid "Saving the Module"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:438
+msgid ""
+"TVM lets us save our module into a file so it can loaded back later. This"
+" is called ahead-of-time compilation and allows us to save some "
+"compilation time. More importantly, this allows us to cross-compile the "
+"executable on our development machine and send it over to the Pynq FPGA "
+"board over RPC for execution."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:461
+msgid "Loading the Module"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:462
+msgid "We can load the compiled module from the file system to run the code."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:475
+msgid "Running the Function"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:476
+msgid ""
+"The compiled TVM function uses a concise C API and can be invoked from "
+"any language."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:479
+msgid ""
+"TVM provides an array API in python to aid quick testing and prototyping."
+" The array API is based on `DLPack <https://github.com/dmlc/dlpack>`_ "
+"standard."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:482
+msgid "We first create a remote context (for remote execution on the Pynq)."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:483
+msgid "Then :code:`tvm.nd.array` formats the data accordingly."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:484
+msgid ":code:`f()` runs the actual computation."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:485
+msgid ""
+":code:`asnumpy()` copies the result array back in a format that can be "
+"interpreted."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:517
+msgid "Verifying Correctness"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:518
+msgid ""
+"Compute the reference result with numpy and assert that the output of the"
+" matrix multiplication indeed is correct"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:536
+msgid "Summary"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:537
+msgid ""
+"This tutorial provides a walk-through of TVM for programming the deep "
+"learning accelerator VTA with a simple vector addition example. The "
+"general workflow includes:"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:541
+msgid "Programming the FPGA with the VTA bitstream over RPC."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:542
+msgid "Describing the vector add computation via a series of computations."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:543
+msgid ""
+"Describing how we want to perform the computation using schedule "
+"primitives."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:544
+msgid "Compiling the function to the VTA target."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:545
+msgid ""
+"Running the compiled module and verifying it against a numpy "
+"implementation."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:547
+msgid ""
+"You are more than welcome to check other examples out and tutorials to "
+"learn more about the supported operations, schedule primitives and other "
+"features supported by TVM to program VTA."
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:565
+msgid ""
+":download:`Download Python source code: vta_get_started.py "
+"<vta_get_started.py>`"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:571
+msgid ""
+":download:`Download Jupyter notebook: vta_get_started.ipynb "
+"<vta_get_started.ipynb>`"
+msgstr ""
+
+#: ../../vta/tutorials/vta_get_started.rst:578
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../api/python/graph_runtime.rst:19
+msgid "tvm.contrib.graph_runtime"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime:1
+msgid "Minimum graph runtime that executes graph containing TVM PackedFunc."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.create:1
+msgid "Create a runtime executor module given a graph and module."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule
+#: tvm.contrib.graph_runtime.GraphModule.debug_get_output
+#: tvm.contrib.graph_runtime.GraphModule.get_input
+#: tvm.contrib.graph_runtime.GraphModule.get_output
+#: tvm.contrib.graph_runtime.GraphModule.load_params
+#: tvm.contrib.graph_runtime.GraphModule.run
+#: tvm.contrib.graph_runtime.GraphModule.set_input
+#: tvm.contrib.graph_runtime.GraphModule.share_params
+#: tvm.contrib.graph_runtime.create tvm.contrib.graph_runtime.get_device_ctx
+msgid "Parameters"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.create:3
+msgid ""
+"The graph to be deployed in json format output by json graph. The graph "
+"can contain operator(tvm_op) that points to the name of PackedFunc in the"
+" libmod."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.create:7
+#: tvm.contrib.graph_runtime.get_device_ctx:3
+msgid "The module of the corresponding function"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.create:9
+msgid ""
+"The context to deploy the module. It can be local or remote when there is"
+" only one TVMContext. Otherwise, the first context in the list will be "
+"used as this purpose. All context should be given for heterogeneous "
+"execution."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_num_inputs
+#: tvm.contrib.graph_runtime.GraphModule.get_num_outputs
+#: tvm.contrib.graph_runtime.create tvm.contrib.graph_runtime.get_device_ctx
+msgid "Returns"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.create:15
+msgid ""
+"**graph_module** -- Runtime graph module that can be used to execute the "
+"graph."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_num_inputs
+#: tvm.contrib.graph_runtime.GraphModule.get_num_outputs
+#: tvm.contrib.graph_runtime.create
+msgid "Return type"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.create:20
+msgid ""
+"See also :py:class:`tvm.contrib.graph_runtime.GraphModule` for examples "
+"to directly construct a GraphModule from an exported relay compiled "
+"library."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.get_device_ctx:1
+msgid "Parse and validate all the device context(s)."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.get_device_ctx:8
+msgid ""
+"* **ctx** (*list of TVMContext*) * **num_rpc_ctx** (*Number of rpc "
+"contexts*) * **device_type_id** (*List of device type and device id*)"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.get_device_ctx:8
+msgid "**ctx** (*list of TVMContext*)"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.get_device_ctx:9
+msgid "**num_rpc_ctx** (*Number of rpc contexts*)"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.get_device_ctx:10
+msgid "**device_type_id** (*List of device type and device id*)"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule:1
+msgid "Wrapper runtime module."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule:3
+msgid ""
+"This is a thin wrapper of the underlying TVM module. you can also "
+"directly call set_input, run, and get_output of underlying module "
+"functions"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule:7
+#: tvm.contrib.graph_runtime.GraphModule:12
+msgid "The internal tvm module that holds the actual graph functions."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule
+msgid "type"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule:14
+msgid "tvm.runtime.Module"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule:17
+msgid "Examples"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.set_input:1
+msgid "Set inputs to the module via kwargs"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.set_input:3
+#: tvm.contrib.graph_runtime.GraphModule.set_input:5
+msgid "The input key"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.set_input:7
+msgid "Additional arguments"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.run:1
+msgid "Run forward execution of the graph"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.run:3
+msgid "List of input values to be feed to"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_num_outputs:1
+msgid "Get the number of outputs from the graph"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_num_outputs:3
+msgid "**count** -- The number of outputs."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_num_inputs:1
+msgid "Get the number of inputs to the graph"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_num_inputs:3
+msgid "**count** -- The number of inputs."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_input:1
+msgid "Get index-th input to out"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_input:3
+msgid "The input index"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.debug_get_output:5
+#: tvm.contrib.graph_runtime.GraphModule.get_input:5
+#: tvm.contrib.graph_runtime.GraphModule.get_output:5
+msgid "The output array container"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_output:1
+msgid "Get index-th output to out"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.get_output:3
+msgid "The output index"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.debug_get_output:1
+msgid "Run graph up to node and get the output to out"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.debug_get_output:3
+msgid "The node index or name"
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.load_params:1
+msgid "Load parameters from serialized byte array of parameter dict."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.load_params:3
+msgid "The serialized parameter dict."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.share_params:1
+msgid "Share parameters from pre-existing GraphRuntime instance."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.share_params:3
+msgid ""
+"The parent GraphRuntime from which this instance should share it's "
+"parameters."
+msgstr ""
+
+#: of tvm.contrib.graph_runtime.GraphModule.share_params:6
+msgid "The serialized parameter dict (used only for the parameter names)."
+msgstr ""
+

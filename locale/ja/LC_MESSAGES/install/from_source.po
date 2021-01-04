@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../install/from_source.rst:21
+msgid "Install from Source"
+msgstr ""
+
+#: ../../install/from_source.rst:22
+msgid ""
+"This page gives instructions on how to build and install the TVM package "
+"from scratch on various systems. It consists of two steps:"
+msgstr ""
+
+#: ../../install/from_source.rst:25
+msgid ""
+"First build the shared library from the C++ codes (`libtvm.so` for linux,"
+" `libtvm.dylib` for macOS and `libtvm.dll` for windows)."
+msgstr ""
+
+#: ../../install/from_source.rst:26
+msgid "Setup for the language packages (e.g. Python Package)."
+msgstr ""
+
+#: ../../install/from_source.rst:28
+msgid ""
+"To get started, download tvm source code from the `Download Page "
+"<https://tvm.apache.org/download>`_."
+msgstr ""
+
+#: ../../install/from_source.rst:31
+msgid "Developers: Get Source from Github"
+msgstr ""
+
+#: ../../install/from_source.rst:32
+msgid ""
+"You can also choose to clone the source repo from github. It is important"
+" to clone the submodules along, with ``--recursive`` option."
+msgstr ""
+
+#: ../../install/from_source.rst:39
+msgid ""
+"For windows users who use github tools, you can open the git shell, and "
+"type the following command."
+msgstr ""
+
+#: ../../install/from_source.rst:50
+msgid "Build the Shared Library"
+msgstr ""
+
+#: ../../install/from_source.rst:52
+msgid "Our goal is to build the shared libraries:"
+msgstr ""
+
+#: ../../install/from_source.rst:54
+msgid "On Linux the target library are `libtvm.so`"
+msgstr ""
+
+#: ../../install/from_source.rst:55
+msgid "On macOS the target library are `libtvm.dylib`"
+msgstr ""
+
+#: ../../install/from_source.rst:56
+msgid "On Windows the target library are `libtvm.dll`"
+msgstr ""
+
+#: ../../install/from_source.rst:64
+msgid "The minimal building requirements are"
+msgstr ""
+
+#: ../../install/from_source.rst:66
+msgid "A recent c++ compiler supporting C++ 14 (g++-5 or higher)"
+msgstr ""
+
+#: ../../install/from_source.rst:67
+msgid "CMake 3.5 or higher"
+msgstr ""
+
+#: ../../install/from_source.rst:68
+msgid "We highly recommend to build with LLVM to enable all the features."
+msgstr ""
+
+#: ../../install/from_source.rst:69
+msgid ""
+"If you want to use CUDA, CUDA toolkit version >= 8.0 is required. If you "
+"are upgrading from an older version, make sure you purge the older "
+"version and reboot after installation."
+msgstr ""
+
+#: ../../install/from_source.rst:70
+msgid ""
+"On macOS, you may want to install `Homebrew <https://brew.sh>` to easily "
+"install and manage dependencies."
+msgstr ""
+
+#: ../../install/from_source.rst:73
+msgid ""
+"We use cmake to build the library. The configuration of TVM can be "
+"modified by `config.cmake`."
+msgstr ""
+
+#: ../../install/from_source.rst:77
+msgid ""
+"First, check the cmake in your system. If you do not have cmake, you can "
+"obtain the latest version from `official website "
+"<https://cmake.org/download/>`_"
+msgstr ""
+
+#: ../../install/from_source.rst:79
+msgid ""
+"First create a build directory, copy the ``cmake/config.cmake`` to the "
+"directory."
+msgstr ""
+
+#: ../../install/from_source.rst:86
+msgid "Edit ``build/config.cmake`` to customize the compilation options"
+msgstr ""
+
+#: ../../install/from_source.rst:88
+msgid ""
+"On macOS, for some versions of Xcode, you need to add ``-lc++abi`` in the"
+" LDFLAGS or you'll get link errors."
+msgstr ""
+
+#: ../../install/from_source.rst:89
+msgid ""
+"Change ``set(USE_CUDA OFF)`` to ``set(USE_CUDA ON)`` to enable CUDA "
+"backend. Do the same for other backends and libraries you want to build "
+"for (OpenCL, RCOM, METAL, VULKAN, ...)."
+msgstr ""
+
+#: ../../install/from_source.rst:91
+msgid ""
+"To help with debugging, ensure the embedded graph runtime and debugging "
+"functions are enabled with ``set(USE_GRAPH_RUNTIME ON)`` and "
+"``set(USE_GRAPH_RUNTIME_DEBUG ON)``"
+msgstr ""
+
+#: ../../install/from_source.rst:93
+msgid ""
+"TVM requires LLVM for for CPU codegen. We highly recommend you to build "
+"with the LLVM support on."
+msgstr ""
+
+#: ../../install/from_source.rst:95
+msgid ""
+"LLVM 4.0 or higher is needed for build with LLVM. Note that version of "
+"LLVM from default apt may lower than 4.0."
+msgstr ""
+
+#: ../../install/from_source.rst:96
+msgid ""
+"Since LLVM takes long time to build from source, you can download pre-"
+"built version of LLVM from `LLVM Download Page "
+"<http://releases.llvm.org/download.html>`_."
+msgstr ""
+
+#: ../../install/from_source.rst:99
+msgid ""
+"Unzip to a certain location, modify ``build/config.cmake`` to add "
+"``set(USE_LLVM /path/to/your/llvm/bin/llvm-config)``"
+msgstr ""
+
+#: ../../install/from_source.rst:100
+msgid ""
+"You can also directly set ``set(USE_LLVM ON)`` and let cmake search for a"
+" usable version of LLVM."
+msgstr ""
+
+#: ../../install/from_source.rst:102
+msgid "You can also use `LLVM Nightly Ubuntu Build <https://apt.llvm.org/>`_"
+msgstr ""
+
+#: ../../install/from_source.rst:104
+msgid ""
+"Note that apt-package append ``llvm-config`` with version number. For "
+"example, set ``set(USE_LLVM llvm-config-10)`` if you installed LLVM 10 "
+"package"
+msgstr ""
+
+#: ../../install/from_source.rst:107
+msgid "We can then build tvm and related libraries."
+msgstr ""
+
+#: ../../install/from_source.rst:115
+msgid ""
+"You can also use Ninja build system instead of Unix Makefiles. It can be "
+"faster to build than using Makefiles."
+msgstr ""
+
+#: ../../install/from_source.rst:123
+msgid "If everything goes well, we can go to :ref:`python-package-installation`"
+msgstr ""
+
+#: ../../install/from_source.rst:128
+msgid "Building with a Conda Environment"
+msgstr ""
+
+#: ../../install/from_source.rst:130
+msgid ""
+"Conda is a very handy way to the necessary obtain dependencies needed for"
+" running TVM. First, follow the `conda's installation guide "
+"<https://docs.conda.io/projects/conda/en/latest/user-guide/install/>`_ to"
+" install miniconda or anaconda if you do not yet have conda in your "
+"system. Run the following command in a conda environment:"
+msgstr ""
+
+#: ../../install/from_source.rst:141
+msgid ""
+"The above command will install all necessary build dependencies such as "
+"cmake and LLVM. You can then run the standard build process in the last "
+"section."
+msgstr ""
+
+#: ../../install/from_source.rst:143
+msgid ""
+"If you want to use the compiled binary outside the conda environment, you"
+" can set LLVM to static linking mode ``set(USE_LLVM \"llvm-config --link-"
+"static\")``. In this way, the resulting library won't depend on the "
+"dynamic LLVM libraries in the conda environment."
+msgstr ""
+
+#: ../../install/from_source.rst:147
+msgid ""
+"The above instructions show how to use conda to provide the necessary "
+"build dependencies to build libtvm. If you are already using conda as "
+"your package manager and wish to directly build and install tvm as a "
+"conda package, you can follow the instructions below:"
+msgstr ""
+
+#: ../../install/from_source.rst:157
+msgid "Building on Windows"
+msgstr ""
+
+#: ../../install/from_source.rst:158
+msgid ""
+"TVM support build via MSVC using cmake. You will need to ontain a visual "
+"studio compiler. The minimum required VS version is **Visual Studio "
+"Community 2015 Update 3**. We recommend following :ref:`build-with-conda`"
+" to obtain necessary dependencies and get an activated tvm-build "
+"environment. Then you can run the following command to build"
+msgstr ""
+
+#: ../../install/from_source.rst:170
+msgid ""
+"The above command generates the solution file under the build directory. "
+"You can then run the following command to build"
+msgstr ""
+
+#: ../../install/from_source.rst:179
+msgid "Building ROCm support"
+msgstr ""
+
+#: ../../install/from_source.rst:181
+msgid ""
+"Currently, ROCm is supported only on linux, so all the instructions are "
+"written with linux in mind."
+msgstr ""
+
+#: ../../install/from_source.rst:183
+msgid "Set ``set(USE_ROCM ON)``, set ROCM_PATH to the correct path."
+msgstr ""
+
+#: ../../install/from_source.rst:184
+msgid ""
+"You need to first install HIP runtime from ROCm. Make sure the "
+"installation system has ROCm installed in it."
+msgstr ""
+
+#: ../../install/from_source.rst:185
+msgid ""
+"Install latest stable version of LLVM (v6.0.1), and LLD, make sure "
+"``ld.lld`` is available via command line."
+msgstr ""
+
+#: ../../install/from_source.rst:190
+msgid "Python Package Installation"
+msgstr ""
+
+#: ../../install/from_source.rst:193
+msgid "TVM package"
+msgstr ""
+
+#: ../../install/from_source.rst:195
+msgid ""
+"Depending on your development environment, you may want to use a virtual "
+"environment and package manager, such as ``virtualenv`` or ``conda``, to "
+"manage your python packages and dependencies."
+msgstr ""
+
+#: ../../install/from_source.rst:198
+msgid "to install and maintain your python development environment."
+msgstr ""
+
+#: ../../install/from_source.rst:200
+msgid ""
+"The python package is located at `tvm/python` There are two ways to "
+"install the package:"
+msgstr ""
+
+#: ../../install/from_source.rst:215
+msgid "Method 1"
+msgstr ""
+
+#: ../../install/from_source.rst:204
+msgid "This method is **recommended for developers** who may change the codes."
+msgstr ""
+
+#: ../../install/from_source.rst:206
+msgid ""
+"Set the environment variable `PYTHONPATH` to tell python where to find "
+"the library. For example, assume we cloned `tvm` on the directory "
+"`/path/to/tvm` then we can add the following line in `~/.bashrc`. The "
+"changes will be immediately reflected once you pull the code and rebuild "
+"the project (no need to call ``setup`` again)"
+msgstr ""
+
+#: ../../install/from_source.rst:227
+msgid "Method 2"
+msgstr ""
+
+#: ../../install/from_source.rst:218
+msgid "Install TVM python bindings by `setup.py`:"
+msgstr ""
+
+#: ../../install/from_source.rst:230
+msgid "Python dependencies"
+msgstr ""
+
+#: ../../install/from_source.rst:232
+msgid ""
+"Note that the ``--user`` flag is not necessary if you're installing to a "
+"managed local environment, like ``virtualenv``."
+msgstr ""
+
+#: ../../install/from_source.rst:235
+msgid "Necessary dependencies:"
+msgstr ""
+
+#: ../../install/from_source.rst:241
+msgid "If you want to use RPC Tracker"
+msgstr ""
+
+#: ../../install/from_source.rst:247
+msgid "If you want to use auto-tuning module"
+msgstr ""
+
+#: ../../install/from_source.rst:255
+msgid "Install Contrib Libraries"
+msgstr ""
+
+#: ../../install/from_source.rst:264
+msgid "Enable C++ Tests"
+msgstr ""
+
+#: ../../install/from_source.rst:265
+msgid ""
+"We use `Google Test <https://github.com/google/googletest>`_ to drive the"
+" C++ tests in TVM. The easiest way to install GTest is from source."
+msgstr ""
+
+#: ../../install/from_source.rst:279
+msgid ""
+"After installing GTest, the C++ tests can be built and started with "
+"``./tests/scripts/task_cpp_unittest.sh`` or just built with ``make "
+"cpptest``."
+msgstr ""
+

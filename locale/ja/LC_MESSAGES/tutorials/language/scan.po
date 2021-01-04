@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/language/scan.rst:13
+msgid ""
+"Click :ref:`here <sphx_glr_download_tutorials_language_scan.py>` to "
+"download the full example code"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:22
+msgid "Scan and Recurrent Kernel"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:23
+msgid "**Author**: `Tianqi Chen <https://tqchen.github.io>`_"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:25
+msgid ""
+"This is an introduction material on how to do recurrent computing in TVM."
+" Recurrent computing is a typical pattern in neural networks."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:48
+msgid ""
+"TVM supports a scan operator to describe symbolic loop. The following "
+"scan op computes cumsum over columns of X."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:51
+msgid ""
+"The scan is carried over the highest dimension of the tensor. "
+":code:`s_state` is a placeholder that describes the transition state of "
+"the scan. :code:`s_init` describes how we can initialize the first k "
+"timesteps. Here since s_init's first dimension is 1, it describes how we "
+"initialize The state at first timestep."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:57
+msgid ""
+":code:`s_update` describes how to update the value at timestep t. The "
+"update value can refer back to the values of previous timestep via state "
+"placeholder. Note that while it is invalid to refer to :code:`s_state` at"
+" current or later timestep."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:61
+msgid ""
+"The scan takes in state placeholder, initial value and update "
+"description. It is also recommended(although not necessary) to list the "
+"inputs to the scan cell. The result of the scan is a tensor, giving the "
+"result of :code:`s_state` after the update over the time domain."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:89
+msgid "Schedule the Scan Cell"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:90
+msgid ""
+"We can schedule the body of the scan by scheduling the update and init "
+"part seperately. Note that it is invalid to schedule the first iteration "
+"dimension of the update part. To split on the time iteration, user can "
+"schedule on scan_op.scan_axis instead."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:118
+msgid "Out:"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:149
+msgid "Build and Verify"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:150
+msgid ""
+"We can build the scan kernel like other TVM kernels, here we use numpy to"
+" verify the correctness of the result."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:205
+msgid "Multi-Stage Scan Cell"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:206
+msgid ""
+"In the above example we described the scan cell using one Tensor "
+"computation stage in s_update. It is possible to use multiple Tensor "
+"stages in the scan cell."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:210
+msgid ""
+"The following lines demonstrate a scan with two stage operations in the "
+"scan cell."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:230
+msgid ""
+"These intermediate tensors can also be scheduled normally. To ensure "
+"correctness, TVM creates a group constraint to forbid the body of scan to"
+" be compute_at locations outside the scan loop."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:248
+msgid "Multiple States"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:249
+msgid ""
+"For complicated applications like RNN, we might need more than one "
+"recurrent state. Scan support multiple recurrent states. The following "
+"example demonstrates how we can build recurrence with two states."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:278
+msgid "Summary"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:279
+msgid "This tutorial provides a walk through of scan primitive."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:281
+msgid "Describe scan with init and update."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:282
+msgid "Schedule the scan cells as normal schedule."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:283
+msgid "For complicated workload, use multiple states and steps in scan cell."
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:298
+msgid ":download:`Download Python source code: scan.py <scan.py>`"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:304
+msgid ":download:`Download Jupyter notebook: scan.ipynb <scan.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/language/scan.rst:311
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

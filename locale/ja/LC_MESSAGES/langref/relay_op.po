@@ -1,0 +1,1196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../langref/relay_op.rst:19
+msgid "Relay Core Tensor Operators"
+msgstr ""
+
+#: ../../langref/relay_op.rst:21
+msgid ""
+"This page contains the list of core tensor operator primitives pre-"
+"defined in tvm.relay. The core tensor operator primitives cover typical "
+"workloads in deep learning. They can represent workloads in front-end "
+"frameworks and provide basic building blocks for optimization. Since deep"
+" learning is a fast evolving field, it is possible to have operators that"
+" are not in here."
+msgstr ""
+
+#: ../../langref/relay_op.rst:29
+msgid ""
+"This document will directly list the function signature of these "
+"operators in the python frontend."
+msgstr ""
+
+#: ../../langref/relay_op.rst:34
+msgid "Overview of Operators"
+msgstr ""
+
+#: ../../langref/relay_op.rst:35
+msgid "**Level 1: Basic Operators**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:37
+msgid "This level enables fully connected multi-layer perceptron."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.log <tvm.relay.log>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Compute elementwise log of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.sqrt <tvm.relay.sqrt>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Compute elementwise sqrt of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.rsqrt <tvm.relay.rsqrt>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Compute elementwise rsqrt of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.exp <tvm.relay.exp>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Compute elementwise exp of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.sigmoid <tvm.relay.sigmoid>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Compute elementwise sigmoid of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.add <tvm.relay.add>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Addition with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.subtract <tvm.relay.subtract>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Subtraction with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.multiply <tvm.relay.multiply>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Multiplication with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.divide <tvm.relay.divide>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Division with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.mod <tvm.relay.mod>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Mod with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.tanh <tvm.relay.tanh>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Compute element-wise tanh of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.concatenate <tvm.relay.concatenate>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Concatenate the input tensors along the given axis."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.expand_dims <tvm.relay.expand_dims>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Insert `num_newaxis` axises at the position given by `axis`."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.softmax <tvm.relay.nn.softmax>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Computes softmax."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.log_softmax <tvm.relay.nn.log_softmax>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Computes log softmax."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.relu <tvm.relay.nn.relu>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Rectified linear unit."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.dropout <tvm.relay.nn.dropout>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Applies the dropout operation to the input array."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.batch_norm <tvm.relay.nn.batch_norm>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "Batch normalization layer (Ioffe and Szegedy, 2014)."
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.bias_add <tvm.relay.nn.bias_add>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:62:<autosummary>:1
+msgid "add_bias operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:63
+msgid "**Level 2: Convolutions**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:65
+msgid "This level enables typical convnet models."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.conv2d <tvm.relay.nn.conv2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "2D convolution."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.conv2d_transpose <tvm.relay.nn.conv2d_transpose>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Two dimensional transposed convolution operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.conv3d <tvm.relay.nn.conv3d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "3D convolution."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.conv3d_transpose <tvm.relay.nn.conv3d_transpose>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "3D transpose convolution."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.dense <tvm.relay.nn.dense>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Dense operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.max_pool2d <tvm.relay.nn.max_pool2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "2D maximum pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.max_pool3d <tvm.relay.nn.max_pool3d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "3D maximum pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.avg_pool2d <tvm.relay.nn.avg_pool2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "2D average pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.avg_pool3d <tvm.relay.nn.avg_pool3d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "3D average pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.global_max_pool2d <tvm.relay.nn.global_max_pool2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "2D global maximum pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.global_avg_pool2d <tvm.relay.nn.global_avg_pool2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "2D global average pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.upsampling <tvm.relay.nn.upsampling>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Upsampling."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.upsampling3d <tvm.relay.nn.upsampling3d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "3D Upsampling."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.batch_flatten <tvm.relay.nn.batch_flatten>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "BatchFlatten."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.pad <tvm.relay.nn.pad>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Padding"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.lrn <tvm.relay.nn.lrn>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "This operator takes data as input and does local response normalization."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.l2_normalize <tvm.relay.nn.l2_normalize>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Perform L2 normalization on the input data"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.bitpack <tvm.relay.nn.bitpack>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Tensor packing for bitserial operations."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.bitserial_dense <tvm.relay.nn.bitserial_dense>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Bitserial Dense operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.bitserial_conv2d <tvm.relay.nn.bitserial_conv2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "2D convolution using bitserial computation."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ""
+":obj:`tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform "
+"<tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "2D convolution with winograd algorithm."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ""
+":obj:`tvm.relay.nn.contrib_conv2d_winograd_weight_transform "
+"<tvm.relay.nn.contrib_conv2d_winograd_weight_transform>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Weight Transformation part for 2D convolution with winograd algorithm."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ""
+":obj:`tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform "
+"<tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "3D convolution with winograd algorithm."
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid ""
+":obj:`tvm.relay.nn.contrib_conv3d_winograd_weight_transform "
+"<tvm.relay.nn.contrib_conv3d_winograd_weight_transform>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:95:<autosummary>:1
+msgid "Weight Transformation part for 3D convolution with winograd algorithm."
+msgstr ""
+
+#: ../../langref/relay_op.rst:96
+msgid "**Level 3: Additional Math And Transform Operators**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:98
+msgid "This level enables additional math and transform operators."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.leaky_relu <tvm.relay.nn.leaky_relu>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ""
+"This operator takes data as input and does Leaky version of a Rectified "
+"Linear Unit."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.prelu <tvm.relay.nn.prelu>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.reshape <tvm.relay.reshape>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Reshape the input array."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.reshape_like <tvm.relay.reshape_like>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Reshapes the input tensor by the size of another tensor."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.copy <tvm.relay.copy>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Copy a tensor."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.transpose <tvm.relay.transpose>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Permutes the dimensions of an array."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.squeeze <tvm.relay.squeeze>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Squeeze axes in the array."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.floor <tvm.relay.floor>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Compute element-wise floor of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.ceil <tvm.relay.ceil>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Compute element-wise ceil of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.sign <tvm.relay.sign>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Compute element-wise absolute of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.trunc <tvm.relay.trunc>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Compute element-wise trunc of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.clip <tvm.relay.clip>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Clip the elements in `a` between `a_min` and `a_max`."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.round <tvm.relay.round>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Compute element-wise round of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.abs <tvm.relay.abs>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.negative <tvm.relay.negative>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Compute element-wise negative of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.take <tvm.relay.take>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Take elements from an array along an axis."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.zeros <tvm.relay.zeros>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Fill array with zeros."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.zeros_like <tvm.relay.zeros_like>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Returns an array of zeros, with same type and shape as the input."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.ones <tvm.relay.ones>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Fill array with ones."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.ones_like <tvm.relay.ones_like>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Returns an array of ones, with same type and shape as the input."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.gather <tvm.relay.gather>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Gather values along given axis from given indices."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.gather_nd <tvm.relay.gather_nd>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ""
+"Gather elements or slices from data and store to a tensor whose shape is "
+"defined by indices."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.full <tvm.relay.full>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Fill array with scalar value."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.full_like <tvm.relay.full_like>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ""
+"Return a scalar value array with the same shape and type as the input "
+"array."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.cast <tvm.relay.cast>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Cast input tensor to data type."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.reinterpret <tvm.relay.reinterpret>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Reinterpret input tensor to data type."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.split <tvm.relay.split>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Split input tensor along axis by sections or indices."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.arange <tvm.relay.arange>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Return evenly spaced values within a given interval."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.meshgrid <tvm.relay.meshgrid>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Create coordinate matrices from coordinate vectors."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.stack <tvm.relay.stack>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Join a sequence of arrays along a new axis."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.repeat <tvm.relay.repeat>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Repeats elements of an array."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.tile <tvm.relay.tile>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Repeats the whole array multiple times."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.reverse <tvm.relay.reverse>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ""
+"Reverses the order of elements along given axis while preserving array "
+"shape."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.reverse_sequence <tvm.relay.reverse_sequence>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Reverse the tensor for variable length slices."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.unravel_index <tvm.relay.unravel_index>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ""
+"Convert a flat index or array of flat indices into a tuple of coordinate "
+"arrays."
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid ":obj:`tvm.relay.sparse_to_dense <tvm.relay.sparse_to_dense>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:140:<autosummary>:1
+msgid "Converts a sparse representation into a dense tensor."
+msgstr ""
+
+#: ../../langref/relay_op.rst:141
+msgid "**Level 4: Broadcast and Reductions**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.right_shift <tvm.relay.right_shift>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Right shift with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.left_shift <tvm.relay.left_shift>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Left shift with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.equal <tvm.relay.equal>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Broadcasted elementwise test for (lhs == rhs)."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.not_equal <tvm.relay.not_equal>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Broadcasted elementwise test for (lhs != rhs)."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.greater <tvm.relay.greater>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Broadcasted elementwise test for (lhs > rhs)."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.greater_equal <tvm.relay.greater_equal>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Broadcasted elementwise test for (lhs >= rhs)."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.less <tvm.relay.less>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Broadcasted elementwise test for (lhs < rhs)."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.less_equal <tvm.relay.less_equal>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Broadcasted elementwise test for (lhs <= rhs)."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.all <tvm.relay.all>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the logical AND of boolean array elements over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.any <tvm.relay.any>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the logical OR of boolean array elements over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.logical_and <tvm.relay.logical_and>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "logical AND with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.logical_or <tvm.relay.logical_or>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "logical OR with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.logical_not <tvm.relay.logical_not>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Compute element-wise logical not of data."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.logical_xor <tvm.relay.logical_xor>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "logical XOR with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.maximum <tvm.relay.maximum>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Maximum with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.minimum <tvm.relay.minimum>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Minimum with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.power <tvm.relay.power>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Power with numpy-style broadcasting."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.where <tvm.relay.where>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ""
+"Selecting elements from either x or y depending on the value of the "
+"condition."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.argmax <tvm.relay.argmax>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Returns the indices of the maximum values along an axis."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.argmin <tvm.relay.argmin>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Returns the indices of the minimum values along an axis."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.sum <tvm.relay.sum>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the sum of array elements over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.max <tvm.relay.max>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the max of array elements over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.min <tvm.relay.min>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the min of array elements over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.mean <tvm.relay.mean>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the mean of array elements over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.variance <tvm.relay.variance>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the variance of data over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.std <tvm.relay.std>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the standard deviation of data over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.mean_variance <tvm.relay.mean_variance>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the mean and variance of data over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.mean_std <tvm.relay.mean_std>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the mean and standard deviation of data over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.prod <tvm.relay.prod>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Computes the products of array elements over given axes."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.strided_slice <tvm.relay.strided_slice>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid "Strided slice of an array."
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ":obj:`tvm.relay.broadcast_to <tvm.relay.broadcast_to>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:178:<autosummary>:1
+msgid ""
+"Return a scalar value array with the same type, broadcast to the provided"
+" shape."
+msgstr ""
+
+#: ../../langref/relay_op.rst:179
+msgid "**Level 5: Vision/Image Operators**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid ":obj:`tvm.relay.image.resize <tvm.relay.image.resize>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid "Image resize operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid ":obj:`tvm.relay.image.crop_and_resize <tvm.relay.image.crop_and_resize>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid "Crop input images and resize them."
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid ":obj:`tvm.relay.image.dilation2d <tvm.relay.image.dilation2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid "Morphological Dilation 2D."
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid ":obj:`tvm.relay.vision.multibox_prior <tvm.relay.vision.multibox_prior>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid "Generate prior(anchor) boxes from data, sizes and ratios."
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid ""
+":obj:`tvm.relay.vision.multibox_transform_loc "
+"<tvm.relay.vision.multibox_transform_loc>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid "Location transformation for multibox detection"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid ":obj:`tvm.relay.vision.nms <tvm.relay.vision.nms>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid "Non-maximum suppression operations."
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid ":obj:`tvm.relay.vision.yolo_reorg <tvm.relay.vision.yolo_reorg>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:192:<autosummary>:1
+msgid "Yolo reorg operation used in darknet models."
+msgstr ""
+
+#: ../../langref/relay_op.rst:193
+msgid "**Level 6: Algorithm Operators**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:201:<autosummary>:1
+msgid ":obj:`tvm.relay.argsort <tvm.relay.argsort>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:201:<autosummary>:1
+msgid ""
+"Performs sorting along the given axis and returns an array of indicies "
+"having same shape as an input array that index data in sorted order."
+msgstr ""
+
+#: ../../langref/relay_op.rst:201:<autosummary>:1
+msgid ":obj:`tvm.relay.topk <tvm.relay.topk>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:201:<autosummary>:1
+msgid "Get the top k elements in an input tensor along the given axis."
+msgstr ""
+
+#: ../../langref/relay_op.rst:202
+msgid "**Level 10: Temporary Operators**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:204
+msgid ""
+"This level support backpropagation of broadcast operators. It is "
+"temporary."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.broadcast_to_like <tvm.relay.broadcast_to_like>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.collapse_sum_like <tvm.relay.collapse_sum_like>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.slice_like <tvm.relay.slice_like>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "Slice the first input with respect to the second input."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.shape_of <tvm.relay.shape_of>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "Get shape of a tensor."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.ndarray_size <tvm.relay.ndarray_size>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "Get number of elements of input tensor."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.layout_transform <tvm.relay.layout_transform>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "Transform the layout of a tensor"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.device_copy <tvm.relay.device_copy>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "Copy data from the source device to the destination device."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.annotation.on_device <tvm.relay.annotation.on_device>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "Annotate an expression with a certain device type."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.reverse_reshape <tvm.relay.reverse_reshape>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ""
+"Reshapes the input array where the special values are inferred from right"
+" to left."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.sequence_mask <tvm.relay.sequence_mask>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ""
+"Sets all elements outside the expected length of the sequence to a "
+"constant value."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.batch_matmul <tvm.relay.nn.batch_matmul>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ""
+"Computes batch matrix multiplication of `x` and `y` when `x` and `y` are "
+"data in batch."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.adaptive_max_pool2d <tvm.relay.nn.adaptive_max_pool2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "2D adaptive max pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.nn.adaptive_avg_pool2d <tvm.relay.nn.adaptive_avg_pool2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid "2D adaptive average pooling operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ":obj:`tvm.relay.one_hot <tvm.relay.one_hot>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:224:<autosummary>:1
+msgid ""
+"Returns a one-hot tensor where the locations repsented by indices take "
+"value on_value, other locations take value off_value."
+msgstr ""
+
+#: ../../langref/relay_op.rst:225
+msgid "**Level 11: Dialect Operators**"
+msgstr ""
+
+#: ../../langref/relay_op.rst:227
+msgid "This level supports dialect operators."
+msgstr ""
+
+#: ../../langref/relay_op.rst:233:<autosummary>:1
+msgid ":obj:`tvm.relay.qnn.op.requantize <tvm.relay.qnn.op.requantize>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:233:<autosummary>:1
+msgid "Requantized operator."
+msgstr ""
+
+#: ../../langref/relay_op.rst:233:<autosummary>:1
+msgid ":obj:`tvm.relay.qnn.op.conv2d <tvm.relay.qnn.op.conv2d>`"
+msgstr ""
+
+#: ../../langref/relay_op.rst:233:<autosummary>:1
+msgid "Quantized 2D convolution."
+msgstr ""
+

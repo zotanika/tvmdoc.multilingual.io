@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../deploy/index.rst:21
+msgid "Deploy and Integration"
+msgstr ""
+
+#: ../../deploy/index.rst:23
+msgid ""
+"This page contains guidelines on how to deploy TVM to various platforms "
+"as well as how to integrate it with your project."
+msgstr ""
+
+#: ../../deploy/index.rst:28
+msgid ""
+"Unlike traditional deep learning frameworks. TVM stack is divided into "
+"two major components:"
+msgstr ""
+
+#: ../../deploy/index.rst:30
+msgid "TVM compiler, which does all the compilation and optimizations"
+msgstr ""
+
+#: ../../deploy/index.rst:31
+msgid "TVM runtime, which runs on the target devices."
+msgstr ""
+
+#: ../../deploy/index.rst:33
+msgid ""
+"In order to integrate the compiled module, we **do not** need to build "
+"entire TVM on the target device. You only need to build the TVM compiler "
+"stack on your desktop and use that to cross-compile modules that are "
+"deployed on the target device. We only need to use a light-weight runtime"
+" API that can be integrated into various platforms."
+msgstr ""
+
+#: ../../deploy/index.rst:36
+msgid ""
+"For example, you can run the following commands to build the runtime API "
+"on a Linux based embedded system such as Raspberry Pi:"
+msgstr ""
+
+#: ../../deploy/index.rst:49
+msgid ""
+"Note that we type `make runtime` to only build the runtime library. If "
+"you want to include additional runtime such as OpenCL, you can modify "
+"`config.cmake` to enable these options. After you get the TVM runtime "
+"library, you can link the compiled library"
+msgstr ""
+
+#: ../../deploy/index.rst:54
+msgid ""
+"The easiest and recommended way to test, tune and benchmark TVM kernels "
+"on embedded devices is through TVM's RPC API. Here are the links to the "
+"related tutorials."
+msgstr ""
+
+#: ../../deploy/index.rst:58
+msgid ":ref:`tutorial-cross-compilation-and-rpc`"
+msgstr ""
+
+#: ../../deploy/index.rst:59
+msgid ":ref:`tutorial-deploy-model-on-rasp`"
+msgstr ""
+
+#: ../../deploy/index.rst:61
+msgid ""
+"After you finished tuning and benchmarking, you might need to deploy the "
+"model on the target device without relying on RPC. see the following "
+"resources on how to do so."
+msgstr ""
+

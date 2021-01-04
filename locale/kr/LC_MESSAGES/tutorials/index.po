@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/index.rst:19
+msgid "Get Started Tutorials"
+msgstr ""
+
+#: ../../tutorials/index.rst:32
+msgid ":ref:`sphx_glr_tutorials_get_started_relay_quick_start.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:53
+msgid ":ref:`sphx_glr_tutorials_get_started_tensor_expr_get_started.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:74
+msgid ":ref:`sphx_glr_tutorials_get_started_tvmc_command_line_driver.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:95
+msgid ":ref:`sphx_glr_tutorials_get_started_cross_compilation_and_rpc.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:117
+msgid "Compile Deep Learning Models"
+msgstr ""
+
+#: ../../tutorials/index.rst:130
+msgid ":ref:`sphx_glr_tutorials_frontend_from_pytorch.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:151
+msgid ":ref:`sphx_glr_tutorials_frontend_from_tensorflow.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:172
+msgid ":ref:`sphx_glr_tutorials_frontend_from_mxnet.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:193
+msgid ":ref:`sphx_glr_tutorials_frontend_from_onnx.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:214
+msgid ":ref:`sphx_glr_tutorials_frontend_from_keras.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:235
+msgid ":ref:`sphx_glr_tutorials_frontend_from_tflite.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:256
+msgid ":ref:`sphx_glr_tutorials_frontend_from_coreml.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:277
+msgid ":ref:`sphx_glr_tutorials_frontend_from_darknet.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:298
+msgid ":ref:`sphx_glr_tutorials_frontend_from_caffe2.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:319
+msgid ":ref:`sphx_glr_tutorials_frontend_build_gcn.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:340
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_model_on_android.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:361
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_model_on_rasp.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:382
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_object_detection_pytorch.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:403
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_prequantized.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:424
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_prequantized_tflite.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:445
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_quantized.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:466
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_sparse.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:487
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_ssd_gluoncv.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:508
+msgid ":ref:`sphx_glr_tutorials_frontend_using_external_lib.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:528
+msgid "Tensor Expression and Schedules"
+msgstr ""
+
+#: ../../tutorials/index.rst:541
+msgid ":ref:`sphx_glr_tutorials_language_schedule_primitives.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:562
+msgid ":ref:`sphx_glr_tutorials_language_intrin_math.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:583
+msgid ":ref:`sphx_glr_tutorials_language_scan.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:604
+msgid ":ref:`sphx_glr_tutorials_language_extern_op.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:625
+msgid ":ref:`sphx_glr_tutorials_language_tensorize.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:646
+msgid ":ref:`sphx_glr_tutorials_language_tuple_inputs.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:667
+msgid ":ref:`sphx_glr_tutorials_language_tedd.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:688
+msgid ":ref:`sphx_glr_tutorials_language_reduction.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:708
+msgid "Optimize Tensor Operators"
+msgstr ""
+
+#: ../../tutorials/index.rst:721
+msgid ":ref:`sphx_glr_tutorials_optimize_opt_gemm.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:742
+msgid ":ref:`sphx_glr_tutorials_optimize_opt_conv_cuda.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:763
+msgid ":ref:`sphx_glr_tutorials_optimize_opt_conv_tensorcore.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:784
+msgid ":ref:`sphx_glr_tutorials_optimize_opt_matmul_auto_tensorcore.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:806
+msgid "AutoTVM : Template-based Auto Tuning"
+msgstr ""
+
+#: ../../tutorials/index.rst:819
+msgid ":ref:`sphx_glr_tutorials_autotvm_tune_simple_template.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:840
+msgid ":ref:`sphx_glr_tutorials_autotvm_tune_conv2d_cuda.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:861
+msgid ":ref:`sphx_glr_tutorials_autotvm_tune_relay_cuda.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:882
+msgid ":ref:`sphx_glr_tutorials_autotvm_tune_relay_x86.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:903
+msgid ":ref:`sphx_glr_tutorials_autotvm_tune_relay_arm.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:924
+msgid ":ref:`sphx_glr_tutorials_autotvm_tune_relay_mobile_gpu.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:944
+msgid "AutoScheduler : Template-free Auto Scheduling"
+msgstr ""
+
+#: ../../tutorials/index.rst:957
+msgid ":ref:`sphx_glr_tutorials_auto_scheduler_tune_matmul_x86.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:978
+msgid ":ref:`sphx_glr_tutorials_auto_scheduler_tune_conv2d_layer_cuda.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:999
+msgid ":ref:`sphx_glr_tutorials_auto_scheduler_tune_network_x86.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1020
+msgid ":ref:`sphx_glr_tutorials_auto_scheduler_tune_network_cuda.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1041
+msgid ":ref:`sphx_glr_tutorials_auto_scheduler_tune_network_mali.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1061
+msgid "Developer Tutorials"
+msgstr ""
+
+#: ../../tutorials/index.rst:1075
+msgid ":ref:`sphx_glr_tutorials_dev_low_level_custom_pass.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1096
+msgid ":ref:`sphx_glr_tutorials_dev_use_pass_infra.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1117
+msgid ":ref:`sphx_glr_tutorials_dev_bring_your_own_datatypes.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1137
+msgid "TOPI: TVM Operator Inventory"
+msgstr ""
+
+#: ../../tutorials/index.rst:1150
+msgid ":ref:`sphx_glr_tutorials_topi_intro_topi.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1172
+msgid "Micro TVM"
+msgstr ""
+
+#: ../../tutorials/index.rst:1185
+msgid ":ref:`sphx_glr_tutorials_micro_micro_reference_vm.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1206
+msgid ":ref:`sphx_glr_tutorials_micro_micro_tflite.py`"
+msgstr ""
+
+#: ../../tutorials/index.rst:1227
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+
