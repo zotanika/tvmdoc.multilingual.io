@@ -49,7 +49,7 @@ msgid ""
 "efficiency-oriented hardware backends."
 msgstr ""
 "TVM 是一个为 CPUs，GPUs 以及各类加速器而生的深度学习编译栈。"
-"TVM 致力于缩短从深度学习框架和各类硬件后端之间的距离。"
+"TVM 致力于缩短从深度学习框架到各类硬件后端之间的距离。"
 ""
 
 #: ../../index.rst:25
