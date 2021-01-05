@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:7
+msgid "Computation times"
+msgstr ""
+
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:8
+msgid "**00:00.003** total execution time for **vta_tutorials_optimize** files:"
+msgstr ""
+
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:11
+msgid ""
+":ref:`sphx_glr_vta_tutorials_optimize_matrix_multiply_opt.py` "
+"(``matrix_multiply_opt.py``)"
+msgstr ""
+
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:11
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:13
+msgid "00:00.001"
+msgstr ""
+
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:11
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:13
+msgid "0.0 MB"
+msgstr ""
+
+#: ../../vta/tutorials/optimize/sg_execution_times.rst:13
+msgid ""
+":ref:`sphx_glr_vta_tutorials_optimize_convolution_opt.py` "
+"(``convolution_opt.py``)"
+msgstr ""
+

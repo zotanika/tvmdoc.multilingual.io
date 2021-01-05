@@ -37,6 +37,7 @@ Please check in **PO**(text based portable object) files from the directory `./l
 |----------|-------------------|
 | Korean | ./locale/kr/LC_MESSAGES/ |
 | Japanese | ./locale/ja/LC_MESSAGES/ |
+| Chinese(simplified) | ./locale/zh_CN/LC_MESSAGES/ |
 
 An example snippet in `./locale/<lang>/LC_MESSAGES/faq.po` follows, where the msgid is multi-line text and contains reStructuredText syntax.
 ```

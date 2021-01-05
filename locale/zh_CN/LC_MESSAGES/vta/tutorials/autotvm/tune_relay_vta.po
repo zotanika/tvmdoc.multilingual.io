@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_vta_tutorials_autotvm_tune_relay_vta.py>` to download "
+"the full example code"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:22
+msgid "Auto-tuning a convolutional network on VTA"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:23
+msgid ""
+"**Author**: `Lianmin Zheng <https://github.com/merrymercy>`_, `Thierry "
+"Moreau <https://homes.cs.washington.edu/~moreau/>`_"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:25
+msgid ""
+"Auto-tuning for a specific accelerator design is critical for getting the"
+" best performance for any given operator. This is a tutorial showcases "
+"how to tune a whole convolutional network on VTA."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:29
+msgid ""
+"The operator implementation for VTA in TVM is written in template form. "
+"The template has many tunable knobs (tile factor, virtual threads, etc). "
+"We will tune all convolution operators in the neural network. After "
+"tuning, we produce a log file which stores the best schedule parameters "
+"for all tuned operators. When the TVM compiler compiles these operators, "
+"it will query this log file to get the best knob parameters."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:39
+msgid "Install dependencies"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:40
+msgid ""
+"To use the autotvm package in tvm, we need to install some extra "
+"dependencies. (change \"3\" to \"2\" if you use python2):"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:47
+msgid ""
+"To make TVM run faster during tuning, it is recommended to use cython as "
+"FFI of TVM. In the root directory of TVM, execute (change \"3\" to \"2\" "
+"if you use python2):"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:56
+msgid "Now return to python code. Import packages."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:105
+msgid "Compile network"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:106
+msgid "Perform vta-specific compilation with Relay from a Gluon model"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:153
+msgid "Start RPC Tracker"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:154
+msgid ""
+"TVM uses an RPC session to communicate with Pynq boards. During tuning, "
+"the tuner will send the generated code to the board and measure the speed"
+" of code on the board."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:158
+msgid ""
+"To scale up tuning, TVM uses an RPC Tracker to manage multiple devices. "
+"The RPC Tracker is a centralized controller node. We can register all "
+"devices to the tracker. For example, if we have 10 Pynq boards, we can "
+"register all of them to the tracker, and run 10 measurements in parallel,"
+" accelerating the tuning process."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:163
+msgid ""
+"To start an RPC tracker, run this command on the host machine. The "
+"tracker is required during the whole tuning process, so we need to open a"
+" new terminal for this command:"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:171
+msgid "The expected output is:"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:180
+msgid "Register devices to RPC Tracker"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:181
+msgid ""
+"Now we can register our devices to the tracker. The first step is to "
+"build the TVM runtime for the Pynq devices."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:184
+msgid ""
+"Follow :ref:`vta-index` to build the TVM runtime on the device. Then "
+"register the device to the tracker with:"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:191
+msgid "(replace :code:`[HOST_IP]` with the IP address of your host machine)"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:193
+msgid "After registering devices, we can confirm it by querying the rpc_tracker:"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:199
+msgid ""
+"For example, if we have 6 Pynq boards and 11 Raspberry Pi 3B, the output "
+"can be"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:212
+msgid "You can register multiple devices to the tracker to accelerate tuning."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:217
+msgid "Set Tuning Options"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:218
+msgid ""
+"Before tuning, we should apply some configurations. Here we use an "
+"Pynq-Z1 board as an example."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:270
+msgid "How to set tuning options"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:272
+msgid ""
+"In general, the default values provided here work well. If you have "
+"enough time budget, you can set :code:`n_trial`, :code:`early_stopping` "
+"to larger values, makes the tuning run for longer. If your device is "
+"under-powered or your conv2d operators are large, consider setting a "
+"longer timeout."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:282
+msgid "Begin Tuning"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:283
+msgid ""
+"Now we can extract tuning tasks from the network and begin tuning. Here, "
+"we provide a simple utility function to tune a list of tasks. This "
+"function is just an initial implementation which tunes them in sequential"
+" order. We will introduce a more sophisticated tuning scheduler in the "
+"future."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:288
+msgid ""
+"Given that the tuning will be done on Pynq FPGA boards, make sure that "
+"the ```TARGET`` entry in the ``vta_config.json`` file is set to ``pynq``."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:354
+msgid "Register VTA-specific tuning tasks"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:398
+msgid "Finally, we launch tuning jobs and evaluate the end-to-end performance."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:524
+msgid "Sample Output"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:525
+msgid ""
+"The tuning needs to compile many programs and extract feature from them. "
+"So a high performance CPU is recommended. One sample output is listed "
+"below. It takes about 2 hours on a 16T CPU, and 6 Pynq boards."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:563
+msgid "**Experiencing Difficulties?**"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:565
+msgid ""
+"The auto tuning module is error-prone. If you always see \" 0.00/ 0.00 "
+"GFLOPS\", then there must be something wrong."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:568
+msgid ""
+"First, make sure you set the correct configuration of your device. Then, "
+"you can print debug information by adding these lines in the beginning of"
+" the script. It will print every measurement result, where you can find "
+"useful error messages."
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:578
+msgid ""
+"Finally, always feel free to ask our community for help on "
+"https://discuss.tvm.apache.org"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:593
+msgid ""
+":download:`Download Python source code: tune_relay_vta.py "
+"<tune_relay_vta.py>`"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:599
+msgid ""
+":download:`Download Jupyter notebook: tune_relay_vta.ipynb "
+"<tune_relay_vta.ipynb>`"
+msgstr ""
+
+#: ../../vta/tutorials/autotvm/tune_relay_vta.rst:606
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

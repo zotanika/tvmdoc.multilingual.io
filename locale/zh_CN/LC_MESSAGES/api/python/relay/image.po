@@ -1,0 +1,411 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../api/python/relay/image.rst:20
+msgid "tvm.relay.image"
+msgstr ""
+
+#: ../../docstring of tvm.relay.image:1
+msgid "Image network related operators."
+msgstr ""
+
+#: ../../docstring of tvm.relay.image:1
+msgid "**Classes:**"
+msgstr ""
+
+#: ../../docstring of tvm.relay.image:1:<autosummary>:1
+msgid ":obj:`Expr <tvm.relay.image.Expr>`\\"
+msgstr ""
+
+#: ../../docstring of tvm.relay.image:1:<autosummary>:1
+msgid "alias of :class:`tvm.ir.expr.RelayExpr`"
+msgstr ""
+
+#: ../../docstring of tvm.relay.image:1
+msgid "**Functions:**"
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid ""
+":obj:`affine_grid <tvm.relay.image.affine_grid>`\\ \\(data\\[\\, "
+"target\\_shape\\]\\)"
+msgstr ""
+
+#: ../../docstring of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+#: tvm.relay.op.image.image.affine_grid:1
+msgid "affine_grid operator that generates 2D sampling grid."
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid ""
+":obj:`crop_and_resize <tvm.relay.image.crop_and_resize>`\\ \\(data\\, "
+"boxes\\, box\\_indices\\, ...\\)"
+msgstr ""
+
+#: ../../docstring of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+#: tvm.relay.op.image.image.crop_and_resize:1
+msgid "Crop input images and resize them."
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid ""
+":obj:`dilation2d <tvm.relay.image.dilation2d>`\\ \\(data\\, weight\\[\\, "
+"strides\\, padding\\, ...\\]\\)"
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid "Morphological Dilation 2D."
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid ""
+":obj:`grid_sample <tvm.relay.image.grid_sample>`\\ \\(data\\, grid\\[\\, "
+"method\\, layout\\]\\)"
+msgstr ""
+
+#: ../../docstring of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+#: tvm.relay.op.image.image.grid_sample:1
+msgid "Applies bilinear sampling to input feature map."
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid ""
+":obj:`resize <tvm.relay.image.resize>`\\ \\(data\\, size\\[\\, layout\\, "
+"method\\, ...\\]\\)"
+msgstr ""
+
+#: ../../docstring of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+#: tvm.relay.op.image.image.resize:1
+msgid "Image resize operator."
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid ""
+":obj:`resize3d <tvm.relay.image.resize3d>`\\ \\(data\\, size\\[\\, "
+"layout\\, method\\, ...\\]\\)"
+msgstr ""
+
+#: ../../docstring of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+#: tvm.relay.op.image.image.resize3d:1
+msgid "Image resize 3D operator."
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid ":obj:`checked_type <tvm.relay.image.Expr.checked_type>`\\"
+msgstr ""
+
+#: of tvm.ir.expr.RelayExpr:1:<autosummary>:1
+msgid "Get the checked type of tvm.relay.Expr."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.affine_grid:3
+msgid ""
+"This operation is described in https://arxiv.org/pdf/1506.02025.pdf. It "
+"generates a uniform sampling grid within the target shape and normalizes "
+"it to [-1, 1]. The provided affine transformation is then applied on the "
+"sampling grid."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.affine_grid
+#: tvm.relay.op.image.image.crop_and_resize
+#: tvm.relay.op.image.image.grid_sample tvm.relay.op.image.image.resize
+#: tvm.relay.op.image.image.resize3d
+msgid "Parameters"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.affine_grid:7
+msgid "3-D with shape [batch, 2, 3]. The affine matrix."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.affine_grid:9
+msgid "Specifies the output shape (H, W)."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.affine_grid
+#: tvm.relay.op.image.image.crop_and_resize tvm.relay.op.image.image.dilation2d
+#: tvm.relay.op.image.image.grid_sample tvm.relay.op.image.image.resize
+#: tvm.relay.op.image.image.resize3d
+msgid "Returns"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.affine_grid:12
+msgid "**Output** -- 4-D with shape [batch, 2, target_height, target_width]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.affine_grid
+#: tvm.relay.op.image.image.crop_and_resize tvm.relay.op.image.image.dilation2d
+#: tvm.relay.op.image.image.grid_sample tvm.relay.op.image.image.resize
+#: tvm.relay.op.image.image.resize3d
+msgid "Return type"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:3
+msgid ""
+"method indicates the algorithm to be used while calculating the out value"
+" and method can be either \"bilinear\" or \"nearest_neighbor\"."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:6
+#: tvm.relay.op.image.image.resize:11 tvm.relay.op.image.image.resize3d:11
+msgid "The input data to the operator."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:8
+msgid ""
+"A 2-D tensor of shape [num_boxes, 4]. Each row of the tensor specifies "
+"the coordinates of a box."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:11
+msgid ""
+"A 1-D tensor of shape [num_boxes], box_ind[i] specifies the data that the"
+" i-th box refers to."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:14
+msgid "The target size to which each box will be resized."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:16
+#: tvm.relay.op.image.image.dilation2d:32 tvm.relay.op.image.image.resize:15
+#: tvm.relay.op.image.image.resize3d:15
+msgid "Layout of the input."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:18
+msgid "Scale method, it can be either \"nearest_neighbor\" or \"bilinear\"."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:20
+msgid "Value used for extrapolation, when applicable."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:22
+#: tvm.relay.op.image.image.resize:24 tvm.relay.op.image.image.resize3d:23
+msgid "Type to return. If left None returns the same type as input."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.crop_and_resize:25
+#: tvm.relay.op.image.image.dilation2d:40
+msgid "**result** -- The computed result."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:1
+msgid ""
+"Morphological Dilation 2D. This operator takes the weight as the dilation"
+" kernel and dilates it with data to produce an output. In the default "
+"case, where the data_layout is `NCHW` and kernel_layout is `OIHW`, "
+"dilation2d takes in a data Tensor with shape `(batch_size, in_channels, "
+"height, width)`, and a weight Tensor with shape `(channels, "
+"kernel_height, kernel_width)` to produce an output Tensor with the "
+"following rule:"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:9
+msgid ""
+"\\mbox{out}[b, c, y, x] = \\max_{dy, dx}\n"
+"   \\mbox{data}[b, c, \\mbox{strides}[0] * y  + dy, \\mbox{strides}[1] * "
+"x + dx] +\n"
+"   \\mbox{weight}[c, dy, dx]\n"
+"\n"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:14
+msgid ""
+"Padding and dilation are applied to data and weight respectively before "
+"the computation. This operator accepts data layout specification. "
+"Semantically, the operator will convert the layout to the canonical "
+"layout (`NCHW` for data and `IHW` for weight) and perform the "
+"computation."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:20
+msgid "weight"
+msgstr ""
+
+#: ../../docstring of
+msgid "tvm.relay.Expr"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:20
+msgid "The weight expressions."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:23
+msgid "strides"
+msgstr ""
+
+#: ../../docstring of
+msgid "Optional[Tuple[int]]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:23
+msgid "The strides of convolution."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:26
+msgid "padding"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:26
+msgid "The padding of convolution on both sides of inputs before convolution."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:29
+msgid "dilations"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:29
+msgid "Specifies the dilation rate to be used for dilated convolution."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:32
+msgid "data_layout"
+msgstr ""
+
+#: ../../docstring of
+msgid "Optional[str]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:35
+msgid "kernel_layout"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:35
+msgid "Layout of the weight."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:38
+msgid "out_dtype"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.dilation2d:38
+msgid "Specifies the output data type."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:3
+msgid "Given :math:`data` and :math:`grid`, then the output is computed by"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:5
+msgid ""
+"x_{src} = grid[batch, 0, y_{dst}, x_{dst}] \\\n"
+"y_{src} = grid[batch, 1, y_{dst}, x_{dst}] \\\n"
+"output[batch, channel, y_{dst}, x_{dst}] = G(data[batch, channel, "
+"y_{src}, x_{src})"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:11
+msgid ""
+":math:`x_{dst}`, :math:`y_{dst}` enumerate all spatial locations in "
+":math:`output`, and :math:`G()` denotes the interpolation function. The "
+"out-boundary points will be padded with zeros. The shape of the output "
+"will be (data.shape[0], data.shape[1], grid.shape[2], grid.shape[3])."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:16
+msgid "The operator assumes that :math:`grid` has been normalized to [-1, 1]."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:18
+msgid ""
+"grid_sample often cooperates with affine_grid which generates sampling "
+"grids for grid_sample."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:20
+msgid "4-D with shape [batch, in_channel, in_height, in_width]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:22
+msgid "4-D with shape [batch, 2, out_height, out_width]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:24
+msgid "The interpolation method. Only 'bilinear' is supported."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:26
+msgid "The layout of input data and the output."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.grid_sample:29
+msgid "**Output** -- 4-D with shape [batch, 2, out_height, out_width]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize:3
+msgid ""
+"This operator takes data as input and does 2D scaling to the given scale "
+"factor. In the default case, where the data_layout is `NCHW` with data of"
+" shape (n, c, h, w) out will have a shape (n, c, size[0], size[1])"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize:8
+msgid ""
+"method indicates the algorithm to be used while calculating the out value"
+" and method can be one of (\"bilinear\", \"nearest_neighbor\", "
+"\"bicubic\")"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize:13
+#: tvm.relay.op.image.image.resize3d:13
+msgid "The out size to which the image will be resized."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize:17
+msgid "Scale method to used [nearest_neighbor, bilinear, bicubic]."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize:19
+msgid ""
+"Describes how to transform the coordinate in the resized tensor to the "
+"coordinate in the original tensor. Refer to the ONNX Resize operator "
+"specification for details. [half_pixel, align_corners, asymmetric]"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize:27
+#: tvm.relay.op.image.image.resize3d:26
+msgid "**result** -- The resized result."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize3d:3
+msgid ""
+"This operator takes data as input and does 3D scaling to the given scale "
+"factor. In the default case, where the data_layout is `NCDHW` with data "
+"of shape `(n, c, d, h, w)` out will have a shape `(n, c, size[0], "
+"size[1], size[2])`"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize3d:8
+msgid ""
+"method indicates the algorithm to be used while calculating the out value"
+" and method can be one of (\"trilinear\", \"nearest_neighbor\")"
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize3d:17
+msgid "Scale method to used [nearest_neighbor, trilinear]."
+msgstr ""
+
+#: ../../docstring of tvm.relay.op.image.image.resize3d:19
+msgid ""
+"Describes how to transform the coordinate in the resized tensor to the "
+"coordinate in the original tensor. [half_pixel, align_corners, "
+"asymmetric]"
+msgstr ""
+

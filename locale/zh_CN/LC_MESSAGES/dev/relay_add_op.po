@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../dev/relay_add_op.rst:21
+msgid "Adding an Operator to Relay"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:23
+msgid ""
+"In order to use TVM operators from within the Relay IR, the operators "
+"need to be registered in Relay in order to ensure that they will be "
+"integrated into Relay's type system."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:27
+msgid "Registering an operator requires three steps:"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:29
+msgid ""
+"Using the ``RELAY_REGISTER_OP`` macro in C++ to register the operator's "
+"arity and type information"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:30
+msgid ""
+"Defining a C++ function to produce a call node for the operator and "
+"registering a Python API hook for the function"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:31
+msgid "Wrapping the above Python API hook in a neater interface"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:33
+msgid ""
+"The file ``src/relay/op/tensor/binary.cc`` provides examples of the first"
+" two steps, while ``python/tvm/relay/op/tensor.py`` gives examples of the"
+" last."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:39
+msgid "Registering an Operator"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:41
+msgid ""
+"TVM already has an operator registry, but Relay cannot properly "
+"incorporate TVM operators without additional type information."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:44
+msgid ""
+"To allow for flexibility in registering operators and greater "
+"expressivity and granularity in expressing types in Relay, operators are "
+"typed using relations between input and output types. These relations are"
+" represented as functions that take in a list of input types and output "
+"types (any of these types may be incomplete) and return a list of input "
+"and output types that satisfies the relation. Essentially, a relation for"
+" an operator can enforce all the necessary typing rules (namely by "
+"inspecting the input types) in addition to computing the output type."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:54
+msgid ""
+"For example, see ``src/relay/op/type_relations.h`` and their "
+"implementations. E.g., ``BroadcastRel`` takes two input types and an "
+"output type, checks that they are all tensor types with the same "
+"underlying data type, and finally ensures that the shape of the output "
+"type is the broadcast of the input types' shapes."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:60
+msgid ""
+"It may be necessary to add another type relation to ``type_relations.h`` "
+"if the existing ones do not capture the behavior of the desired operator."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:63
+msgid ""
+"The ``RELAY_REGISTER_OP`` macro in C++ allows a developer to specify the "
+"following information about an operator in Relay:"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:66
+msgid "Arity (number of arguments)"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:67
+msgid "Names and descriptions for positional arguments"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:68
+msgid ""
+"Support level (1 indicates an internal intrinsic; higher numbers indicate"
+" less integral or externally supported operators)"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:69
+msgid "A type relation for the operator"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:71
+msgid ""
+"The below example is from ``binary.cc`` and uses a broadcasting add for "
+"tensors:"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:84
+msgid "Creating a Call Node"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:86
+msgid ""
+"This step requires simply writing a function that takes the arguments to "
+"the operator (as Relay expressions) and returning a call node to the "
+"operator (i.e., the node that should be placed into the Relay AST where "
+"the call to the operator is intended)."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:92
+msgid ""
+"At present call attributes and type arguments (the last two fields) are "
+"not supported, so it suffices to use ``Op::Get`` to fetch the operator's "
+"information from the operator registry and pass in the arguments to the "
+"call node, as below."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:106
+msgid "Including a Python API Hook"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:108
+msgid ""
+"It is generally the convention in Relay, that functions exported through "
+"``TVM_REGISTER_GLOBAL`` should be wrapped in a separate Python function "
+"rather than called directly in Python. In the case of the functions that "
+"produce calls to operators, it may be convenient to bundle them, as in "
+"``python/tvm/relay/op/tensor.py``, where elementwise operators on tensors"
+" are all provided. For example, the following is how the add function "
+"from the previous section is exposed in Python:"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:136
+msgid ""
+"Note that these Python wrappers might also be good opportunities to "
+"provide an easier interface to the operator. For example, the ``concat`` "
+"operator is registered as taking only one operator, namely a tuple with "
+"the tensors to be concatenated, but the Python wrapper takes the tensors "
+"as arguments and combines them into a tuple before producing the call "
+"node:"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:160
+msgid "Gradient Operators"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:162
+msgid ""
+"Gradient operators are important for writing differentiable programs in "
+"Relay. While it is the case that Relay's autodiff algorithm can "
+"differentiate first-class language constructs, operators are opaque. "
+"Because Relay can't look into the implementation, an explicit "
+"differentiation rule must be provided."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:168
+msgid ""
+"Both Python and C++ can be used to write gradient operators, but we focus"
+" our examples on Python, as it is more commonly used."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:172
+msgid "Adding a Gradient in Python"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:174
+msgid ""
+"A collection of Python gradient operators can be found in "
+"``python/tvm/relay/op/_tensor_grad.py``. We will walk through two "
+"representative examples: ``sigmoid`` and ``multiply``."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:185
+msgid ""
+"The inputs here are the original operator ``orig`` and a gradient "
+"``grad`` to accumulate into. What we return is a list, where the element "
+"at the i'th index is the derivative of the operator with respect to the "
+"operator's i'th input. In general, the gradient will return a list with "
+"as many elements as there are inputs to the base operator."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:191
+msgid ""
+"Before we further analyze this definition, first we should recall the "
+"derivative of the sigmoid function: :math:`\\frac{\\partial "
+"\\sigma}{\\partial x} = \\sigma(x)(1 - \\sigma(x))`. The definition above"
+" looks similar to the mathematical definition, but there is one important"
+" addition, which we describe below."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:197
+msgid ""
+"The term ``orig * (ones_like(orig) - orig)`` directly matches the "
+"derivative, because ``orig`` here is the sigmoid function, but we're not "
+"just interested in how to compute the gradient of this function. We're "
+"interested in composing this gradient with other gradients, so we can "
+"accumulate the gradient across an entire program. This is where the "
+"``grad`` term comes in. In the expression ``grad * orig * "
+"(ones_like(orig) - orig)``, multiplying by ``grad`` specifies how to "
+"compose the derivative with the gradient thus far."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:205
+msgid "Now, we consider ``multiply``, a slightly more interesting example:"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:216
+msgid ""
+"In this example, there are two elements in the returned list, because "
+"``multiply`` is a binary operator. And to recall, if :math:`f(x, y) = "
+"xy`, the partial derivatives are :math:`\\frac{\\partial f}{\\partial x} "
+"= y` and :math:`\\frac{\\partial f}{\\partial y} = x`."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:221
+msgid ""
+"There is one required step for ``multiply`` that is not required for "
+"``sigmoid``, because ``multiply`` has broadcasting semantics. Since the "
+"shape of ``grad`` might not match the shape of the inputs, we use "
+"``collapse_sum_like`` to take the contents of the ``grad * <var>`` terms "
+"and make the shape match the shape of the input we're differentiating "
+"with respect to."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:229
+msgid "Adding a Gradient in C++"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:231
+msgid ""
+"Adding a gradient in C++ is similar to adding one in Python, but the "
+"interface for registering is slightly different."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:234
+msgid ""
+"First, make sure ``src/relay/pass/pattern_utils.h`` is included. It "
+"provides helper functions for creating nodes in the Relay AST. Then, "
+"define the gradient in a similar fashion as in the Python example:"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:246
+msgid ""
+"Notice that in C++ we can't use the same operator overloading that we "
+"have in Python, and we need to downcast, so the implementation is more "
+"verbose. Even so, we can easily verify that this definition mirrors the "
+"earlier example in Python."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:251
+msgid ""
+"Now, instead of using a Python decorator, we need to tack a ``set_attr`` "
+"call for \"FPrimalGradient\" onto the end of the base operator's "
+"registration, in order to register the gradient."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:264
+msgid "Summary"
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:266
+msgid ""
+"A TVM operator can be registered in Relay using a relation to express the"
+" appropriate type information."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:267
+msgid ""
+"Using an operator in Relay requires a function to produce a call node for"
+" the operator."
+msgstr ""
+
+#: ../../dev/relay_add_op.rst:268
+msgid "It is best to have a simple Python wrapper for producing the call node."
+msgstr ""
+

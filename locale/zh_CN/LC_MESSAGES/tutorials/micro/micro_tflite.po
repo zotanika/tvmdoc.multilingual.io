@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/micro/micro_tflite.rst:13
+msgid ""
+"Click :ref:`here <sphx_glr_download_tutorials_micro_micro_tflite.py>` to "
+"download the full example code"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:22
+msgid "Micro TVM with TFLite Models"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:23
+msgid "**Author**: `Tom Gall <https://github.com/tom-gall>`_"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:25
+msgid ""
+"This tutorial is an introduction to working with MicroTVM and a TFLite "
+"model with Relay."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:31
+msgid "Setup"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:33
+msgid "To get started, TFLite package needs to be installed as prerequisite."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:35
+msgid "install tflite"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:41
+msgid ""
+"or you could generate TFLite package yourself. The steps are the "
+"following:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:43
+msgid ""
+"Get the flatc compiler. Please refer to "
+"https://github.com/google/flatbuffers for details and make sure it is "
+"properly installed."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:51
+msgid "Get the TFLite schema."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:57
+msgid "Generate TFLite package."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:63
+msgid ""
+"Add the current folder (which contains generated tflite module) to "
+"PYTHONPATH."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:69
+msgid ""
+"To validate that the TFLite package was installed successfully, ``python "
+"-c \"import tflite\"``"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:71
+msgid ""
+"CMSIS needs to be downloaded and the CMSIS_ST_PATH environment variable "
+"setup This tutorial only supports the STM32F7xx series of boards. "
+"Download from : https://www.st.com/en/embedded-software/stm32cubef7.html "
+"After you've expanded the zip file"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:83
+msgid "Recreating your own Pre-Trained TFLite model"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:85
+msgid ""
+"The tutorial downloads a pretrained TFLite model. When working with "
+"microcontrollers you need to be mindful these are highly resource "
+"constrained devices as such standard models like MobileNet may not fit "
+"into their modest memory."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:89
+msgid "For this tutorial, we'll make use of one of the TF Micro example models."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:91
+msgid ""
+"If you wish to replicate the training steps see: "
+"https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/hello_world/train"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:96
+msgid ""
+"If you accidentally download the example pretrained model from: wget "
+"https://storage.googleapis.com/download.tensorflow.org/models/tflite/micro/hello_world_2020_04_13.zip"
+" this will fail due to an unimplemented opcode (114)"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:134
+msgid "Load and prepare the Pre-Trained Model"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:136
+msgid ""
+"Load the pretrained TFLite model from a file in your current directory "
+"into a buffer"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:153
+msgid "Using the buffer, transform into a tflite model python object"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:171
+msgid "Print out the version of the model"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:183
+msgid ""
+"Parse the python model object to convert it into a relay module and "
+"weights. It is important to note that the input tensor name must match "
+"what is contained in the model."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:188
+msgid ""
+"If you are unsure what that might be, this can be discovered by using the"
+" visualize.py script within the Tensorflow project. See : How do I "
+"inspect a .tflite file? `<https://www.tensorflow.org/lite/guide/faq>`_"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:208
+msgid ""
+"Now we create a build config for relay. turning off two options and then "
+"calling relay.build which will result in a C source file."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:231
+msgid "Running on simulated device"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:233
+msgid ""
+"First, compile a static microTVM runtime for the targeted device. In this"
+" case, the host simulated device is used."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:264
+msgid ""
+"Next, establish a session with the simulated device and run the "
+"computation. The `with session` line would typically flash an attached "
+"microcontroller, but in this tutorial, it simply launches a subprocess to"
+" stand in for an attached microcontroller."
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:307
+msgid ":download:`Download Python source code: micro_tflite.py <micro_tflite.py>`"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:313
+msgid ""
+":download:`Download Jupyter notebook: micro_tflite.ipynb "
+"<micro_tflite.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/micro/micro_tflite.rst:320
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

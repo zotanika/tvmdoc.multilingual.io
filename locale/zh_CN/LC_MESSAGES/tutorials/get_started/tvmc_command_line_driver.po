@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_tutorials_get_started_tvmc_command_line_driver.py>` to"
+" download the full example code"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:22
+msgid "Getting Started with TVM command line driver - TVMC"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:23
+msgid ""
+"**Authors**: `Leandro Nunes <https://github.com/leandron>`_, `Matthew "
+"Barrett <https://github.com/mbaret>`_"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:27
+msgid ""
+"This tutorial is an introduction to working with TVMC, the TVM command "
+"line driver. TVMC is a tool that exposes TVM features such as auto-"
+"tuning, compiling, profiling and execution of models, via a command line "
+"interface."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:32
+msgid ""
+"In this tutorial we are going to use TVMC to compile, run and tune a "
+"ResNet-50 on a x86 CPU."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:35
+msgid ""
+"We are going to start by downloading ResNet 50 V2. Then, we are going to "
+"use TVMC to compile this model into a TVM module, and use the compiled "
+"module to generate predictions. Finally, we are going to experiment with "
+"the auto-tuning options, that can be used to help the compiler to improve"
+" network performance."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:41
+msgid ""
+"The final goal is to give an overview of TVMC's capabilities and also "
+"some guidance on where to look for more information."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:47
+msgid "Using TVMC"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:49
+msgid ""
+"TVMC is a Python application, part of the TVM Python package. When you "
+"install TVM using a Python package, you will get TVMC as as a command "
+"line application called ``tvmc``."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:53
+msgid ""
+"Alternatively, if you have TVM as a Python module on your "
+"``$PYTHONPATH``,you can access the command line driver functionality via "
+"the executable python module, ``python -m tvm.driver.tvmc``."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:57
+msgid ""
+"For simplicity, this tutorial will mention TVMC command line using ``tvmc"
+" <options>``, but the same results can be obtained with ``python -m "
+"tvm.driver.tvmc <options>``."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:61
+msgid "You can check the help page using:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:68
+msgid ""
+"As you can see in the help page, the main features are accessible via the"
+" subcommands ``tune``, ``compile`` and ``run``. To read about specific "
+"options under a given subcommand, use ``tvmc <subcommand> --help``."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:73
+msgid ""
+"In the following sections we will use TVMC to tune, compile and run a "
+"model. But first, we need a model."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:80
+msgid "Obtaining the model"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:82
+msgid ""
+"We are going to use ResNet-50 V2 as an example to experiment with TVMC. "
+"The version below is in ONNX format. To download the file, you can use "
+"the command below:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:94
+msgid "Supported model formats"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:96
+msgid ""
+"TVMC supports models created with Keras, ONNX, TensorFlow, TFLite and "
+"Torch. Use the option``--model-format`` if you need to explicitly provide"
+" the model format you are using. See ``tvmc compile --help`` for more "
+"information."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:105
+msgid "Compiling the model"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:107
+msgid ""
+"The next step once we've downloaded ResNet-50, is to compile it, To "
+"accomplish that, we are going to use ``tvmc compile``. The output we get "
+"from the compilation process is a TAR package, that can be used to run "
+"our model on the target device."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:119
+msgid ""
+"Once compilation finishes, the output ``compiled_module.tar`` will be "
+"created. This can be directly loaded by your application and run via the "
+"TVM runtime APIs."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:125
+msgid "Defining the correct target"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:127
+msgid ""
+"Specifying the correct target (option ``--target``) can have a huge "
+"impact on the performance of the compiled module, as it can take "
+"advantage of hardware features available on the target. For more "
+"information, please refer to `Auto-tuning a convolutional network for x86"
+" CPU <https://tvm.apache.org/docs/tutorials/autotvm/tune_relay_x86.html"
+"#define-network>`_."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:136
+msgid ""
+"In the next step, we are going to use the compiled module, providing it "
+"with some inputs, to generate some predictions."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:143
+msgid "Input pre-processing"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:145
+msgid "In order to generate predictions, we will need two things:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:147
+msgid "the compiled module, which we just produced;"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:148
+msgid "a valid input to the model"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:150
+msgid ""
+"Each model is particular when it comes to expected tensor shapes, formats"
+" and data types. For this reason, most models require some pre and post "
+"processing, to ensure the input(s) is valid and to interpret the "
+"output(s)."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:154
+msgid ""
+"In TVMC, we adopted NumPy's ``.npz`` format for both input and output "
+"data. This is a well-supported NumPy format to serialize multiple arrays "
+"into a file."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:157
+msgid "We will use the usual cat image, similar to other TVM tutorials:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:164
+msgid ""
+"For our ResNet 50 V2 model, the input is expected to be in ImageNet "
+"format. Here is an example of a script to pre-process an image for ResNet"
+" 50 V2."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:206
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:291
+msgid "Out:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:218
+msgid "Running the compiled module"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:220
+msgid ""
+"With both the compiled module and input file in hand, we can run it by "
+"invoking ``tvmc run``."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:230
+msgid ""
+"When running the above command, a new file ``predictions.npz`` should be "
+"produced. It contains the output tensors."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:233
+msgid ""
+"In this example, we are running the model on the same machine that we "
+"used for compilation. In some cases we might want to run it remotely via "
+"an RPC Tracker. To read more about these options please check ``tvmc run "
+"--help``."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:242
+msgid "Output post-processing"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:244
+msgid ""
+"As previously mentioned, each model will have its own particular way of "
+"providing output tensors."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:247
+msgid ""
+"In our case, we need to run some post-processing to render the outputs "
+"from ResNet 50 V2 into a more human-readable form."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:250
+msgid ""
+"The script below shows an example of the post-processing to extract "
+"labels from the output of our compiled module."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:302
+msgid ""
+"When running the script, a list of predictions should be printed similar "
+"the the example below."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:318
+msgid "Tuning the model"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:320
+msgid ""
+"In some cases, we might not get the expected performance when running "
+"inferences using our compiled module. In cases like this, we can make use"
+" of the auto-tuner, to find a better configuration for our model and get "
+"a boost in performance."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:325
+msgid ""
+"Tuning in TVM refers to the process by which a model is optimized to run "
+"faster on a given target. This differs from training or fine-tuning in "
+"that it does not affect the accuracy of the model, but only the runtime "
+"performance."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:330
+msgid ""
+"As part of the tuning process, TVM will try running many different "
+"operator implementation variants to see which perform best. The results "
+"of these runs are stored in a tuning records file, which is ultimately "
+"the output of the ``tune`` subcommand."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:335
+msgid "In the simplest form, tuning requires you to provide three things:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:337
+msgid "the target specification of the device you intend to run this model on;"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:338
+msgid ""
+"the path to an output file in which the tuning records will be stored, "
+"and finally,"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:339
+msgid "a path to the model to be tuned."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:342
+msgid "The example below demonstrates how that works in practice:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:352
+msgid ""
+"Tuning sessions can take a long time, so ``tvmc tune`` offers many "
+"options to customize your tuning process, in terms of number of "
+"repetitions (``--repeat`` and ``--number``, for example), the tuning "
+"algorithm to be use, and so on. Check ``tvmc tune --help`` for more "
+"information."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:357
+msgid ""
+"As an output of the tuning process above, we obtained the tuning records "
+"stored in ``autotuner_records.json``. This file can be used in two ways:"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:360
+msgid "as an input to further tuning (via ``tvmc tune --tuning-records``), or"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:361
+msgid "as an input to the compiler"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:363
+msgid ""
+"The compiler will use the results to generate high performance code for "
+"the model on your specified target. To do that we can use ``tvmc compile "
+"--tuning-records``. Check ``tvmc compile --help`` for more information."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:371
+msgid "Final Remarks"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:373
+msgid ""
+"In this tutorial, we presented TVMC, a command line driver for TVM. We "
+"demonstrated how to compile, run and tune a model, as well as discussed "
+"the need for pre and post processing of inputs and outputs."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:377
+msgid ""
+"Here we presented a simple example using ResNet 50 V2 locally. However, "
+"TVMC supports many more features including cross-compilation, remote "
+"execution and profiling/benchmarking."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:381
+msgid ""
+"To see what other options are available, please have a look at ``tvmc "
+"--help``."
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:397
+msgid ""
+":download:`Download Python source code: tvmc_command_line_driver.py "
+"<tvmc_command_line_driver.py>`"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:403
+msgid ""
+":download:`Download Jupyter notebook: tvmc_command_line_driver.ipynb "
+"<tvmc_command_line_driver.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/get_started/tvmc_command_line_driver.rst:410
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

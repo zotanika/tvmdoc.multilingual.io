@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_tutorials_frontend_deploy_model_on_android.py>` to "
+"download the full example code"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:24
+msgid "Deploy the Pretrained Model on Android"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:25
+msgid "**Author**: `Tomohiro Kato <https://tkat0.github.io/>`_"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:27
+msgid ""
+"This is an example of using Relay to compile a keras model and deploy it "
+"on Android device."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:57
+msgid "Setup Environment"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:58
+msgid ""
+"Since there are many required packages for Android, it is recommended to "
+"use the official Docker Image."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:60
+msgid "First, to build and run Docker Image, we can run the following command."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:70
+msgid ""
+"You are now inside the container. The cloned TVM directory is mounted on "
+"/workspace. At this time, mount the 9190 port used by RPC described "
+"later."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:75
+msgid ""
+"Please execute the following steps in the container. We can execute "
+":code:`docker exec -it tvm bash` to open a new terminal in the container."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:78
+msgid "Next we build the TVM."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:92
+msgid "After building TVM successfully, Please set PYTHONPATH."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:102
+msgid "Start RPC Tracker"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:103
+msgid "TVM uses RPC session to communicate with Android device."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:105
+msgid ""
+"To start an RPC tracker, run this command in the container. The tracker "
+"is required during the whole tuning process, so we need to open a new "
+"terminal for this command:"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:113
+msgid "The expected output is"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:122
+msgid "Register Android device to RPC Tracker"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:123
+msgid "Now we can register our Android device to the tracker."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:125
+msgid ""
+"Follow this `readme page "
+"<https://github.com/apache/tvm/tree/main/apps/android_rpc>`_ to install "
+"TVM RPC APK on the android device."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:128
+msgid "Here is an example of config.mk. I enabled OpenCL and Vulkan."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:158
+msgid ""
+"At this time, don't forget to `create a standalone toolchain "
+"<https://github.com/apache/tvm/tree/main/apps/android_rpc#architecture-"
+"and-android-standalone-toolchain>`_ ."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:160
+msgid "for example"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:168
+msgid ""
+"Next, start the Android application and enter the IP address and port of "
+"RPC Tracker. Then you have already registered your device."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:171
+msgid "After registering devices, we can confirm it by querying rpc_tracker"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:177
+msgid "For example, if we have 1 Android device. the output can be"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:189
+msgid ""
+"To confirm that you can communicate with Android, we can run following "
+"test script. If you use OpenCL and Vulkan, please set :code:`test_opencl`"
+" and :code:`test_vulkan` in the script."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:206
+msgid "Load pretrained keras model"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:207
+msgid ""
+"We load a pretrained MobileNetV2(alpha=0.5) classification model provided"
+" by keras."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:234
+#: ../../tutorials/frontend/deploy_model_on_android.rst:275
+#: ../../tutorials/frontend/deploy_model_on_android.rst:313
+#: ../../tutorials/frontend/deploy_model_on_android.rst:460
+msgid "Out:"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:245
+msgid ""
+"In order to test our model, here we download an image of cat and "
+"transform its format."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:286
+msgid ""
+"synset is used to transform the label from number of ImageNet class to "
+"the word human can understand."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:325
+msgid "Compile the model with relay"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:326
+msgid ""
+"If we run the example on our x86 server for demonstration, we can simply "
+"set it as :code:`llvm`. If running it on the Android device, we need to "
+"specify its instruction set. Set :code:`local_demo` to False if you want "
+"to run this tutorial with a real device."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:385
+msgid "Deploy the Model Remotely by RPC"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:386
+msgid ""
+"With RPC, you can deploy the model remotely from your host machine to the"
+" remote android device."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:431
+msgid "Execute on TVM"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:474
+msgid "Sample Output"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:475
+msgid ""
+"The following is the result of 'cpu', 'opencl' and 'vulkan' using Adreno "
+"530 on Snapdragon 820"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:477
+msgid ""
+"Although we can run on a GPU, it is slower than CPU. To speed up, we need"
+" to write and optimize the schedule according to the GPU architecture."
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:510
+msgid ""
+":download:`Download Python source code: deploy_model_on_android.py "
+"<deploy_model_on_android.py>`"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:516
+msgid ""
+":download:`Download Jupyter notebook: deploy_model_on_android.ipynb "
+"<deploy_model_on_android.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/frontend/deploy_model_on_android.rst:523
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

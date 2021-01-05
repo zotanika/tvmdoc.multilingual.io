@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:7
+msgid "Computation times"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:8
+msgid "**00:45.217** total execution time for **tutorials_auto_scheduler** files:"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:11
+msgid ""
+":ref:`sphx_glr_tutorials_auto_scheduler_tune_network_x86.py` "
+"(``tune_network_x86.py``)"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:11
+msgid "00:39.107"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:11
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:13
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:15
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:17
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:19
+msgid "0.0 MB"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:13
+msgid ""
+":ref:`sphx_glr_tutorials_auto_scheduler_tune_network_cuda.py` "
+"(``tune_network_cuda.py``)"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:13
+msgid "00:03.796"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:15
+msgid ""
+":ref:`sphx_glr_tutorials_auto_scheduler_tune_network_mali.py` "
+"(``tune_network_mali.py``)"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:15
+msgid "00:02.211"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:17
+msgid ""
+":ref:`sphx_glr_tutorials_auto_scheduler_tune_matmul_x86.py` "
+"(``tune_matmul_x86.py``)"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:17
+msgid "00:00.089"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:19
+msgid ""
+":ref:`sphx_glr_tutorials_auto_scheduler_tune_conv2d_layer_cuda.py` "
+"(``tune_conv2d_layer_cuda.py``)"
+msgstr ""
+
+#: ../../tutorials/auto_scheduler/sg_execution_times.rst:19
+msgid "00:00.014"
+msgstr ""
+

@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:7
+msgid "Computation times"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:8
+msgid "**00:17.125** total execution time for **tutorials_autotvm** files:"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:11
+msgid ""
+":ref:`sphx_glr_tutorials_autotvm_tune_simple_template.py` "
+"(``tune_simple_template.py``)"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:11
+msgid "00:16.947"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:11
+#: ../../tutorials/autotvm/sg_execution_times.rst:13
+#: ../../tutorials/autotvm/sg_execution_times.rst:15
+#: ../../tutorials/autotvm/sg_execution_times.rst:17
+#: ../../tutorials/autotvm/sg_execution_times.rst:19
+#: ../../tutorials/autotvm/sg_execution_times.rst:21
+msgid "0.0 MB"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:13
+msgid ""
+":ref:`sphx_glr_tutorials_autotvm_tune_conv2d_cuda.py` "
+"(``tune_conv2d_cuda.py``)"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:13
+msgid "00:00.157"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:15
+msgid ""
+":ref:`sphx_glr_tutorials_autotvm_tune_relay_x86.py` "
+"(``tune_relay_x86.py``)"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:15
+msgid "00:00.012"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:17
+msgid ""
+":ref:`sphx_glr_tutorials_autotvm_tune_relay_mobile_gpu.py` "
+"(``tune_relay_mobile_gpu.py``)"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:17
+#: ../../tutorials/autotvm/sg_execution_times.rst:19
+#: ../../tutorials/autotvm/sg_execution_times.rst:21
+msgid "00:00.003"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:19
+msgid ""
+":ref:`sphx_glr_tutorials_autotvm_tune_relay_cuda.py` "
+"(``tune_relay_cuda.py``)"
+msgstr ""
+
+#: ../../tutorials/autotvm/sg_execution_times.rst:21
+msgid ""
+":ref:`sphx_glr_tutorials_autotvm_tune_relay_arm.py` "
+"(``tune_relay_arm.py``)"
+msgstr ""
+
