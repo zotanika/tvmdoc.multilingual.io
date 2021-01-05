@@ -6,7 +6,7 @@ TVM Multilingual Documentation
 Introduction
 ------------
 This project has been established to provide a workplace for [TVM technical documentation](https://tvm.apache.org/docs/) localization.
-For now, primary target languages are Korean and Japanese.
+For now, primary target languages are Korean, Japanese, and Chinese(simplified).
 
 Setup
 -----
@@ -73,13 +73,17 @@ $ . makehtml_kr.sh
 ```
 $ . makehtml_jp.sh
 ```
+- For Chinese(simplified)
+```
+$ . makehtml_zh_CN.sh
+```
 Then open `./html/index.html` with a web browser.
 
 Check out TVM upstream
 -------------
-In case that you would like to see what updates may be delivered from upstream TVM documentations, please follow the advanced setup process:
+In case that you would like to see what updates may be delivered from upstream TVM documentations, please run the script:
 ```
 $ . upsync.sh
 ```
-The process above will help you update and build the whole TVM project, then generate latest PO files correspondingly.
-You can find the updated HTML artifacts at `./html-reference`.
+The process above will help you update and build the whole upstream TVM project, then generate latest PO files correspondingly.
+You can find the updated HTML artifacts at `./html-reference` (in English).
