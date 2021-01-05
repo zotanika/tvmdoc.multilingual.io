@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/micro/micro_reference_vm.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_tutorials_micro_micro_reference_vm.py>` to download "
+"the full example code"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:23
+msgid "microTVM Reference Virtual Machines"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:24
+msgid "**Author**: `Andrew Reusch <areusch@octoml.ai>`_"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:26
+msgid ""
+"This tutorial explains how to launch microTVM Reference Virtual Machines."
+" You can use these to develop on real physical hardware without needing "
+"to individually install the microTVM dependencies. These are also "
+"particularly useful when trying to reproduce behavior with microTVM, such"
+" as when filing bug reports."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:31
+msgid ""
+"microTVM is the effort to allow TVM to build and execute models on bare-"
+"metal microcontrollers. microTVM aims to be compatible with a wide "
+"variety of SoCs and runtime environments (i.e. bare metal, RTOS, etc). "
+"However, some stable software environment is needed to allow developers "
+"to share and reproduce bugs and results. The microTVM Reference Virtual "
+"Machines are intended to provide that environment."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:38
+msgid "How it works"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:40
+msgid ""
+"No Virtual Machines are stored in the TVM repository--instead, the files "
+"stored in ``apps/microtvm/reference-vm`` describe how to build VMs to the"
+" Vagrant_ VM builder tool."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:43
+msgid "The Reference VMs are split into two parts:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:45
+msgid ""
+"A Vagrant Base Box, which contains all of the stable dependencies for "
+"that platform. Build scripts are stored in ``apps/microtvm/reference-"
+"vm/<platform>/base-box``. TVM committers run these when a platform's "
+"\"stable\" dependencies change, and the generated base boxes are stored "
+"in `Vagrant Cloud`_."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:49
+msgid ""
+"A per-workspace VM, which users normally build using the Base Box as a "
+"starting point. Build scripts are stored in ``apps/microtvm/reference-"
+"vm/<platform>`` (everything except ``base-box``)."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:56
+msgid "Setting up the VM"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:59
+msgid "Installing prerequisites"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:61
+msgid "A minimal set of prerequisites are needed:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:64
+msgid "`Vagrant <https://vagrantup.com>`__"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:65
+msgid ""
+"A supported Virtual Machine hypervisor. `VirtualBox "
+"<https://www.virtualbox.org>`__ is one suggested free hypervisor, but "
+"please note that the `VirtualBox Extension Pack`_ is required for proper "
+"USB forwarding. If using VirtualBox, also consider installing the "
+"`vbguest <https://github.com/dotless-de/vagrant-vbguest>`_ plugin."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:73
+msgid "First boot"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:75
+msgid ""
+"The first time you use a reference VM, you need to create the box locally"
+" and then provision it."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:85
+msgid ""
+"This command will take a couple of minutes to run and will require 4 to "
+"5GB of storage on your machine. It does the following:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:88
+msgid ""
+"Downloads the `microTVM base box`_ and clones it to form a new VM "
+"specific to this TVM directory."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:89
+msgid ""
+"Mounts your TVM directory (and, if using ``git-subtree``, the original "
+"``.git`` repo) into the VM."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:91
+msgid ""
+"Builds TVM and installs a Python virtualenv with the dependencies "
+"corresponding with your TVM build."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:97
+msgid ""
+"Next, you need to configure USB passthrough to attach your physical "
+"development board to the virtual machine (rather than directly to your "
+"laptop's host OS)."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:100
+msgid ""
+"It's suggested you setup a device filter, rather than doing a one-time "
+"forward, because often the device may reboot during the programming "
+"process and you may, at that time, need to enable forwarding again. It "
+"may not be obvious to the end user when this occurs. Instructions to do "
+"that:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:104
+msgid "`VirtualBox <https://www.virtualbox.org/manual/ch03.html#usb-support>`__"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:105
+msgid "`Parallels <https://kb.parallels.com/122993>`__"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:106
+msgid ""
+"`VMWare Workstation <https://docs.vmware.com/en/VMware-Workstation-"
+"Pro/15.0/com.vmware.ws.using.doc/GUID-E003456F-"
+"EB94-4B53-9082-293D9617CB5A.html>`__"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:109
+msgid "Future use"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:111
+msgid ""
+"After the first boot, you'll need to ensure you keep the build, in "
+"``$TVM_HOME/build-microtvm``, up-to-date when you modify the C++ runtime "
+"or checkout a different revision. You can either re-provision the machine"
+" (``vagrant provision`` in the same directory you ran ``vagrant up`` "
+"before) or manually rebuild TVM yourself."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:116
+msgid ""
+"Remember: the TVM ``.so`` built inside the VM is different from the one "
+"you may use on your host machine. This is why it's built inside the "
+"special directory ``build-microtvm``."
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:120
+msgid "Logging in to the VM"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:122
+msgid ""
+"The VM should be available to your host only with the hostname "
+"``microtvm``. You can SSH to the VM as follows:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:129
+msgid ""
+"Then ``cd`` to the same path used on your host machine for TVM. For "
+"example, on Mac:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:136
+msgid "Running tests"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:138
+msgid "Once the VM has been provisioned, tests can executed using ``poetry``:"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:157
+msgid ""
+":download:`Download Python source code: micro_reference_vm.py "
+"<micro_reference_vm.py>`"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:163
+msgid ""
+":download:`Download Jupyter notebook: micro_reference_vm.ipynb "
+"<micro_reference_vm.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/micro/micro_reference_vm.rst:170
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/language/intrin_math.rst:13
+msgid ""
+"Click :ref:`here <sphx_glr_download_tutorials_language_intrin_math.py>` "
+"to download the full example code"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:22
+msgid "Intrinsics and Math Functions"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:23
+msgid "**Author**: `Tianqi Chen <https://tqchen.github.io>`_"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:25
+msgid ""
+"While TVM supports basic arithmetic operations. In many cases usually we "
+"will need more complicated builtin functions. For example :code:`exp` to "
+"take the exponential of the function."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:29
+msgid ""
+"These functions are target system dependent and may have different names "
+"of different target platforms. In this tutorial, we will learn how we can"
+" invoke these target specific functions, and how we can unify the "
+"interface via tvm's intrinsic API."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:54
+msgid "Direct Declare Extern Math Call"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:55
+msgid ""
+"The most straight-forward way to call target specific function is via "
+"extern function call construct in tvm. In the following example, we use "
+":any:`tvm.tir.call_pure_extern` to call :code:`__expf` function, which is"
+" only available under CUDA."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:113
+msgid "Unified Intrinsic Call"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:114
+msgid ""
+"The above code verifies that direct external call can be used to call "
+"into device specific functions. However, the above way only works for "
+"CUDA target with float type. Ideally, we want to write same code for any "
+"device and any data type."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:119
+msgid ""
+"TVM intrinsic provides the user a mechanism to achieve this, and this is "
+"the recommended way to solve the problem. The following code use te.exp "
+"instead, which create an intrinsic call :py::func:`tvm.te.exp` to do the "
+"exponential."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:142
+msgid ""
+"We can find that the code works for both CUDA and opencl. The same te.exp"
+" can also be used for float64 data types."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:157
+msgid "Intrinsic Lowering Rule"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:158
+msgid ""
+"When :py:func:`tvm.te.exp` is called, TVM creates an intrinsic Call Expr."
+" TVM uses transformation rules to transform the intrinsic call to device "
+"specific extern calls."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:162
+msgid ""
+"TVM also allows user to customize the rules during runtime. The following"
+" example customizes CUDA lowering rule for :code:`exp`."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:193
+msgid ""
+"Register the rule to TVM with override option to override existing rule. "
+"Notice the difference between the printed code from previous one: our new"
+" rule uses math function :code:`expf` instead of fast math version "
+":code:`__expf`."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:210
+msgid "Add Your Own Intrinsic"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:211
+msgid ""
+"If there is an intrinsic that is not provided by TVM. User can easily add"
+" new intrinsic by using the intrinsic rule system. The following example "
+"add an intrinsic :code:`mylog` to the system."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:256
+msgid "Summary"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:257
+msgid "TVM can call extern target dependent math function."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:258
+msgid "Use intrinsic to defined a unified interface for the functions."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:259
+msgid "For more intrinsics available in tvm, take a look at :any:`tvm.tir`"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:260
+msgid "You can customize the intrinsic behavior by defining your own rules."
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:276
+msgid ":download:`Download Python source code: intrin_math.py <intrin_math.py>`"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:282
+msgid ""
+":download:`Download Jupyter notebook: intrin_math.ipynb "
+"<intrin_math.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/language/intrin_math.rst:289
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/dev/use_pass_infra.rst:13
+msgid ""
+"Click :ref:`here <sphx_glr_download_tutorials_dev_use_pass_infra.py>` to "
+"download the full example code"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:24
+msgid "How to Use TVM Pass Infra"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:25
+msgid "**Author**: `Zhi Chen <https://github.com/zhiics>`_"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:27
+msgid ""
+"As the number of optimization passes increases in Relay/tir, it becomes "
+"intractable to execute them and maintain their dependencies manually. "
+"Therefore, we have introduced an infrastructure to manage the "
+"optimization passes and make it applicable to different layers of the IR "
+"in the TVM stack."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:32
+msgid ""
+"The optimizations of a Relay/tir program could be applied at various "
+"granularity, namely function-level and module-level using "
+":py:class:`tvm.relay.transform.FunctionPass`/ "
+":py:class:`tvm.tir.transform.PrimFuncPass` and "
+":py:class:`tvm.transform.ModulePass` respectively. Or users can rely on "
+":py:class:`tvm.transform.Sequential` to apply a sequence of passes on a "
+"Relay/tir program where the dependencies between passes can be resolved "
+"by the pass infra. For more details about each type of these passes, "
+"please refer to the :ref:`pass-infra`"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:40
+msgid ""
+"This tutorial mainly demostrates how developers can use the pass infra to"
+" perform a certain optimization and create an optimization pipeline for a"
+" Relay program. The same approach can be used for tir as well."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:64
+msgid "Create An Example Relay Program"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:65
+msgid ""
+"First of all, we create a simple Relay program for the tutorial. This "
+"program will be used by various optimizations of the examples in this "
+"tutorial. Similarly, users can write a tir primitive function and apply "
+"the tir passes."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:100
+msgid ""
+"Let us register layout alteration for a conv2d op so that we can apply "
+"the layout alteration pass on the example. How alter layout pass works is"
+" out the scope of this tutorial."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:128
+msgid "Optimize the Program"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:129
+msgid ""
+"Now we would like to optimize the program. Relay features a host of "
+"optimizations. We will select some of them to apply on this example "
+"program."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:132
+msgid ""
+"There are multiple ways to optimize a Relay program. Below we will "
+"provide examples for each of them."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:136
+msgid "Manually Apply Optimization Passes"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:165
+#: ../../tutorials/dev/use_pass_infra.rst:200
+#: ../../tutorials/dev/use_pass_infra.rst:238
+#: ../../tutorials/dev/use_pass_infra.rst:313
+#: ../../tutorials/dev/use_pass_infra.rst:358
+#: ../../tutorials/dev/use_pass_infra.rst:402
+#: ../../tutorials/dev/use_pass_infra.rst:449
+#: ../../tutorials/dev/use_pass_infra.rst:533
+#: ../../tutorials/dev/use_pass_infra.rst:613
+msgid "Out:"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:184
+msgid ""
+"More optimizations can be applied in the similar manner. For instance, we"
+" can eliminate the common expressions that used by `z` and `z1`."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:218
+msgid ""
+"Some optimizations, such as fusion, are parameteric as well. For example,"
+" opt level 0 will not allow operators to be fused together. Users can "
+"pass the `fuse_opt_level` to enable this."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:269
+msgid "Use Sequential to Apply a Sequence of Passes"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:270
+msgid ""
+"Applying passes as above is actually tedious and it may require users to "
+"have better understanding about the dependencies between them. For "
+"example, fusion currently doesn't work well on let bindings. Therefore, "
+"we would not be able to fuse operators that were fusable if "
+":py:func:`relay.transform.ToANormalForm` is applied before fusion, as "
+"this pass generates let bindings for each expression to canonicalize a "
+"Relay program."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:277
+msgid ""
+"Relay, hence, provides :py:class:`tvm.transform.Sequential` to alleviate "
+"developers from handling these issues explicitly by specifying the "
+"required passes of each pass and packing them as a whole to execute. For "
+"example, the same passes can now be applied using the sequential style as"
+" the following. :py:class:`tvm.transform.Sequential` is similiar to "
+"`torch.nn.sequential "
+"<https://pytorch.org/docs/stable/nn.html#torch.nn.Sequential>`_ and "
+"`mxnet.gluon.block "
+"<https://mxnet.apache.org/api/python/docs/_modules/mxnet/gluon/block.html>`_."
+" For example, `torch.nn.sequential` is used to contain a sequence of "
+"PyTorch `Modules` that will be added to build a network. It focuses on "
+"the network layers. Instead, the :py:class:`tvm.transform.Sequential` in "
+"our pass infra works on the optimizing pass."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:335
+msgid ""
+"From the transformed Relay program, we can see that there are still two "
+"identical addition operations. This is because ``EliminateCommonSubexpr``"
+" was not actually performed. The reason is because only the passes that "
+"have optimization level less or equal to 2 will be executed by default "
+"under :py:class:`tvm.transform.Sequential`. The pass infra, however, "
+"provides a configuration interface for users to customize the "
+"optimization level that they want to execute."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:379
+msgid "Now we can see that only one of the two identical additions is kept."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:381
+msgid ""
+"In addition, users can selectively disable some passes using the "
+"`disabled_pass` config, which is similar to the `-fno-xxx` option used "
+"the general purpose compilers, such as Clang and GCC. For example, we can"
+" disable EliminateCommonSubexpr as following. The printed module will "
+"again show two identical addition operations."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:424
+msgid ""
+"The passes applied so far are target independent. The pass infra also "
+"provides a means to make pass target-aware. For example, the layout "
+"alteration pass falls in such category."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:486
+msgid "Implement a Pass Using Python Decorator"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:487
+msgid ""
+"The next example illustrates how we can orchestrate a customized "
+"optimization pipeline through the pass infra using Python decorators. "
+"This functionality greatly eases the implementation of passes. For "
+"example, users can simply define a decorated class to do function-level "
+"optimizations as the following example shows. `transform_function` wraps "
+"a class to replace all constants with a multiple of `c`. Later on, each "
+"function in a given module will be visited and each constant in the "
+"function will be replaced when we invoke the customized pass."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:557
+msgid "Debug a Pass"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:558
+msgid ""
+"TVM provides users a plug-and-play style debugging pass that print the IR"
+" after a certain pass is done through a special pass (``PrintIR``) to "
+"dump the IR of the whole module. A slightly modified version of the "
+"sequential pass example could be like the following to enable IR dumping "
+"for ``FoldConstant`` optimization."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:898
+msgid "Summary"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:899
+msgid ""
+"This tutorial has covered how we can write and invoke passes in TVM more "
+"conveniently using the pass infra. Different ways of invoking a pass are "
+"also disucssed. Using :py:class:`tvm.transform.Sequential` can largely "
+"help users to ease the work of handling multiple optimization passes and "
+"their dependencies. In addition, an example is provided to illustrate how"
+" we can debug a pass using the ``PrintIR`` and tracing."
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:919
+msgid ""
+":download:`Download Python source code: use_pass_infra.py "
+"<use_pass_infra.py>`"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:925
+msgid ""
+":download:`Download Jupyter notebook: use_pass_infra.ipynb "
+"<use_pass_infra.ipynb>`"
+msgstr ""
+
+#: ../../tutorials/dev/use_pass_infra.rst:932
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

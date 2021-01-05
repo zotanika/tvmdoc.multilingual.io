@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../tutorials/frontend/sg_execution_times.rst:7
+msgid "Computation times"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:8
+msgid "**05:10.359** total execution time for **tutorials_frontend** files:"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:11
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_deploy_object_detection_pytorch.py` "
+"(``deploy_object_detection_pytorch.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:11
+msgid "01:19.207"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:11
+#: ../../tutorials/frontend/sg_execution_times.rst:13
+#: ../../tutorials/frontend/sg_execution_times.rst:15
+#: ../../tutorials/frontend/sg_execution_times.rst:17
+#: ../../tutorials/frontend/sg_execution_times.rst:19
+#: ../../tutorials/frontend/sg_execution_times.rst:21
+#: ../../tutorials/frontend/sg_execution_times.rst:23
+#: ../../tutorials/frontend/sg_execution_times.rst:25
+#: ../../tutorials/frontend/sg_execution_times.rst:27
+#: ../../tutorials/frontend/sg_execution_times.rst:29
+#: ../../tutorials/frontend/sg_execution_times.rst:31
+#: ../../tutorials/frontend/sg_execution_times.rst:33
+#: ../../tutorials/frontend/sg_execution_times.rst:35
+#: ../../tutorials/frontend/sg_execution_times.rst:37
+#: ../../tutorials/frontend/sg_execution_times.rst:39
+#: ../../tutorials/frontend/sg_execution_times.rst:41
+#: ../../tutorials/frontend/sg_execution_times.rst:43
+#: ../../tutorials/frontend/sg_execution_times.rst:45
+#: ../../tutorials/frontend/sg_execution_times.rst:47
+msgid "0.0 MB"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:13
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_deploy_prequantized_tflite.py` "
+"(``deploy_prequantized_tflite.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:13
+msgid "00:55.609"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:15
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_deploy_prequantized.py` "
+"(``deploy_prequantized.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:15
+msgid "00:29.724"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:17
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_deploy_ssd_gluoncv.py` "
+"(``deploy_ssd_gluoncv.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:17
+msgid "00:27.923"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:19
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_deploy_quantized.py` "
+"(``deploy_quantized.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:19
+msgid "00:22.705"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:21
+msgid ":ref:`sphx_glr_tutorials_frontend_from_darknet.py` (``from_darknet.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:21
+msgid "00:18.986"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:23
+msgid ":ref:`sphx_glr_tutorials_frontend_from_tflite.py` (``from_tflite.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:23
+msgid "00:14.317"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:25
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_deploy_model_on_rasp.py` "
+"(``deploy_model_on_rasp.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:25
+msgid "00:10.946"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:27
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_deploy_model_on_android.py` "
+"(``deploy_model_on_android.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:27
+msgid "00:10.902"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:29
+msgid ":ref:`sphx_glr_tutorials_frontend_from_pytorch.py` (``from_pytorch.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:29
+msgid "00:09.985"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:31
+msgid ":ref:`sphx_glr_tutorials_frontend_from_coreml.py` (``from_coreml.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:31
+msgid "00:08.574"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:33
+msgid ":ref:`sphx_glr_tutorials_frontend_from_mxnet.py` (``from_mxnet.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:33
+msgid "00:07.193"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:35
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_from_tensorflow.py` "
+"(``from_tensorflow.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:35
+msgid "00:05.837"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:37
+msgid ":ref:`sphx_glr_tutorials_frontend_from_keras.py` (``from_keras.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:37
+msgid "00:04.620"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:39
+msgid ":ref:`sphx_glr_tutorials_frontend_from_onnx.py` (``from_onnx.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:39
+msgid "00:01.281"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:41
+msgid ":ref:`sphx_glr_tutorials_frontend_build_gcn.py` (``build_gcn.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:41
+msgid "00:01.078"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:43
+msgid ":ref:`sphx_glr_tutorials_frontend_from_caffe2.py` (``from_caffe2.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:43
+msgid "00:00.983"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:45
+msgid ""
+":ref:`sphx_glr_tutorials_frontend_using_external_lib.py` "
+"(``using_external_lib.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:45
+msgid "00:00.486"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:47
+msgid ":ref:`sphx_glr_tutorials_frontend_deploy_sparse.py` (``deploy_sparse.py``)"
+msgstr ""
+
+#: ../../tutorials/frontend/sg_execution_times.rst:47
+msgid "00:00.004"
+msgstr ""
+
