@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../faq.rst:20
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "常见问题"
 
 #: ../../faq.rst:24
 msgid "How to Install"

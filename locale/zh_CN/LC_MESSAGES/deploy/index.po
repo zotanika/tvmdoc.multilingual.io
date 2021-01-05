@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../deploy/index.rst:21
 msgid "Deploy and Integration"
-msgstr ""
+msgstr "部署与集成"
 
 #: ../../deploy/index.rst:23
 msgid ""

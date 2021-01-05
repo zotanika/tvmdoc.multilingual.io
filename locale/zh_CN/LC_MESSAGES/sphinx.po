@@ -38,12 +38,12 @@ msgstr ""
 
 #: ../../../../venv/lib/python3.7/site-packages/tlcpack_sphinx_addon/_templates/breadcrumbs.html:84
 #: ../../../../venv/lib/python3.7/site-packages/tlcpack_sphinx_addon/_templates/footer.html:7
-msgid "Next"
+msgid "下一页"
 msgstr ""
 
 #: ../../../../venv/lib/python3.7/site-packages/tlcpack_sphinx_addon/_templates/breadcrumbs.html:87
 #: ../../../../venv/lib/python3.7/site-packages/tlcpack_sphinx_addon/_templates/footer.html:10
-msgid "Previous"
+msgid "上一页"
 msgstr ""
 
 #: ../../../../venv/lib/python3.7/site-packages/tlcpack_sphinx_addon/_templates/layout.html:87

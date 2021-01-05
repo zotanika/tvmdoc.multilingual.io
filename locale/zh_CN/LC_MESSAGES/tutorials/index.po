@@ -203,7 +203,7 @@ msgstr ""
 
 #: ../../tutorials/index.rst:944
 msgid "AutoScheduler : Template-free Auto Scheduling"
-msgstr ""
+msgstr "AutoScheduler：无 Template 的自动 Scheduling"
 
 #: ../../tutorials/index.rst:957
 msgid ":ref:`sphx_glr_tutorials_auto_scheduler_tune_matmul_x86.py`"
@@ -227,7 +227,7 @@ msgstr ""
 
 #: ../../tutorials/index.rst:1061
 msgid "Developer Tutorials"
-msgstr ""
+msgstr "开发者指南"
 
 #: ../../tutorials/index.rst:1075
 msgid ":ref:`sphx_glr_tutorials_dev_low_level_custom_pass.py`"
@@ -243,7 +243,7 @@ msgstr ""
 
 #: ../../tutorials/index.rst:1137
 msgid "TOPI: TVM Operator Inventory"
-msgstr ""
+msgstr "TOPI：TVM Operator 目录"
 
 #: ../../tutorials/index.rst:1150
 msgid ":ref:`sphx_glr_tutorials_topi_intro_topi.py`"

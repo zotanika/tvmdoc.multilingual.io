@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../install/index.rst:21
 msgid "Installation"
-msgstr ""
+msgstr "安装"
 
 #: ../../install/index.rst:22
 msgid ""
@@ -29,4 +29,8 @@ msgid ""
 "runtime, please read :ref:`deploy-and-integration`. If you would like to "
 "quickly try out TVM or do demo/tutorials, checkout :ref:`docker-images`"
 msgstr ""
+"请参考 :ref:`install-from-source` 进行安装。如果您仅对将模型部署到移动/嵌入式设备中，"
+"您并不需要安将整个 TVM 安装到您的设备上，您只需要按照 :ref:`deploy-and-integration` 中的内容"
+"来安装运行时即可。如果您仅仅打算快速试一试 TVM，可以使用 Docker :ref:`docker-images`"
+""
 

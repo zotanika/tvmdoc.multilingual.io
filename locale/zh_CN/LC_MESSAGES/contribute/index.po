@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../contribute/index.rst:19
 msgid "Contribute to TVM"
-msgstr ""
+msgstr "参与 TVM 开发"
 
 #: ../../contribute/index.rst:21
 msgid ""

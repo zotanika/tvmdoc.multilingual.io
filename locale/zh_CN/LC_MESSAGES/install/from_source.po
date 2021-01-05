@@ -32,27 +32,30 @@ msgstr ""
 msgid ""
 "First build the shared library from the C++ codes (`libtvm.so` for linux,"
 " `libtvm.dylib` for macOS and `libtvm.dll` for windows)."
-msgstr ""
+msgstr "首先您需要从 C++ 代码构建动态链接库（Linux 上的 `libtvm.so`, MacOS 上的 `libtvm.dylib` "
+"以及 Windows 上的 `libtvm.dll`"
 
 #: ../../install/from_source.rst:26
 msgid "Setup for the language packages (e.g. Python Package)."
-msgstr ""
+msgstr "设置库（例如 Python Package）"
 
 #: ../../install/from_source.rst:28
 msgid ""
 "To get started, download tvm source code from the `Download Page "
 "<https://tvm.apache.org/download>`_."
 msgstr ""
+"请首先从 https://tvm.apache.org/download "
+"获取 TVM 源代码"
 
 #: ../../install/from_source.rst:31
 msgid "Developers: Get Source from Github"
-msgstr ""
+msgstr "开发者：从 Github 获取源代码"
 
 #: ../../install/from_source.rst:32
 msgid ""
 "You can also choose to clone the source repo from github. It is important"
 " to clone the submodules along, with ``--recursive`` option."
-msgstr ""
+msgstr "您也可以从 Github 上获取源代码。请您一定注意需要使用 ``--recursive`` 把所有的子模块也克隆下来！"
 
 #: ../../install/from_source.rst:39
 msgid ""

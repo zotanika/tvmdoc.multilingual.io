@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../dev/index.rst:19
 msgid "Design and Architecture"
-msgstr ""
+msgstr "设计与架构"
 
 #: ../../dev/index.rst:21
 msgid ""

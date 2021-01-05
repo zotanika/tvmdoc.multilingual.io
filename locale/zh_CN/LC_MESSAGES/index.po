@@ -48,37 +48,37 @@ msgid ""
 "productivity-focused deep learning frameworks, and the performance- or "
 "efficiency-oriented hardware backends."
 msgstr ""
-"TVM 是一个为 CPUs，GPUs 以及各类加速器而生的深度学习编译栈"
-"TVM 致力于缩短从深度学习框架和各类硬件后端之间的距离"
+"TVM 是一个为 CPUs，GPUs 以及各类加速器而生的深度学习编译栈。"
+"TVM 致力于缩短从深度学习框架和各类硬件后端之间的距离。"
 ""
 
 #: ../../index.rst:25
 msgid "Get Started"
-msgstr ""
+msgstr "开始"
 
 #: ../../index.rst:27
 msgid "Follow the :doc:`instructions <install/index>` to install TVM."
-msgstr ""
+msgstr "根据 :doc:`instructions <install/index>` 安装 TVM"
 
 #: ../../index.rst:28
 msgid "Checkout the :doc:`tutorials <tutorials/index>`."
-msgstr ""
+msgstr "查看教程 :doc:`tutorials <tutorials/index>`"
 
 #: ../../index.rst:31
 msgid "For Developers"
-msgstr ""
+msgstr "开发者频道"
 
 #: ../../index.rst:33
 msgid ""
 ":doc:`dev/index` is useful for developers who want to understand the "
 "architecture of TVM and/or actively develop on the project."
-msgstr ""
+msgstr ":doc:`dev/index` 对于希望理解 TVM 架构并参与本项目的开发者很有帮助"
 
 #: ../../index.rst:35
 msgid ":doc:`dev/how_to` gives quick development tips on various topics."
-msgstr ""
+msgstr ":doc:`dev/how_to` 包含一系列开发指南"
 
 #: ../../index.rst:82
 msgid "Index"
-msgstr ""
+msgstr "索引"
 

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../vta/index.rst:21
 msgid "VTA: Deep Learning Accelerator Stack"
-msgstr ""
+msgstr "VTA：深度学习加速栈"
 
 #: ../../vta/index.rst:23
 msgid ""
