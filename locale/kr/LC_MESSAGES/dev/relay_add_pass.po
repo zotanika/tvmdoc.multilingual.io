@@ -31,8 +31,8 @@ msgid ""
 "nothing more than \"standard\" compiler passes."
 msgstr ""
 "컴파일러 패스는 Relay의 기능 추가와 Relay 프로그램 상의 최적화를 수행하기 위한 "
-"주요 인터페이스입니다. 컴파일러 패스를 작성함으로써 목적에 따라서는 AST 혹은 AST에 "
-"관한 수집 정보도 변경할 수 있습니다. 사실, Relay의 가장 중요한 몇몇 빌트인 기능 "
+"주요 인터페이스입니다. 컴파일러 패스를 작성함으로써 목적에 따라서는 AST를 변경하거나 "
+"AST에 대한 정보를 수집할 수 있습니다. 사실, Relay의 가장 중요한 몇몇 빌트인 기능 "
 "(e.g., 자동비교와 타입 추론)들조차도 \"표준\" 컴파일러 패스의 중요도엔 미치지 못합니다. "
 
 #: ../../dev/relay_add_pass.rst:30
@@ -41,15 +41,15 @@ msgstr "고수준에서, 패스를 작성하기 위한 두 가지 중요 요소�
 
 #: ../../dev/relay_add_pass.rst:32
 msgid "Creating one or more C++ classes that traverse the program"
-msgstr "프로그램 전체를 가로지르는 하나 이상의 C++ 클래스 만들기"
+msgstr "프로그램 전체를 순회하는 하나 이상의 C++ 클래스를 만들 것."
 
 #: ../../dev/relay_add_pass.rst:33
 msgid ""
 "Wrapping the traversal implementation and its metadata in the pass "
 "manager API so it can neatly interface with the :ref:`pass-infra`"
 msgstr ""
-"가로지르기 구현과 그에 상응하는 패스 매니저 API 내의 메타데이터를 함께 래핑해서 "
-":ref:`pass-infra` 와 깔끔하게 인터페이스되도록 하기"
+"순회 구현체와 그에 상응하는 패스 매니저 API 내의 메타데이터를 함께 포장하여 "
+":ref:`pass-infra` 와 정합적으로 인터페이스되도록 할 것."
 
 #: ../../dev/relay_add_pass.rst:35
 msgid ""
@@ -57,13 +57,12 @@ msgid ""
 "compiler pass. Then, we'll walk through a concrete example of the "
 "constant-folding pass in Relay."
 msgstr ""
-"To begin, we'll give an overview of the key mechanisms for writing a "
-"compiler pass. Then, we'll walk through a concrete example of the "
-"constant-folding pass in Relay."
+"시작하기에 앞서, 컴파일러 패스를 작성하기 위한 핵심 메커니즘에 대한 개요를 살펴볼 것입니다. "
+"그 후, Relay 내의 상수 폴딩을 구체적인 예제로 삼아 차근 차근 짚어 나가겠습니다. "
 
 #: ../../dev/relay_add_pass.rst:40
 msgid "AST Traversers"
-msgstr ""
+msgstr "AST 순회자"
 
 #: ../../dev/relay_add_pass.rst:42
 msgid ""
@@ -74,6 +73,10 @@ msgid ""
 " overriding implementations of ``VisitExpr_`` for each type of "
 "expression."
 msgstr ""
+"Relay 프로그램을 순회하기 위해 사용되는 베이스 클래스는 ``ExprFunctor`` 입니다. "
+"이 클래스가 제공하는 공개 인터페이스는 ``VisitExpr`` 메서드로, 표현식과 추가적인 인자(생략 가능)를 받아 "
+"특정 타입의 인스턴스를 반환합니다. "
+"이 클래스를 확장하려면, 각 타입의 표현식에 대한 ``VisitExpr_`` 구현을 오버라이딩함으로써 AST 순회 패턴을 정의해야 합니다. "
 
 #: ../../dev/relay_add_pass.rst:48
 msgid ""
@@ -88,6 +91,13 @@ msgid ""
 "define a ``PrintVisitor`` traverser that printed \"Here\" before every "
 "visit, we could override ``VisitExpr``:"
 msgstr ""
+"``VisitExpr`` 과 ``VisitExpr_`` 과의 관계는 아주 밀접합니다. "
+"각각의 ``VisitExpr_`` 정의는 특정한 타입의 표현식을 다루지만, 어떤 타입의 노드에 방문할 것인지 언제나 알 수 있는 것은 아닙니다. "
+"이 문제를 처리하기 위해 ``ExprFunctor`` 가 제공하는 것이 ``VisitExpr`` 함수로, 주어진 표현식을 "
+"그것을 다룰 줄 아는 적절한 ``VisitExpr_`` 로 라우팅합니다. "
+"C++이 이미 동적 디스패치를 제공함에도 불구하고, ``ExprFunctor`` 은 ``VisitExpr`` 이 사용하는 자체 vtable을 내장하도록 정의됩니다. "
+"이를 통해 디스패치 동작에 있어서 더 많은 제어권을 갖게 됩니다. 예를 들어, 매 방문 전에 \"Here\" 라고 프린트하는 "
+"``PrintVisitor`` 라는 순회자를 정의하고 싶다면, ``VisitExpr`` 를 다음과 같이 오버라이드할 수 있습니다: "
 
 #: ../../dev/relay_add_pass.rst:66
 msgid ""
@@ -100,10 +110,16 @@ msgid ""
 "different behavior. We describe each subclass on its own in the following"
 " sections."
 msgstr ""
+"``ExprFunctor`` 자체는 매우 추상화된 클래스이기 때문에, 이를 직접 활용하기보다는 ``ExprVisitor`` 나 "
+"``ExprMutator`` 를 확장하는 경우가 빈번할 것입니다. 이들 클래스들이 ``ExprFunctor`` 를 확장하여 "
+"각 표현식 타입들에 대한 공통적인 순회 패턴을 다루는 ``VisitExpr_`` 의 기본적인 구현을 제공하게 됩니다. "
+"기본 구현들을 보유하고 있다는 것은, 즉, 어떤 표현식 타입에 대해 다른 동작을 하길 원할 때엔 그 경우만 오버라이딩하여 "
+"다루도록 구현하기만 하면 된다는 뜻입니다. "
+"내장된 서브클래스에 대해서는 다음 섹션에서 서술하겠습니다. "
 
 #: ../../dev/relay_add_pass.rst:75
 msgid "Expression Visitors"
-msgstr ""
+msgstr "표현식 방문자"
 
 #: ../../dev/relay_add_pass.rst:77
 msgid ""
@@ -114,12 +130,18 @@ msgid ""
 " the expression's fields that are expressions. The default implementation"
 " for ``IfNode`` is shown below."
 msgstr ""
+"``ExprVisitor`` 는 프로그램을 변경하지 않는 대신 프로그램 분석을 시행하고 정보를 모으는 패스들을 위한 것입니다. "
+"이 클래스에서는 ``VisitExpr`` 와 그에 내부적으로 대응하는 함수들이 아무것도 반환하지 않습니다. "
+"이 클래스에 의해 제공되는 ``VisitExpr_`` 구현들은 간단히 표현식에 속한 표현식 필드들을 모두 방문합니다. "
+"``IfNode`` 에 대한 기본 구현체는 아래와 같습니다. "
 
 #: ../../dev/relay_add_pass.rst:92
 msgid ""
 "Note that we're calling ``VisitExpr`` and not ``VisitExpr_`` here, so we "
 "can use the vtable in ``ExprFunctor`` for routing."
 msgstr ""
+"여기서 ``VisitExpr_`` 가 아닌 ``VisitExpr`` 을 호출한다는 점에 유의하세요. "
+"따라서 우리는 경로 추적을 위해 ``ExprFunctor`` 의 vtable을 사용할 수 있습니다. "
 
 #: ../../dev/relay_add_pass.rst:95
 msgid ""
@@ -127,6 +149,8 @@ msgid ""
 "function calls appear in the program, we would only need to extend "
 "``ExprVisitor`` and define the following ``VisitExpr_`` method:"
 msgstr ""
+"만일, 프로그램 내에서 함수 호출이 있는지 확인하는 클래스 ``CallChecker`` 를 작성하고자 한다면, "
+"``ExprVisitor`` 를 확장해서 다음과 같이 ``VisitExpr_`` 메서드를 정의하기만 하면 됩니다:"
 
 #: ../../dev/relay_add_pass.rst:105
 msgid ""
@@ -135,6 +159,9 @@ msgid ""
 " true and we now know the original expression contains a call. To make "
 "this visitor usable, we would provide the following public method:"
 msgstr ""
+"여기서 ``result_`` 는 필드입니다. 이 경우에, ``CallNode`` 의 필드 상에서 더 이상의 재귀는 불필요합니다. "
+"``result_`` 가 이미 참이고 이제 원래의 표현식에 호출이 포함된다는 것을 알기 때문입니다. "
+"이 방문자가 사용될 수 있도록 하려면, 다음과 같은 공개 메서드를 제공해야 할 겁니다: "
 
 #: ../../dev/relay_add_pass.rst:118
 msgid ""
@@ -144,10 +171,14 @@ msgid ""
 "that creates a ``CallChecker`` instance and calls ``Check`` on it, but "
 "the takeaway is that we've achieved our goal with very little effort."
 msgstr ""
+"이것으로 필요한 것은 다 갖춰졌습니다. 이는 최상위 계층에서 재귀를 개시하기 전에 몇몇 북키핑을 "
+"수행시키고자 하는 공개 인터페이스를 정의할 때의 아주 흔한 과정입니다. "
+"물론 ``CallChecker`` 인스턴스를 생성하고 그에 대해 ``Check`` 를 호출하는 독립적인 프로시져를 "
+"만들어 API를 포장할 수도 있겠으나, 중요한 것은 아주 적은 노력으로 우리 목표를 달성했다는 점입니다. "
 
 #: ../../dev/relay_add_pass.rst:125
 msgid "Expression Mutators"
-msgstr ""
+msgstr "표현식 변이자"
 
 #: ../../dev/relay_add_pass.rst:127
 msgid ""
@@ -158,6 +189,10 @@ msgid ""
 "the fields to be the result of visiting them. The default implementation "
 "for ``TupleGetItemNode`` is shown below."
 msgstr ""
+"``ExprMutator`` 는 패스들로 하여금 어떤 방식으로든 프로그램을 변형시킵니다. "
+"이 클래스에서 ``VisitExpr`` 와 그에 내부적으로 대응하는 함수들이 ``Expr`` 를 반환합니다. "
+"이 클래스에 의해 제공되는 ``VisitExpr`` 기본 구현은 표현식에 속한 표현식 필드들을 모두 방문하고 "
+"해당 필드들을 방문의 결과물로 교체합니다. ``TupleGetItemNode`` 에 대한 기본 구현체는 아래와 같습니다. "
 
 #: ../../dev/relay_add_pass.rst:145
 msgid ""
@@ -167,6 +202,10 @@ msgid ""
 "update is called a functional update and doing so avoids unnecessary "
 "allocations."
 msgstr ""
+"염두에 둬야 할 점들이 몇 개 있습니다. 첫번째, ``Mutate`` 는 ``ExprMutator`` 내의 "
+"``VisitExpr`` 에 대한 별칭입니다. 두번째, ``Mutate`` 로의 호출이 ``tuple`` 필드를 "
+"변경할 때에만 새로운 노드를 반환합니다. "
+"이 업데이트 방법을 함수적 업데이트(functional update)라고 부르며, 불필요한 할당을 억제하도록 작동합니다. "
 
 #: ../../dev/relay_add_pass.rst:150
 msgid ""
@@ -178,6 +217,10 @@ msgid ""
 "results in a subclass of ``ExprVisitor``, we need to define the cache "
 "ourselves."
 msgstr ""
+"``ExprMutator`` 에는 있지만 ``ExprVisitor`` 에는 없는 한 가지 기능은 결과값을 캐싱하기 위한 "
+"빌트인 ``memo_`` 필드입니다. ``ExprMutator`` 가 메모이저를 보유하는 것은, 우리가 어떤 타입의 결과값을 "
+"캐싱할지(i.e., ``Expr``) 알기 때문에 타당합니다. 반면에 ``ExprVisitor`` 의 방문 메서드는 아무 것도 "
+"반환하지 않죠. 통상, ``ExprVisitor`` 의 서브클래스 내에서 결과값을 캐싱하고자 할 때에는 스스로 직접 캐시를 정의해야 합니다. "
 
 #: ../../dev/relay_add_pass.rst:157
 msgid ""
@@ -185,6 +228,8 @@ msgid ""
 " statement with its true branch, we would override ``VisitExpr_`` for "
 "``IfNode``:"
 msgstr ""
+"만일, 모든 if 구문을 참-가지(true branch)로 교체하는 클래스 ``IfCollapser`` 를 작성하고자 한다면, "
+"``IfNode`` 에 대해 ``VisitExpr_`` 를 오버라이드해야 합니다: "
 
 #: ../../dev/relay_add_pass.rst:167
 msgid ""
@@ -192,6 +237,8 @@ msgid ""
 "and this is fine, because the return type is ``Expr``. Now, we create the"
 " public interface:"
 msgstr ""
+"반환된 표현식은 반드시 ``IfNode`` 는 아닐 수 있다는 것에 유의하세요. 반환 타입은 ``Expr`` 이어야 하므로, "
+"이는 전혀 문제가 아닙니다. 이제 공개 인터페이스를 생성하겠습니다: "
 
 #: ../../dev/relay_add_pass.rst:177
 msgid ""
@@ -199,10 +246,12 @@ msgid ""
 "want to follow the convention of having a descriptive method as the "
 "interface."
 msgstr ""
+"이 변이자에서는 어떤 북키핑도 필요 없었습니다. 하지만 우리는 여전히 인터페이스로서 서술적 메서드를 "
+"갖는 규약에 따르고자 합니다. "
 
 #: ../../dev/relay_add_pass.rst:181
 msgid "Example: Constant Folding"
-msgstr ""
+msgstr "예제: 상수 폴딩"
 
 #: ../../dev/relay_add_pass.rst:183
 msgid ""
@@ -211,6 +260,8 @@ msgid ""
 "`src/relay/transforms/fold_constant.cc`_) as a guide, because it is a "
 "relatively simple pass that incorporates both types of traversals."
 msgstr ""
+"패스를 작성하는 과정을 더 잘 이해하기 위해, 두 타입의 순회들이 상호 작용하는 비교적 간단한 패스인 "
+"상수 폴딩 패스를 시범적으로 살펴보도록 하겠습니다(`src/relay/transforms/fold_constant.cc` 참조). "
 
 #: ../../dev/relay_add_pass.rst:188
 msgid ""
@@ -221,10 +272,13 @@ msgid ""
 "makes use of a visitor (``ConstantChecker``) and a mutator "
 "(``ConstantFolder``)."
 msgstr ""
+"상수 폴딩은 프로그램 내의 표현식들이 **오직** 상수값들하고만 관련되어 있는지를 평가하고, 표현식들을 평가한 결과물로 교체합니다. "
+"이 패스의 목적은 미리 계산할 수 있는 것들은 모두 앞당겨 해두는 것입니다. 이를 위해, 상수 폴딩 패스는 방문자 (``ConstantChecker``) "
+"와 변이자 (``ConstantFolder``) 를 이용합니다. "
 
 #: ../../dev/relay_add_pass.rst:195
 msgid "The ``ConstantChecker`` Visitor"
-msgstr ""
+msgstr "``ConstantChecker`` 방문자"
 
 #: ../../dev/relay_add_pass.rst:197
 msgid ""
@@ -232,6 +286,8 @@ msgid ""
 "define an expression to be constant if it is a ``ConstantNode`` or it is "
 "a ``TupleNode`` with only constant fields."
 msgstr ""
+"이 방문자는 어떤 표현식이 불변량인지의 여부를 확인하기 위해 사용됩니다. Relay에서는, 어떤 표현식이 ``ConstantNode`` 이거나 "
+"상수 필드로만 이루어진 ``TupleNode`` 이라면 불변량, 즉 상수로 정의합니다. "
 
 #: ../../dev/relay_add_pass.rst:201
 msgid ""
@@ -239,12 +295,15 @@ msgid ""
 "and to cache these results. Below are the ``VisitExpr_`` definitions in "
 "the ``ConstantChecker``."
 msgstr ""
+"``memo_`` 필드는 어떤 노드를 그 노드가 상수인지의 여부에 대응시키고 결과를 캐싱해 두기 위해 사용됩니다. "
+"아래는 ``ConstantChecker`` 내에서의 ``VisitExpr_`` 정의입니다."
 
 #: ../../dev/relay_add_pass.rst:222
 msgid ""
 "The bookkeeping used to coordinate these definitions is a ``Check`` "
 "method that returns whether the given expression is considered constant."
 msgstr ""
+"이들 정의를 조율하기 위해 사용되는 북키핑 기능의 구현체가 ``Check`` 메서드로, 주어진 표현식을 불변으로 볼 수 있는지의 여부를 반환합니다. "
 
 #: ../../dev/relay_add_pass.rst:235
 msgid ""
@@ -253,10 +312,12 @@ msgid ""
 " Then we rely on the default value being false when ``memo_`` doesn't "
 "contain ``expr``."
 msgstr ""
+"마주친 모든 노드에 대해 ``memo_`` 를 변경하지는 않으며, 오직 그 노드가 잠정적으로 불변일 때에만 ``memo_`` 를 변경합니다. "
+"그러므로 ``memo_`` 가 ``expr`` 에 대한 내용을 수록하고 있지 않을 때에는 기본값을 거짓으로 간주할 수 있습니다. "
 
 #: ../../dev/relay_add_pass.rst:241
 msgid "The ``ConstantFolder`` Mutator"
-msgstr ""
+msgstr "``ConstantFolder`` 변이자"
 
 #: ../../dev/relay_add_pass.rst:243
 msgid ""
@@ -266,6 +327,9 @@ msgid ""
 "``TupleItemGetNode``, and ``CallNode``. In the following paragraphs, we "
 "explain the roles of each in the pass."
 msgstr ""
+"이 변이자는 상수 폴딩 패스 뭉치를 수행하고 내부적으로 ``ConstantChecker`` 를 활용합니다. "
+"Relay에서는 상수 폴딩과 관련된 세가지 타입의 노드가 있습니다: ``LetNode``, "
+"``TupleItemGetNode``, 그리고 ``CallNode``. 이어지는 단락에서 각각의 역할에 대해 설명하겠습니다."
 
 #: ../../dev/relay_add_pass.rst:269
 msgid ""
@@ -275,6 +339,10 @@ msgid ""
 "value to its use sites in the body. If we can't const-fold the bound "
 "value, we mimic the default implementation."
 msgstr ""
+"``LetNode`` 의 경우, 표현식에 구속된 값들에 대해 상수-폴드를 먼저 시도해 봅니다. "
+"그게 가능하다면, ``memo_`` 에 덧쓰기 하고, 몸체 방문 결과를 반환하는데---이는 필연적으로 "
+"구속 값들을 몸체 내의 사용처로 모두 전파하게 됩니다. 만일 구속된 값들을 상수-폴드할 수 없다면, "
+"기본 구현을 모방합니다. "
 
 #: ../../dev/relay_add_pass.rst:287
 msgid ""
@@ -283,6 +351,9 @@ msgid ""
 "tuple pointed to by ``op->index``. The reason we need to check is because"
 " ``op->tuple`` might evaluate to a tuple, without itself being a tuple."
 msgstr ""
+"``TupleItemGetNode`` 의 경우, ``op->tuple`` 필드가 ``TupleNode`` 인지를 확인합니다. "
+"만일 그렇다면, 퓨플을 ``op->index`` 가 가리키는 튜플의 필드로 교체합니다. "
+"확인이 필요한 이유는 ``op->tuple`` 이 튜플을 평가할 뿐 스스로는 튜플이 아닐 수도 있기 때문입니다. "
 
 #: ../../dev/relay_add_pass.rst:319
 msgid ""
@@ -296,6 +367,13 @@ msgid ""
 " a helper method ``ValueToExpr`` to allow us to place the evaluated "
 "expression back into the AST."
 msgstr ""
+"``CallNode`` 의 경우, 먼저 호출을 방문하기 위해 ``ExprMutator`` 의 ``VisitExpr_`` 를 "
+"사용하는데, 이는 호출에 연관된 모든 필드를 상수-폴드합니다. "
+"``VisitExpr`` 대신 ``ExprMutator::VisitExpr_`` 를 사용하는 이유는 vtable을 우회하기 "
+"싶어서이고(무한 루프 회피를 위해) ``ExprMutator`` 에 의해 제공되는 기본 구현을 활용하기 위함입니다. "
+"그 다음 모든 인자가 상수( ``ConstantChecker`` 를 이용해)인지 여부로 호출을 평가합니다. "
+"호출의 평가는 하나의 **값** 으로 산출되고, 헬퍼 메서드 ``ValueToExpr`` 를 이용해 평가된 표현식을 "
+"AST로 되돌려 보냅니다. "
 
 #: ../../dev/relay_add_pass.rst:328
 msgid ""
@@ -305,22 +383,27 @@ msgid ""
 " and uses a ``ConstantFolder`` instance (the full definition can be found"
 " in `src/relay/transforms/fold_constant.cc`_)."
 msgstr ""
+"이제, 우리의 상수 폴딩 기능을 위해 보다 편리한 인터페이스인 ``FoldConstant`` 를 구축해 보겠습니다. "
+"``FoldConstant`` 는 ``ConstantFolder`` 클래스와 독립된 함수로, 표현식을 취하고 내부적으로 "
+"``ConstantFolder`` 인스턴스를 생성 및 활용합니다(완벽한 정의는 `src/relay/transforms/fold_constant.cc`_ 에서 찾아볼 수 있습니다). "
 
 #: ../../dev/relay_add_pass.rst:336
 msgid "Registering a Pass with the Pass Manager"
-msgstr ""
+msgstr "패스 매니저로 패스 등록하기"
 
 #: ../../dev/relay_add_pass.rst:338
 msgid ""
 "*Note: please see the documentation on the :ref:`pass-infra` for more "
 "specific detail on this subject.*"
 msgstr ""
+"*알림: 본 주제와 관련된 더 자세한 내용은 :ref:`pass-infra` 의 문서를 참고하세요.*"
 
 #: ../../dev/relay_add_pass.rst:340
 msgid ""
 "With the AST traversers written, the pass can be registered to become a "
 "TVM API endpoint with the following code:"
 msgstr ""
+"AST 순회자가 작성되었다면, 이 패스가 TVM API에 직결되도록 다음과 같은 코드로 등록될 수 있습니다: "
 
 #: ../../dev/relay_add_pass.rst:357
 msgid ""
@@ -330,6 +413,9 @@ msgid ""
 "expect for a constant folding pass (it should fold all constants where "
 "possible)."
 msgstr ""
+"상기의 코드로 만들어진 ``Pass`` 객체가 패스 인프라스트럭쳐에 주어지면, 상수 폴딩 패스에게 "
+"기대되는 동작 그대로 주어진 Relay 모듈 내의 모든 함수에 AST 순회가 적용된다는 것이 "
+"보증됩니다(가능한 부분에서 모든 상수가 접힐 것입니다). "
 
 #: ../../dev/relay_add_pass.rst:362
 msgid ""
@@ -343,6 +429,15 @@ msgid ""
 "common dependency; others may depend on the program's being in A-normal "
 "form, via the ``ToANormalForm`` pass."
 msgstr ""
+"The function ``CreateFunctionPass`` allows for registering the "
+"optimization level of the pass (in this case, 2), which can be used to "
+"group together passes based on their general utility, a name for the "
+"pass, and any dependencies for the pass. A pass's dependencies are given "
+"as a list of any passes whose results are necessary to be able to run the"
+" current pass. ``FoldConstant`` does not have any dependencies, but many "
+"Relay passes do depend on having type information, so ``InferType`` is a "
+"common dependency; others may depend on the program's being in A-normal "
+"form, via the ``ToANormalForm`` pass."
 
 #: ../../dev/relay_add_pass.rst:371
 msgid ""
@@ -351,6 +446,10 @@ msgid ""
 "need this information but other passes may reference their "
 "``PassContext`` objects."
 msgstr ""
+"Note that the ``PassContext`` object contains information a pass uses for"
+" error reporting and configuration options; ``FoldConstant`` does not "
+"need this information but other passes may reference their "
+"``PassContext`` objects."
 
 #: ../../dev/relay_add_pass.rst:375
 msgid ""
@@ -358,6 +457,9 @@ msgid ""
 "good idea to also add a Python binding for the pass, as in this code "
 "snippet:"
 msgstr ""
+"The pass can now be invoked via the pass infrastructure, though it's a "
+"good idea to also add a Python binding for the pass, as in this code "
+"snippet:"
 
 #: ../../dev/relay_add_pass.rst:383
 msgid ""
@@ -368,6 +470,12 @@ msgid ""
 "applies both the ``FoldConstant`` and ``ToANormalForm`` passes (one after"
 " the other) to each function in ``mod`` and obtains a new module."
 msgstr ""
+"Once ``Pass`` objects are defined in the above fashion, they can be "
+"invoked using the pass infrastructure's ``Sequential`` construct, which "
+"takes a list of passes and applies them in sequence to a Relay module, "
+"obtaining a transformed module as a result. For example, the below code "
+"applies both the ``FoldConstant`` and ``ToANormalForm`` passes (one after"
+" the other) to each function in ``mod`` and obtains a new module."
 
 #: ../../dev/relay_add_pass.rst:397
 msgid ""
@@ -376,4 +484,8 @@ msgid ""
 ":ref:`pass-infra`. Relay's standard passes are listed in "
 "`include/tvm/relay/transform.h`_ and implemented in `src/relay/pass/`_."
 msgstr ""
+"More detail about registration can be found in :ref:`tvm-runtime-system` "
+"and more information about the pass manager interface can be found in "
+":ref:`pass-infra`. Relay's standard passes are listed in "
+"`include/tvm/relay/transform.h`_ and implemented in `src/relay/pass/`_."
 

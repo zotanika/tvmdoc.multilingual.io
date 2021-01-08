@@ -86,31 +86,35 @@ msgstr ""
 
 #: ../../contribute/code_guide.rst:79
 msgid "Python Code Styles"
-msgstr ""
+msgstr "파이썬 코딩 스타일"
 
 #: ../../contribute/code_guide.rst:80
 msgid ""
 "The functions and classes are documented in `numpydoc "
 "<https://numpydoc.readthedocs.io/en/latest/>`_ format."
 msgstr ""
+"함수와 클래스들은 `numpydoc "
+"<https://numpydoc.readthedocs.io/en/latest/>`_ 포맷에 실려 있습니다. "
 
 #: ../../contribute/code_guide.rst:81
 msgid "Check your code style using ``make pylint``"
-msgstr ""
+msgstr "``make pylint`` 로 코딩 스타일을 확인하세요. "
 
 #: ../../contribute/code_guide.rst:82
 msgid "Stick to language features as in ``python 3.5``"
-msgstr ""
+msgstr "``python 3.5`` 이 지원하는 언어  언어 어 Stick to language features as in ``python 3.5``"
 
 #: ../../contribute/code_guide.rst:86
 msgid "Writing Python Tests"
-msgstr ""
+msgstr "파이썬 테스트코드 작성하기"
 
 #: ../../contribute/code_guide.rst:87
 msgid ""
 "We use `pytest <https://docs.pytest.org/en/stable/>`_ for all python "
 "testing. ``tests/python`` contains all the tests."
 msgstr ""
+"We use `pytest <https://docs.pytest.org/en/stable/>`_ for all python "
+"testing. ``tests/python`` contains all the tests."
 
 #: ../../contribute/code_guide.rst:89
 msgid ""

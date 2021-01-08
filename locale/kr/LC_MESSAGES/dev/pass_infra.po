@@ -112,7 +112,7 @@ msgstr ""
 
 #: ../../dev/pass_infra.rst:61
 msgid "providing a user-friendly way to debug optimization passes."
-msgstr "사용자 친화적인 최적화 패스 디버깅 방법 제공. "
+msgstr "사용자 친화적인 최적화 패스 디버깅 방법을 제공하기 "
 
 #: ../../dev/pass_infra.rst:63
 msgid ""
@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../../dev/pass_infra.rst:80
 msgid "C++ Backend"
-msgstr ""
+msgstr "C++ 백엔드"
 
 #: ../../dev/pass_infra.rst:82
 msgid ""
@@ -162,6 +162,18 @@ msgid ""
 "``required`` field can be used by the pass infra to resolve pass "
 "dependencies."
 msgstr ""
+"We provide a ``PassInfo`` object to contain the basic information needed "
+"by a pass. ``name`` is the pass name, ``opt_level`` indicates at which "
+"optimization level the pass will be enabled, and ``required`` represents "
+"the passes that are required to execute a certain pass (see "
+"`include/tvm/ir/transform.h`_ for more details). For example, during "
+"registration of a pass (will be covered in later), the pass developers "
+"can specify the name of the pass, the optimization level it will be "
+"performed at, and/or the passes that are required. ``opt_level`` could be"
+" used to help the pass infra identify if a certain pass needs to be "
+"executed when running under a user-provided optimization level. The "
+"``required`` field can be used by the pass infra to resolve pass "
+"dependencies."
 
 #: ../../dev/pass_infra.rst:102 ../../dev/pass_infra.rst:403
 msgid "PassContext"
@@ -228,7 +240,7 @@ msgstr ""
 
 #: ../../dev/pass_infra.rst:192
 msgid "Module-Level Passes"
-msgstr ""
+msgstr "모듈 레벨 패스"
 
 #: ../../dev/pass_infra.rst:194
 msgid ""
@@ -239,6 +251,12 @@ msgid ""
 " set. At this level, users can even add and/or delete functions in a "
 "module. Note that all passes"
 msgstr ""
+"모듈 레벨 패스들은 Module level passes are geared mainly for global and inter-procedural "
+"optimizations (IPO), which are similar to the module pass used in LLVM. "
+"Some typical passes in Relay that need the global picture of a module, "
+"such as A-normal form conversion and lambda lifting, etc., fall into this"
+" set. At this level, users can even add and/or delete functions in a "
+"module. Note that all passes"
 
 #: ../../dev/pass_infra.rst:210
 msgid ""
