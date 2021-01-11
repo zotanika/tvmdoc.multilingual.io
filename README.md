@@ -87,3 +87,9 @@ $ . upsync.sh
 ```
 The process above will help you update and build the whole upstream TVM project, then generate latest PO files correspondingly.
 You can find the updated HTML artifacts at `./html-reference` (in English).
+
+HTML hosting(under construction)
+------------
+- TVM Korean Documentation - [https://zotanika.github.io/tvmkr.io/](https://zotanika.github.io/tvmkr.io/)
+- TVM Japanese Documentation
+- TVM Chinese Documentation
