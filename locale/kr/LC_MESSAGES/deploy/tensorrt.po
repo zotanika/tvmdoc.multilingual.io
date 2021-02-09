@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../deploy/tensorrt.rst:19
 msgid "Relay TensorRT Integration"
-msgstr ""
+msgstr "Relay TensorRT 구현"
 
 #: ../../deploy/tensorrt.rst:20
 msgid "**Author**: `Trevor Morris <https://github.com/trevor-m>`_"
-msgstr ""
+msgstr "**저자**: `Trevor Morris <https://github.com/trevor-m>`_"
 
 #: ../../deploy/tensorrt.rst:23
 msgid "Introduction"

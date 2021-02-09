@@ -42,6 +42,9 @@ msgid ""
 "`hardware` `runtime_ms_mean`, and `runtime_ms_std`. For finer-grained "
 "logging, one may additionally propagate the `*_config` fields."
 msgstr ""
+"qhrwkFor simplicity, we suggest prioritizing the fields `workload`, `engine`, "
+"`hardware` `runtime_ms_mean`, 및 `runtime_ms_std` 필드를 우선시하길 제안합니다. For finer-grained "
+"logging, one may additionally propagate the `*_config` fields."
 
 #: ../../dev/benchmark.rst:29
 msgid "header"

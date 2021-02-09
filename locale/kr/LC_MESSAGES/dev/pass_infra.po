@@ -108,18 +108,17 @@ msgid ""
 "users to flexibly customize and build their own optimization pipelines."
 msgstr ""
 "최적화 작업의 더 나은 프로그램적 조화. 이로써 사용자들로 하여금 각자의 최적화 파이프라인을 "
-"만들고 융통성있게 커스텀할 수 있게 합니다. "
+"만들고 융통성있게 커스텀할 수 있게 합니다."
 
 #: ../../dev/pass_infra.rst:61
 msgid "providing a user-friendly way to debug optimization passes."
-msgstr "사용자 친화적인 최적화 패스 디버깅 방법을 제공하기 "
+msgstr "사용자 친화적인 최적화 패스 디버깅 방법을 제공하기."
 
 #: ../../dev/pass_infra.rst:63
 msgid ""
 "alleviating developers from manually and respectively resolving the "
 "dependencies between passes."
 msgstr ""
-"alleviating developers from manually and respectively resolving the "
 "패스들 사이의 의존성을 개발자들이 직접 일일이 풀어야 하는 부담을 경감시키기."
 
 #: ../../dev/pass_infra.rst:66
@@ -128,10 +127,12 @@ msgid ""
 " we allow users to implement a pass in Python and let the pass infra "
 "manipulate its execution."
 msgstr ""
+"개발자들을 위해 새로운 패스 구현을 단순화하기. 예컨대, 사용자로 하여금 파이썬으로 패스를 "
+"구현할 수 있게끔 하고 패스 인프라를 통해 실행을 제어할 수 있게끔 합니다."
 
 #: ../../dev/pass_infra.rst:71
 msgid "The Design"
-msgstr ""
+msgstr "디자인"
 
 #: ../../dev/pass_infra.rst:73
 msgid ""
@@ -142,6 +143,11 @@ msgid ""
 "to interact with, i.e., allowing users to quickly create their own "
 "optimization pipelines."
 msgstr ""
+"우리는 사용자들이 하위 호환성 유실에 대한 우려 없이 새로운 패스를 빠르게 추가할 수 있도록 하여 "
+"손쉽게 기능을 확장할 수 있도록 하는 데에 집중합니다. "
+"디자인은 백엔드와 프론트엔드 양 측 모두를 아우릅니다. 전자의 경우는 패스 인프라의 주요 동작 구현과 "
+"관련되고, 후자의 경우는 사용자들로 하여금 그들만의 최적화 파이프라인을 빠르게 생성할 수 있도록, "
+"사용자들이 상호작용할 간단한 API들의 정의와 관련됩니다. "
 
 #: ../../dev/pass_infra.rst:80
 msgid "C++ Backend"
@@ -162,22 +168,19 @@ msgid ""
 "``required`` field can be used by the pass infra to resolve pass "
 "dependencies."
 msgstr ""
-"We provide a ``PassInfo`` object to contain the basic information needed "
-"by a pass. ``name`` is the pass name, ``opt_level`` indicates at which "
-"optimization level the pass will be enabled, and ``required`` represents "
-"the passes that are required to execute a certain pass (see "
-"`include/tvm/ir/transform.h`_ for more details). For example, during "
-"registration of a pass (will be covered in later), the pass developers "
-"can specify the name of the pass, the optimization level it will be "
-"performed at, and/or the passes that are required. ``opt_level`` could be"
-" used to help the pass infra identify if a certain pass needs to be "
-"executed when running under a user-provided optimization level. The "
-"``required`` field can be used by the pass infra to resolve pass "
-"dependencies."
+"``PassInfo`` 는 패스가 필요로 하는 기본적인 정보를 담는 객체입니다. "
+"``name`` 은 패스 명칭이고, ``opt_level`` 은 어느 정도의 최적화 레벨로 패스를 활성화할 것인지를 "
+"가리키며, ``required`` 는 어떤 특정 패스의 실행에 요구되는 패스들을 나타냅니다(더 자세한 사항은 "
+"`include/tvm/ir/transform.h`_ 를 참고). "
+"예컨대 패스 등록 과정에서(나중에 다룸), 패스 개발자는 패스의 명칭, 어느 최적화 레벨에서 작동할 것인지, "
+"그리고/또는 필요로 하는 패스들까지 지정할 수 있습니다. "
+"``opt_level`` 은, 사용자에 의해 최적화 레벨이 주어지는 경우, 패스 인프라가 어떤 패스를 작동시켜야 하는지 "
+"구분할 수 있도록 돕는 데에 사용될 수도 있습니다. "
+"``required`` 필드는 패스 인프라가 패스 간의 의존성 해소를 위해 사용합니다. "
 
 #: ../../dev/pass_infra.rst:102 ../../dev/pass_infra.rst:403
 msgid "PassContext"
-msgstr ""
+msgstr "PassContext"
 
 #: ../../dev/pass_infra.rst:104
 msgid ""
@@ -192,6 +195,13 @@ msgid ""
 "Now we could glob all passes at ``opt_level=3`` and exclude those in the "
 "disabled pass list."
 msgstr ""
+"``PassContext`` 는 최적화 패스를 위한 유용한 정보들을 담고 있습니다. 예를 들어, 여기에 포함된 "
+"오류 보고 시스템은 왜 최적화가 실패하는지에 대해 패스 작성자가 진단할 수 있게끔 합니다. "
+"``PassContext`` 는 예전에 사용자들이 최적화 레벨이나 활성화/비활성화 패스 지정과 같은 컴파일 옵션을 "
+"설정하는 데에 사용되던 ``BuildConfig`` 를 대체하기 위해 디자인된 측면도 있습니다. "
+"예컨대, ``PassContext`` 에 제공되는 ``disabled_pass=xx`` 를 써서 몇몇 패스들을 비활성화한 "
+"채로 ``opt_level=3`` 에서 모든 패스들을 동작시키도록 설정하고자 할 수 있습니다. "
+"이제 ``opt_level=3`` 인 모든 패스들을 걸러낸 다음 이들을 비활성 패스 리스트에서 배제할 수도 있습니다. "
 
 #: ../../dev/pass_infra.rst:114
 msgid ""
@@ -204,10 +214,17 @@ msgid ""
 "objects. Examples will be provided later to show how we can use both the "
 "C++ and Python APIs to create a compilation pipeline using pass context."
 msgstr ""
+"이 클래스는 특정한 조건 하에서 최적화를 수행할 수 있도록 ``with`` 문법으로 편리하게 파이썬 코드를 "
+"작성할 수 있게 디자인되었습니다. "
+"게다가 사용자는 ``PassContext::Current()`` 를 통해 멀티쓰레딩 환경에서도 동시성 문제 없이 "
+"특정 프로그램의 변수영역(scope) 내에서 가용한 컨텍스트를 얻을 수 있는데, 생성된 패스 컨텍스트 객체를 담는 데에 "
+"국지적 쓰레드 저장(TLS) 기능인 ``PassContextThreadLocalStore`` 이 사용되기 때문입니다. "
+"패스 컨텍스트를 활용한 컴파일 파이프라인을 생성하기 위해 C++과 파이썬 API를 사용하는 방법을 보여주는 "
+"예제가 아래 제공될 것입니다. "
 
 #: ../../dev/pass_infra.rst:163
 msgid "Pass Constructs"
-msgstr ""
+msgstr "패스 구축"
 
 #: ../../dev/pass_infra.rst:165
 msgid ""
@@ -218,6 +235,10 @@ msgid ""
 "must be implemented by the subclasses at the level of modules, functions,"
 " or sequences of passes."
 msgstr ""
+"패스 인프라는 계층적으로 디자인되었으며, Relay/tir 프로그램들의 세분화 정도(granularity)에 "
+"맞춰 다르게 작동할 수 있습니다. 순수한 가상 클래스인 ``PassNode`` 는 서로 다른 최적화 패스들의 "
+"베이스 역할을 하도록 고안되었습니다. 이 클래스는 모듈, 함수, 또는 패스 적용 순서의 각 수준에 따라 "
+"서브클래스에 의해 구현되어야 하는 몇 가지 가상 메서드들을 포함합니다. "
 
 #: ../../dev/pass_infra.rst:179
 msgid ""
@@ -226,6 +247,10 @@ msgid ""
 "a ``Module`` to ``Module`` manner. Therefore, optimizations governed by "
 "the pass infra will always update the whole module."
 msgstr ""
+"함자(functor)는 패스가 어떻게 실체화되어야 하는지 보여줍니다. 즉, 패스는 언제나 특정 컨텍스트 "
+"하에서 :py:class:`IRModule` 에 작용합니다. "
+"모든 패스는 ``Module`` 이 ``Module`` 에 대응하는 형식으로 디자인됩니다. 따라서, 패스 인프라에 의해 "
+"관리되는 최적화는 항상 전체 모듈을 갱신하게 되어 있습니다. "
 
 #: ../../dev/pass_infra.rst:184
 msgid ""
@@ -237,10 +262,14 @@ msgid ""
 "definition of them can be found in `src/relay/ir/transform.cc`_ and "
 "`src/ir/transform.cc`_."
 msgstr ""
+"몇몇 서브클래스들은, 각기 다른 형태의 최적화 패스들, 가령 함수 수준 패스, 모듈 수준 패스, 그리고 "
+"순차적 패스 등의 구현을 위해 생성되었습니다. 각 서브클래스 자체는 패스 매니저처럼 동작할 수도 있습니다. "
+"예컨대 필요한 패스 목록을 수집하고, 이를 실행하거나 주어진 메타데이터에 기반해 의존성 그래프를 구축해 내기도 합니다. "
+"`src/relay/ir/transform.cc`_ 와 `src/ir/transform.cc`_ 에서 정확한 정의를 찾아볼 수 있습니다. "
 
 #: ../../dev/pass_infra.rst:192
 msgid "Module-Level Passes"
-msgstr "모듈 레벨 패스"
+msgstr "모듈 수준 패스"
 
 #: ../../dev/pass_infra.rst:194
 msgid ""
@@ -251,12 +280,11 @@ msgid ""
 " set. At this level, users can even add and/or delete functions in a "
 "module. Note that all passes"
 msgstr ""
-"모듈 레벨 패스들은 Module level passes are geared mainly for global and inter-procedural "
-"optimizations (IPO), which are similar to the module pass used in LLVM. "
-"Some typical passes in Relay that need the global picture of a module, "
-"such as A-normal form conversion and lambda lifting, etc., fall into this"
-" set. At this level, users can even add and/or delete functions in a "
-"module. Note that all passes"
+"모듈 수준 패스들은 주로 프로시져간 최적화(IPO: inter-procedural optimizations)와 같은 "
+"전반적인 최적화에 적합하며, 이는 LLVM에서의 모듈 패스의 역할과 유사합니다. "
+"A-일반형태(ANF: A-normal form) 전환이나 람다 리프팅 등과 같이 모듈의 전체적인 상을 필요로 하는 "
+"Relay의 몇몇 전형적인 패스들이 이 부류에 속합니다. "
+"이 수준의 패스에서는, 모듈에서 함수를 새로 추가하거나 삭제하는 것조차도 가능합니다. "
 
 #: ../../dev/pass_infra.rst:210
 msgid ""
@@ -268,10 +296,15 @@ msgid ""
 "that this field is designed as a packed function, which enables the "
 "implementation of the optimization in both C++ and Python."
 msgstr ""
+"모듈 수준 패스가 필요로 하는 정보들은 ``pass_info`` 가 보유합니다. "
+"``pass_func`` 는 실제 최적화를 스케치합니다. 가령 어떤 모듈에서 죽은 코드 제거를 수행할 필요가 있을 때, "
+"``pass_func`` 안에 알고리즘을 구현하고 모듈 상에서 실행할 수 있습니다. "
+"이는 곧 모듈 내에서 사용되지 않는 함수들을 포함한 죽은 코드들을 제거하게 될 것입니다. "
+"이 필드는, C++ 및 파이썬으로 최적화 구현이 가능한 포장함수로서 디자인된다는 점에 유념하세요. "
 
 #: ../../dev/pass_infra.rst:219
 msgid "Function-Level Passes"
-msgstr ""
+msgstr "함수 수준 패스"
 
 #: ../../dev/pass_infra.rst:221
 msgid ""
@@ -283,6 +316,11 @@ msgid ""
 "and inference simplification in Relay as well as vectorization and "
 "flattening storage in tir, etc."
 msgstr ""
+"함수 수준 패스는 주어진 Relay/tir 모듈에 대해 다양한 함수 자체적 수준의 최적화를 구현하는 데에 "
+"활용됩니다. "
+"이는 최적화를 위해 모듈의 함수 리스트로부터 한 번에 하나의 함수를 가져와, 재작성된 Relay ``Function`` "
+"나 tir ``PrimFunc`` 를 내놓습니다. 대부분의 패스들, 하위표현식 제거나 Relay에서의 추론 간략화, "
+"tir의 벡터화 및 저장소 평탄화 등이 이 카테고리로 분류될 수 있습니다. "
 
 #: ../../dev/pass_infra.rst:228
 msgid ""
@@ -290,6 +328,8 @@ msgid ""
 " a tir primitive function. Therefore, we cannot add or delete a function "
 "through these passes as they are not aware of the global information."
 msgstr ""
+"이 수준의 패스들이 다루는 범위는 Relay 함수나 tir 원시 함수라는 점에 유의하세요. "
+"따라서, 우리는 포괄적인 정보를 인지하지 못하는 이들 패스를 통해 함수를 추가하거나 삭제할 수 없습니다. "
 
 #: ../../dev/pass_infra.rst:242
 msgid ""
@@ -298,16 +338,20 @@ msgid ""
 "as we may use it for reporting errors. A function could be annotated with"
 " \"SkipOptimization\" so that it will be ignored during optimization."
 msgstr ""
+"``pass_info`` 는 모듈 패스 섹션에서 서술한 것과 동일합니다. "
+"``pass_func`` 는 최적화를 위해 함수를 취하며, 오류 보고를 위해 활용할 모듈도 필요로 합니다. "
+"어떤 함수에 \"SkipOptimization\" 로 주석 처리를 하면, 그 함수에 대한 최적화 처리를 무시할 수 있습니다. "
 
 #: ../../dev/pass_infra.rst:248
 msgid "Sequential Passes"
-msgstr ""
+msgstr "순차적 패스"
 
 #: ../../dev/pass_infra.rst:250
 msgid ""
 "``SequentialPass`` is similar to Pytorch ``nn.Sequential`` that contains "
 "a host of passes for execution."
 msgstr ""
+"``SequentialPass`` 는 파이토치에서 패스 실행을 관장하는 ``nn.Sequential`` 과 유사합니다. "
 
 #: ../../dev/pass_infra.rst:263
 msgid ""
@@ -317,6 +361,10 @@ msgid ""
 "``BackwardFoldScaleAxis`` is recommended to be fulfilled first. This "
 "pass, hence, is an ideal candidate for ``SequentialPass``."
 msgstr ""
+"현재 Relay에서는 소수의 패스만이 이 부류에 속합니다. ``ForwardFoldScaleAxis`` 과 "
+"``BackwardFoldScaleAxis`` 를 내부적으로 디스패치해야만 하는 ``FoldScaleAxis`` 이 그러한 예입니다. "
+"추가적으로 ``BackwardFoldScaleAxis`` 을 먼저 수행하는 것이 바람직합니다. 이런 의미에서 이 패스는 "
+"``SequentialPass`` 의 이상적인 후보라고 할 수 있겠지요. "
 
 #: ../../dev/pass_infra.rst:269
 msgid ""
@@ -324,6 +372,8 @@ msgid ""
 "invoked. Essentially, we sequentially execute each pass in a sequential "
 "pass using the order that they were appended to the pass list."
 msgstr ""
+"이어지는 코드는 순차적 패스 군집 내의 각 패스가 어떻게 호출되는지를 보여줍니다. "
+"원칙적으로, 우리는 순차적 패스 내의 각 패스들을 패스 리스트에 덧붙여진 순서대로 차례로 실행합니다. "
 
 #: ../../dev/pass_infra.rst:292
 msgid ""
@@ -335,6 +385,11 @@ msgid ""
 "executed only when its optimization level is not less than the configured"
 " optimization level in the pass context."
 msgstr ""
+"패스의 호출에 있어, 먼저 이 패스가 활성화되어 있는지를 확인하게 됩니다. "
+"이 작업은, 사용자에 의해 해당 패스가 명시적으로 불활성화되어 있는지, 이어서 사용자가 필요로 하는 패스로 "
+"규정되어 있는지의 여부를 검사함으로써 수행됩니다. "
+"그럼에도 여전히 패스의 활성화 여부를 결정할 수 없다면, ``opt_level`` 을 확인합니다. "
+"이 최적화 레벨이 패스 컨텍스트에 설정된 최적화 레벨 이상일 경우에만 해당 패스가 활성화되고 실행 가능하게 됩니다. "
 
 #: ../../dev/pass_infra.rst:299
 msgid ""
@@ -343,6 +398,8 @@ msgid ""
 "because every pass is registered with an API endpoint as we will show "
 "later."
 msgstr ""
+"패스를 실행하기 위해서, 먼저 패스 명칭을 사용해 TVM 포장함수 레지스트리 내에 등록된 패스를 검색할 필요가 있습니다. "
+"이는, 후술될 내용과 같이, 모든 패스가 API 엔드포인트로 직결되어 있기에 가능합니다. "
 
 #: ../../dev/pass_infra.rst:314
 msgid ""
@@ -351,10 +408,12 @@ msgid ""
 "frontend for users to favorably use Python APIs to create a specific pass"
 " object."
 msgstr ""
+"앞서 설명된 각 유형의 패스들을 생성하기 위해 제공되는 도우미 함수들이 있습니다. 이들은 파이썬 프론트엔드에 "
+"노출되어, 사용자들이 특정 패스 객체를 생성하기 위한 파이썬 API를 손쉽게 활용하게끔 합니다. "
 
 #: ../../dev/pass_infra.rst:341
 msgid "Pass Registration"
-msgstr ""
+msgstr "패스 등록"
 
 #: ../../dev/pass_infra.rst:343
 msgid ""
@@ -364,10 +423,14 @@ msgid ""
 "already been implemented to fold constants in a Relay function (found in "
 "`src/relay/pass/fold_constant.cc`_)."
 msgstr ""
+"지금까지 다양한 수준의 패스들에 대한 개념과 컴파일레이션에 활용되는 컨텍스트에 대해 다뤄 봤습니다. "
+"사용자들이 얼마나 쉽게 패스를 등록할 수 있는지 살펴 보는 것도 흥미로울 것입니다. "
+"상수 폴딩을 예로 들어 봅시다. 이 패스는 Relay 함수 내의 상수들을 집적(fold)할 수 있도록 "
+"이미 구현되어 있는 상태입니다(`src/relay/pass/fold_constant.cc`_ 을 참고하세요). "
 
 #: ../../dev/pass_infra.rst:349
 msgid "An API was provided to perform the ``Expr`` to ``Expr`` transformation."
-msgstr ""
+msgstr "``Expr`` 대 ``Expr`` 변환을 수행하기 위해 API 하나가 제시되었습니다. "
 
 #: ../../dev/pass_infra.rst:355
 msgid ""
@@ -380,6 +443,11 @@ msgid ""
 "required for this pass. Otherwise, the pass developer has to identify and"
 " list them."
 msgstr ""
+"이 패스를 패스 인프라에 등록하기 위해서, 먼저 이 패스가 어느 최적화 레벨에서 작동하게 할지 결정해야 합니다. "
+"상수 폴딩은 개별 함수 단위에서 수행되는만큼, ``CreateFunctionPass`` 를 통해 ``FunctionPass`` 를 생성해야 함을 직관적으로 알 수 있습니다. "
+"``pass_func`` 은 `IRModule` 내의 각 함수마다 ``Expr`` 대 ``Expr`` API를 불러오는 포장함수로서 반환됩니다. "
+"``{}`` 은 이 패스가 아무런 전제 조건을 필요로 하지 않는다는 것을 보여주며, 그렇지 않다면 패스 개발자는 "
+"여기에 필요 조건을 확정하여 나열해야 합니다. "
 
 #: ../../dev/pass_infra.rst:363
 msgid ""
@@ -388,16 +456,19 @@ msgid ""
 " in the registry that can be accessed by both C++ (e.g. the ``GetPass`` "
 "above) and Python when needed."
 msgstr ""
+"한편, 패스 API 엔드포인트는 ``relay._transform.FoldConstant`` 이라는 명칭으로 등록됩니다. "
+"그에 따라 이 패스는 필요하다면 C++(e.g. ``GetPass`` 이상)과 파이썬 모두에서 접근 가능한 레지스트리의 항목이 됩니다. "
 
 #: ../../dev/pass_infra.rst:385
 msgid ""
 "To allow other C++ modules to apply this pass, we declare a free function"
 " in `include/tvm/relay/transform.h`_ as the following:"
 msgstr ""
+"다른 C++ 모듈들이 이 패스를 적용할 수 있도록 허용하기 위해, 다음과 같이 `include/tvm/relay/transform.h`_ 에 단독함수(free function)를 선언해 두었습니다. "
 
 #: ../../dev/pass_infra.rst:393
 msgid "Python Frontend"
-msgstr ""
+msgstr "파이썬 프론트엔드"
 
 #: ../../dev/pass_infra.rst:395
 msgid ""
@@ -407,6 +478,9 @@ msgid ""
 "`python/tvm/ir/transform.py`_). The backend receives the information and "
 "decides which function it should use to create a Pass object."
 msgstr ""
+"프론트엔드 측은 몇가지의 간단한 API로 집약됩니다. 예컨대, 패스의 생성과 실행을 위한 API들을 "
+"다음과 같이 제공합니다(전체 구현은 `python/tvm/relay/transform.py`_ 와 `python/tvm/ir/transform.py`_ 를 참조). "
+"백엔드는 정보를 수집하고 Pass 객체를 생성하려면 어떤 함수를 써야할지 결정합니다. "
 
 #: ../../dev/pass_infra.rst:405
 msgid ""
@@ -415,6 +489,9 @@ msgid ""
 "``current`` static method is offered for users to get the context that is"
 " in use under a certain scope."
 msgstr ""
+"파이썬 프론트엔드는 ``__enter__`` 와 ``__exit__`` 를 오버라이딩하여 ``with`` 구문을 지원할 수 있도록 "
+"``PassContext`` 를 포장합니다. ``current`` 정적 메서드는 사용자들이 특정한 변수영역 하에서 사용되고 있는 "
+"컨텍스트를 확인할 수 있도록 하기 위해 제공됩니다. "
 
 #: ../../dev/pass_infra.rst:426
 msgid ""
@@ -426,14 +503,19 @@ msgid ""
 "must be registered through ``TVM_REGISTER_PASS_CONFIG_OPTION``. For "
 "example, the following is used by the loop unrolling pass"
 msgstr ""
+"``PassContext`` 는 최적화 수준과 활성화/비활성화 패스 등을 포함하는 컴파일레이션 옵션들을 "
+"설정하기 위해 사용됩니다. 또한, 여러 설정들로 이루어진 딕셔너리를 취하여, 예비(fallback) 장치 정보나 루프 "
+"풀어헤치기(loop unrolling)의 단계/깊이 등과 같이, 주어진 정보들에 알맞게 서로 다른 패스들을 조달할 수 있도록 합니다. "
+"필요로 하는 설정이 패치될 수 있도록 만드려면, ``TVM_REGISTER_PASS_CONFIG_OPTION`` 을 통해 "
+"키를 등록해야 합니다. 다음은 루프 풀어헤치기 패스에서 사용되는 예시입니다.
 
 #: ../../dev/pass_infra.rst:438
 msgid "Please refer to `src/tir/transforms/unroll_loop.cc`_ for more details."
-msgstr ""
+msgstr "더 자세한 내용은 `src/tir/transforms/unroll_loop.cc`_ 을 참고하세요."
 
 #: ../../dev/pass_infra.rst:441
 msgid "Pass Objects"
-msgstr ""
+msgstr "패스 객제"
 
 #: ../../dev/pass_infra.rst:443
 msgid ""
@@ -444,6 +526,10 @@ msgid ""
 "callable objects so that they can be invoked easily (e.g., "
 "``pass_xx(arg)``) for execution."
 msgstr ""
+"``Pass`` 는 모든 패스 객체의 베이스 클래스입니다. 여기의 모든 메서드들은 단순히 후방(backend)에서 "
+"구현되어야 할 것들의 껍데기입니다. 이들은 사용자들이 파이썬으로 베이스 클래스와 편리하게 상호작용할 수 "
+"있도록 정의되었습니다. 패스 베이스 클래스에서 오직 ``__call__`` 만이 호출 가능한 객체로서의 서브 클래스를 "
+"만들기 위해 정의되어, 간결한 호출로 (e.g., ``pass_xx(인자)``) 실행될 수 있게 합니다. "
 
 #: ../../dev/pass_infra.rst:456
 msgid ""
@@ -453,6 +539,9 @@ msgid ""
 "provided to users so that they can customize their own pass or pass "
 "pipeline."
 msgstr ""
+"파이썬 프론트엔드로부터 패스들을 간이 생성하고 패스 인프라로 하여금 실행을 제어할 수 있게끔 만들어 주는 "
+"얼마간의 보조 API들도 제공됩니다. 예컨대, ``module_pass``, ``function_pass``, 그리고 ``sequential`` "
+"들이 사용자에게 제공되어, 각자의 패스나 패스 파이프라인을 커스터마이징할 수 있게 됩니다. "
 
 #: ../../dev/pass_infra.rst:461
 msgid ""
@@ -461,10 +550,12 @@ msgid ""
 "`python/tvm/relay/transform.py`_, respectively. For instance, const "
 "folding has a Python API like the following:"
 msgstr ""
+"C++ 백엔드에 구현되어 있는 모든 패스들을 위한 파이썬 API들이 각각 `python/tvm/ir/transform.py`_ 와 "
+"`python/tvm/relay/transform.py`_ 에 제공됩니다. 예컨대, 상수 폴딩은 다음과 같은 파이썬 API를 보유합니다: "
 
 #: ../../dev/pass_infra.rst:471
 msgid "Users can build a pass through decoration like the following:"
-msgstr ""
+msgstr "사용자는 아래와 같이 파이썬 데코레이션으로 패스를 작성할 수 있습니다:"
 
 #: ../../dev/pass_infra.rst:489
 msgid ""
@@ -474,6 +565,10 @@ msgid ""
 "module. For example, we can build an empty module and apply this pass to "
 "add an ``abs`` function."
 msgstr ""
+"여기서는 ``transform`` 함수가 입력 모듈에 ``abs`` 함수 하나를 덧붙이는 정도이지만, 모듈 수준에서 "
+"어떠한 맞춤형 최적화도 가능합니다. "
+"이 ``module_pass`` 를 생성한 후, 사용자들은 어떠한 Relay 모듈에도 이를 적용할 수 있습니다. "
+"가령, 빈 모듈을 만들고 이 패스를 적용하면 ``abs`` 함수를 더할 수 있습니다. "
 
 #: ../../dev/pass_infra.rst:500
 msgid ""
@@ -481,6 +576,8 @@ msgid ""
 "For instance, an example function-level pass could be written as the "
 "following:"
 msgstr ""
+"``function_pass`` 에 대해서도 상응하는 기능들이 제공됩니다. "
+"예제로서, 다음과 같이 함수 수준 패스를 작성할 수도 있습니다: "
 
 #: ../../dev/pass_infra.rst:524
 msgid ""
@@ -489,4 +586,7 @@ msgid ""
 "your own optimization pipeline and debug Relay and tir passes, please "
 "refer to the `use pass infra`_ tutorial."
 msgstr ""
+"데코레이터 구문 형식에 따르는 대신, 사용자들은 직접 패스를 등록하고 불러올 수도 있습니다. "
+"사용자 고유의 최적화 파이프라인의 커스터마이징과 Relay 및 tir 패스들의 디버깅에 관련된 더 많은 예제들은 "
+"`use pass infra`_ 튜토리얼에서 찾아볼 수 있습니다. "
 
