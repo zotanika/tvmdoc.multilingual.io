@@ -113,5 +113,3 @@ coremltools
 gluon
 gluoncv
 dgl
-cloudpickle
-tornado
