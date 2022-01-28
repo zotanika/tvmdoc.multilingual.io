@@ -1,3 +1,4 @@
 [submodule "desk"]
 	path = desk
 	url = https://github.com/apache/tvm
+	branch = v0.8

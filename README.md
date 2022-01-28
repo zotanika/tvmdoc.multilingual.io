@@ -1,8 +1,6 @@
 TVM Multilingual Documentation
 ===============================
 
-- - -
-
 Introduction
 ------------
 This project has been established to provide a workplace for [TVM technical documentation](https://tvm.apache.org/docs/) localization.
@@ -15,12 +13,19 @@ Volunteers can immediately start translating just after cloning the project repo
 $ git clone --recursive https://github.com/zotanika/tvmdoc.multilingual.io
 $ cd ./tvmdoc.multilingual.io
 ```
+Make sure if packages necessary for building TVM are installed in the system:
+```
+$ sudo apt-get update
+$ sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev zlib1g-dev build-essential cmake libedit-dev libxml2-dev llvm
+```
+Don't forget to take care of SSL certificate for accessing HTTPS sites through Python urllib if you are working behind a coperate proxy.
+
 
 Advanced Setup
 -------------
 For your convenience, please prepare the virtual environment for keeping your workspace quarantined from the global system environment(limited to Linux environment):
 ```
-$ virtualenv -p python3.7 ./venv
+$ virtualenv -p python3 ./venv
 $ . ./venv/bin/activate
 $ pip install -r requirements.txt
 ```

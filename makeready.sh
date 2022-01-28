@@ -15,11 +15,14 @@ git submodule update --init --recursive
 echo "Building TVM project..."
 if [ ! -d $TVM_BUILD_PATH ]; then
     mkdir $TVM_BUILD_PATH
-    cd $TVM_BUILD_PATH
-    cp $TVM_PATH/cmake/config.cmake $TVM_BUILD_PATH
-    cmake ..
+else
+    rm -rf $TVM_BUILD_PATH
+    mkdir $TVM_BUILD_PATH
 fi
 cd $TVM_BUILD_PATH
+cp $TVM_PATH/cmake/config.cmake $TVM_BUILD_PATH
+sed -i "s/set(USE_MICRO OFF)/set(USE_MICRO ON)/" $TVM_PATH/cmake/config.cmake
+cmake ..
 make -j8
 cd $TVMDOC_BUILD_PATH
 ln -s $CURR_PATH/locale $TVMDOC_BUILD_PATH/locale
