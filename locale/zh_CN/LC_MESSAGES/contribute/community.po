@@ -1,27 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, Apache Software Foundation
+# Copyright (C) 2020 - 2021, Apache Software Foundation
 # This file is distributed under the same license as the tvm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: tvm 0.8.dev0\n"
+"Project-Id-Version: tvm 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: ../../contribute/community.rst:21
+#: ../../_staging/contribute/community.rst:21
 msgid "TVM Community Guideline"
 msgstr ""
 
-#: ../../contribute/community.rst:23
+#: ../../_staging/contribute/community.rst:23
 msgid ""
 "TVM adopts the Apache style model and governs by merit. We believe that "
 "it is important to create an inclusive community where everyone can use, "
@@ -31,11 +31,11 @@ msgid ""
 "current list of contributors."
 msgstr ""
 
-#: ../../contribute/community.rst:28
+#: ../../_staging/contribute/community.rst:28
 msgid "General Development Process"
 msgstr ""
 
-#: ../../contribute/community.rst:29
+#: ../../_staging/contribute/community.rst:29
 msgid ""
 "Everyone in the community is welcomed to send patches, documents, and "
 "propose new directions to the project. The key guideline here is to "
@@ -47,7 +47,7 @@ msgid ""
 "review the process later."
 msgstr ""
 
-#: ../../contribute/community.rst:31
+#: ../../_staging/contribute/community.rst:31
 msgid ""
 "Code reviews are one of the key ways to ensure the quality of the code. "
 "High-quality code reviews prevent technical debt for long-term and are "
@@ -63,7 +63,7 @@ msgid ""
 "others the same favor."
 msgstr ""
 
-#: ../../contribute/community.rst:33
+#: ../../_staging/contribute/community.rst:33
 msgid ""
 "The community should strive to reach a consensus on technical decisions "
 "through discussion. We expect committers and PMCs to moderate technical "
@@ -71,11 +71,11 @@ msgid ""
 "technical reasoning when necessary."
 msgstr ""
 
-#: ../../contribute/community.rst:38
+#: ../../_staging/contribute/community.rst:38
 msgid "Committers"
 msgstr ""
 
-#: ../../contribute/community.rst:39
+#: ../../_staging/contribute/community.rst:39
 msgid ""
 "Committers are individuals who are granted the write access to the "
 "project. A committer is usually responsible for a certain area or several"
@@ -87,7 +87,7 @@ msgid ""
 "help the community to recognize potential committers:"
 msgstr ""
 
-#: ../../contribute/community.rst:41
+#: ../../_staging/contribute/community.rst:41
 msgid ""
 "Sustained contribution to the project, demonstrated by discussion over "
 "RFCs, code reviews and proposals of new features, and other development "
@@ -95,7 +95,7 @@ msgid ""
 "or several areas of the project."
 msgstr ""
 
-#: ../../contribute/community.rst:42
+#: ../../_staging/contribute/community.rst:42
 msgid ""
 "Quality of contributions: High-quality, readable code contributions "
 "indicated by pull requests that can be merged without a substantial code "
@@ -104,7 +104,7 @@ msgid ""
 "adhere to a good standard."
 msgstr ""
 
-#: ../../contribute/community.rst:43
+#: ../../_staging/contribute/community.rst:43
 msgid ""
 "Community involvement: active participation in the discussion forum, "
 "promote the projects via tutorials, talks and outreach. We encourage "
@@ -112,7 +112,7 @@ msgid ""
 "designs with community members that they do not interact physically."
 msgstr ""
 
-#: ../../contribute/community.rst:45
+#: ../../_staging/contribute/community.rst:45
 msgid ""
 "The Project Management Committee(PMC) consists group of active committers"
 " that moderate the discussion, manage the project release, and proposes "
@@ -125,11 +125,11 @@ msgid ""
 "organization."
 msgstr ""
 
-#: ../../contribute/community.rst:49
+#: ../../_staging/contribute/community.rst:49
 msgid "Reviewers"
 msgstr ""
 
-#: ../../contribute/community.rst:50
+#: ../../_staging/contribute/community.rst:50
 msgid ""
 "Reviewers are individuals who actively contributed to the project and are"
 " willing to participate in the code review of new contributions. We "

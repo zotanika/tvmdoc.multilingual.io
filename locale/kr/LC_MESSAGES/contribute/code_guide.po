@@ -1,128 +1,116 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, Apache Software Foundation
+# Copyright (C) 2020 - 2021, Apache Software Foundation
 # This file is distributed under the same license as the tvm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: tvm 0.8.dev0\n"
+"Project-Id-Version: tvm 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: ../../contribute/code_guide.rst:21
+#: ../../_staging/contribute/code_guide.rst:21
 msgid "Code Guide and Tips"
-msgstr "코딩 가이드와 개발팁"
+msgstr ""
 
-#: ../../contribute/code_guide.rst:23
+#: ../../_staging/contribute/code_guide.rst:23
 msgid ""
 "This is a document used to record tips in TVM codebase for reviewers and "
 "contributors. Most of them are summarized through lessons during the "
 "contributing and process."
 msgstr ""
-"이 문서는 리뷰어와 컨트리뷰터를 위해 TVM 코드베이스의 개발팁을 기록하기 위해 사용됩니다. "
-"대부분은 개발 기여 절차에서 얻은 교훈들을 요약한 것입니다. "
 
-#: ../../contribute/code_guide.rst:28
+#: ../../_staging/contribute/code_guide.rst:28
 msgid "C++ Code Styles"
-msgstr "C++ 코딩 스타일"
+msgstr ""
 
-#: ../../contribute/code_guide.rst:29
+#: ../../_staging/contribute/code_guide.rst:29
 msgid "Use the Google C/C++ style."
-msgstr "구글 C/C++ 스타일을 준수하세요."
+msgstr ""
 
-#: ../../contribute/code_guide.rst:30
+#: ../../_staging/contribute/code_guide.rst:30
 msgid "The public facing functions are documented in doxygen format."
-msgstr "외부로 드러나는 함수들은 doxygen 포맷으로 문서화되어야 합니다."
+msgstr ""
 
-#: ../../contribute/code_guide.rst:31
+#: ../../_staging/contribute/code_guide.rst:31
 msgid "Favor concrete type declaration over ``auto`` as long as it is short."
-msgstr "너무 길어지지만 않는다면 ``auto`` 보다는 확실한 타입 선언을 선호합니다."
+msgstr ""
 
-#: ../../contribute/code_guide.rst:32
+#: ../../_staging/contribute/code_guide.rst:32
 msgid ""
 "Favor passing by const reference (e.g. ``const Expr&``) over passing by "
 "value. Except when the function consumes the value by copy constructor or"
 " move, pass by value is better than pass by const reference in such "
 "cases."
 msgstr ""
-"값을 넘기기보다는 const 참조(e.g. ``const Expr&``)를 넘기길 선호합니다. "
-"함수가 복제 생성자나 이동(move)으로 값을 소비할 때에는 예외인데, 그런 경우는 const 참조 넘기기보다 값 넘기기가 더 낫습니다. "
 
-#: ../../contribute/code_guide.rst:35
+#: ../../_staging/contribute/code_guide.rst:35
 msgid "Favor ``const`` member function when possible."
-msgstr "가급적 ``const`` 멤버 함수를 선호합니다. "
+msgstr ""
 
-#: ../../contribute/code_guide.rst:37
+#: ../../_staging/contribute/code_guide.rst:37
 msgid ""
 "We use `clang-format` to enforce the code style. Because different "
 "version of clang-format might change by its version, it is recommended to"
 " use the same version of the clang-format as the main one. You can also "
 "use the following command via docker."
 msgstr ""
-"코딩 스타일을 강제하기 위해 `clang-format` 을 사용합니다. clang-format의 버젼별 차이가 있으므로, "
-"동일 버젼의 clang-format을 메인으로 활용하는 것을 권장합니다. docker를 통해 다음 명령을 사용할 수도 있습니다. "
 
-#: ../../contribute/code_guide.rst:47
+#: ../../_staging/contribute/code_guide.rst:47
 msgid ""
 "clang-format is also not perfect, when necessary, you can use disble "
 "clang-format on certain code regions."
 msgstr ""
-"clang-format이 완벽한 것은 아니므로, 어떤 코드 영역에서는 부득이하게 clang-format을 비활성화할 수도 있습니다. "
 
-#: ../../contribute/code_guide.rst:58
+#: ../../_staging/contribute/code_guide.rst:58
 msgid ""
 "Because clang-format may not recognize macros, it is recommended to use "
 "macro like normal function styles."
 msgstr ""
-"clang-format이 매크로를 인식하지 못할 수도 있습니다. 매크로를 닮은 일반 함수 스타일을 사용하길 권고합니다. "
 
-#: ../../contribute/code_guide.rst:79
+#: ../../_staging/contribute/code_guide.rst:79
 msgid "Python Code Styles"
-msgstr "파이썬 코딩 스타일"
+msgstr ""
 
-#: ../../contribute/code_guide.rst:80
+#: ../../_staging/contribute/code_guide.rst:80
 msgid ""
 "The functions and classes are documented in `numpydoc "
 "<https://numpydoc.readthedocs.io/en/latest/>`_ format."
 msgstr ""
-"함수와 클래스들은 `numpydoc "
-"<https://numpydoc.readthedocs.io/en/latest/>`_ 포맷에 실려 있습니다. "
 
-#: ../../contribute/code_guide.rst:81
+#: ../../_staging/contribute/code_guide.rst:81
 msgid "Check your code style using ``make pylint``"
-msgstr "``make pylint`` 로 코딩 스타일을 확인하세요. "
+msgstr ""
 
-#: ../../contribute/code_guide.rst:82
-msgid "Stick to language features as in ``python 3.5``"
-msgstr "``python 3.5`` 이 지원하는 언어  언어 어 Stick to language features as in ``python 3.5``"
+#: ../../_staging/contribute/code_guide.rst:82
+msgid "Stick to language features as in ``python 3.6``"
+msgstr ""
 
-#: ../../contribute/code_guide.rst:86
+#: ../../_staging/contribute/code_guide.rst:86
 msgid "Writing Python Tests"
-msgstr "파이썬 테스트코드 작성하기"
+msgstr ""
 
-#: ../../contribute/code_guide.rst:87
+#: ../../_staging/contribute/code_guide.rst:87
 msgid ""
 "We use `pytest <https://docs.pytest.org/en/stable/>`_ for all python "
 "testing. ``tests/python`` contains all the tests."
 msgstr ""
-"We use `pytest <https://docs.pytest.org/en/stable/>`_ for all python "
-"testing. ``tests/python`` contains all the tests."
 
-#: ../../contribute/code_guide.rst:89
+#: ../../_staging/contribute/code_guide.rst:89
 msgid ""
 "If you want your test to run over a variety of targets, use the "
 ":py:func:`tvm.testing.parametrize_targets` decorator. For example:"
 msgstr ""
 
-#: ../../contribute/code_guide.rst:97
+#: ../../_staging/contribute/code_guide.rst:97
 msgid ""
 "will run ``test_mytest`` with ``target=\"llvm\"``, ``target=\"cuda\"``, "
 "and few others. This also ensures that your test is run on the correct "
@@ -133,11 +121,11 @@ msgid ""
 "``@tvm.testing.requires_cuda`` decorator."
 msgstr ""
 
-#: ../../contribute/code_guide.rst:100
+#: ../../_staging/contribute/code_guide.rst:100
 msgid "Handle Integer Constant Expression"
 msgstr ""
 
-#: ../../contribute/code_guide.rst:101
+#: ../../_staging/contribute/code_guide.rst:101
 msgid ""
 "We often need to handle constant integer expressions in TVM. Before we do"
 " so, the first question we want to ask is that is it really necessary to "
@@ -146,14 +134,14 @@ msgid ""
 " generated code works for shapes that are not known ahead of time."
 msgstr ""
 
-#: ../../contribute/code_guide.rst:103
+#: ../../_staging/contribute/code_guide.rst:103
 msgid ""
 "Note that in some cases we cannot know certain information, e.g. sign of "
 "symbolic variable, it is ok to make assumptions in certain cases. While "
 "adding precise support if the variable is constant."
 msgstr ""
 
-#: ../../contribute/code_guide.rst:105
+#: ../../_staging/contribute/code_guide.rst:105
 msgid ""
 "If we do have to get constant integer expression, we should get the "
 "constant value using type ``int64_t`` instead of ``int``, to avoid "

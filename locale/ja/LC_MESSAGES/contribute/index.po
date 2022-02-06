@@ -1,68 +1,68 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, Apache Software Foundation
+# Copyright (C) 2020 - 2021, Apache Software Foundation
 # This file is distributed under the same license as the tvm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: tvm 0.8.dev0\n"
+"Project-Id-Version: tvm 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: ../../contribute/index.rst:19
-msgid "Contribute to TVM"
+#: ../../_staging/contribute/index.rst:19
+msgid "Contributor Guide"
 msgstr ""
 
-#: ../../contribute/index.rst:21
+#: ../../_staging/contribute/index.rst:21
 msgid ""
 "TVM has been developed by community members. Everyone is welcomed to "
 "contribute. We value all forms of contributions, including, but not "
 "limited to:"
 msgstr ""
 
-#: ../../contribute/index.rst:25
+#: ../../_staging/contribute/index.rst:25
 msgid "Code reviewing of the existing patches."
 msgstr ""
 
-#: ../../contribute/index.rst:26
+#: ../../_staging/contribute/index.rst:26
 msgid "Documentation and usage examples"
 msgstr ""
 
-#: ../../contribute/index.rst:27
+#: ../../_staging/contribute/index.rst:27
 msgid "Community participation in forums and issues."
 msgstr ""
 
-#: ../../contribute/index.rst:28
+#: ../../_staging/contribute/index.rst:28
 msgid "Code readability and developer guide"
 msgstr ""
 
-#: ../../contribute/index.rst:30
+#: ../../_staging/contribute/index.rst:30
 msgid "We welcome contributions that add code comments to improve readability"
 msgstr ""
 
-#: ../../contribute/index.rst:32
+#: ../../_staging/contribute/index.rst:32
 msgid ""
 "We also welcome contributions to docs to explain the design choices of "
 "the internal."
 msgstr ""
 
-#: ../../contribute/index.rst:35
+#: ../../_staging/contribute/index.rst:35
 msgid "Test cases to make the codebase more robust"
 msgstr ""
 
-#: ../../contribute/index.rst:36
+#: ../../_staging/contribute/index.rst:36
 msgid "Tutorials, blog posts, talks that promote the project."
 msgstr ""
 
-#: ../../contribute/index.rst:38
+#: ../../_staging/contribute/index.rst:38
 msgid "Here are guidelines for contributing to various aspect of the project:"
 msgstr ""
 

@@ -1,0 +1,474 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 - 2021, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-06 10:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_topic_vta_tutorials_matrix_multiply.py>` to download "
+"the full example code"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:24
+msgid "Simple Matrix Multiply"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:25
+msgid "**Author**: `Thierry Moreau <https://homes.cs.washington.edu/~moreau/>`_"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:27
+msgid ""
+"In this tutorial, we will build on top of the :ref:`vta-get-started` "
+"tutorial and introduce additional concepts required to implement matrix "
+"multiplication on VTA with the TVM workflow."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:34
+msgid "RPC Setup"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:35
+msgid ""
+"We start by programming the Pynq's FPGA and building its RPC runtime as "
+"we did in the VTA introductory tutorial."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:85
+msgid "Computation Declaration"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:86
+msgid ""
+"In this example we describe a simple matrix multiplication addition, "
+"which requires multiple computation stages, as shown in the dataflow "
+"diagram below. First we describe the input tensors :code:`A` and "
+":code:`B` that are living in main memory. Second, we need to declare "
+"intermediate tensors :code:`A_buf` and :code:`B_buf`, which will live in "
+"VTA's on-chip buffers. Having this extra computational stage allows us to"
+" explicitly stage cached reads and writes. Third, we describe the matrix "
+"multiplication computation over :code:`A_buf` and :code:`B_buf` to "
+"produce the product matrix :code:`C_buf`. The last operation is a cast "
+"and copy back to DRAM, into results tensor :code:`C`."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:105
+msgid "Data Layout"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:106
+msgid ""
+"We describe the placeholder tensors :code:`A`, and :code:`B` in a tiled "
+"data format to match the data layout requirements imposed by the VTA "
+"tensor core."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:113
+msgid "**Data Tiling**"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:115
+msgid ""
+"One source of complexity when targeting accelerators is to make sure that"
+" the data layout matches the layout imposed by the accelerator design. "
+"VTA is designed around a *tensor core* that performs, one matrix-matrix "
+"operation per cycle between an activation matrix and a weight matrix, "
+"adding the result matrix to an accumulator matrix, as shown in the figure"
+" below."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:126
+msgid ""
+"The dimensions of that matrix-matrix multiplication are specified in the "
+":code:`vta_config.json` configuration file. The activation matrix has a "
+":code:`(BATCH, BLOCK_IN)` shape and the transposed weight matrix has a "
+":code:`(BLOCK_OUT, BLOCK_IN)` shape, thus inferring that the resulting "
+"output matrix has a :code:`(BATCH, BLOCK_OUT)` shape. Consequently input "
+"and output tensors processed by VTA need to be tiled according to these "
+"aforementioned dimension."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:135
+msgid ""
+"The diagram below shows the impact of data tiling on a matrix that is "
+"originally of shape (4, 8). Tiling by a (2, 2) tile shape ensures that "
+"data within each tile is contiguous. The resulting tiled tensor has a "
+"shape of (2, 4, 2, 2)."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:145
+msgid ""
+"We first define the variables :code:`m`, :code:`n`, :code:`o` to "
+"represent the shape of the matrix multiplication. These variables are "
+"multiplicative factors over the :code:`BLOCK_OUT`, :code:`BLOCK_IN`, and "
+":code:`BATCH` tensor dimensions respectively. By default, the "
+"configuration file sets :code:`BATCH`, :code:`BLOCK_IN`, and "
+":code:`BLOCK_OUT` to be 1, 16 and 16 respectively (:code:`BATCH` being "
+"set to 1 implies that our compute building block is vector-matrix "
+"multiply)."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:158
+msgid "**Data Types**"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:160
+msgid ""
+"It's important to not only match the inner-tile dimension of VTA's tensor"
+" core, but also to match the specific data types expected by VTA. VTA for"
+" now only supports fixed point data types, which integer width is "
+"specified in the :code:`vta_config.json` file by :code:`INP_WIDTH` and "
+":code:`WGT_WIDTH` for the activations and weights data types "
+"respectively. In addition, the accumulator data type integer width is "
+"specified by :code:`ACC_WIDTH`."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:169
+msgid ""
+"By default, the configuration file sets :code:`INP_WIDTH` and "
+":code:`WGT_WIDTH` to 8. The accumulator width :code:`ACC_WIDTH` is set to"
+" 32, in order to avoid overflow during accumulation. As a result, "
+":code:`env.inp_dtype` and :code:`env.wgt_dtype` are all narrow 8-bit "
+"integers, while :code:`env.acc_dtype` is a standard 32-bit integer."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:201
+msgid "Matrix Multiplication"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:202
+msgid ""
+"Now we're ready to describe the matrix multiplication result tensor "
+":code:`C`, with another compute operation. The compute function takes the"
+" shape of the tensor, as well as a lambda function that describes the "
+"computation rule for each position of the tensor."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:207
+msgid ""
+"In order to implement matrix multiplication, the lambda function needs to"
+" include a reduction formula over the input channel dimension axes. To "
+"create a reduction formula, we can declare a reduction axis using "
+":code:`te.reduce_axis`, which takes in the range of reductions. "
+":code:`te.sum` takes in the expression to be reduced as well as the "
+"reduction axes to compute the sum of value over all k in the declared "
+"ranges."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:215
+msgid ""
+"Note that the reduction needs to be performed over 32-bit "
+":code:`env.acc_dtype` accumulator data types."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:218
+msgid ""
+"No computation happens during this phase, as we are only declaring how "
+"the computation should be done."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:244
+msgid "Casting the Results"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:245
+msgid ""
+"After the computation is done, we'll need to send the results computed by"
+" VTA back to main memory."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:252
+msgid "**Memory Store Restrictions**"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:254
+msgid ""
+"One specificity of VTA is that it only supports DRAM stores in the narrow"
+" :code:`env.inp_dtype` data type format. This lets us reduce the data "
+"footprint for memory transfers, but also lets us quantize the wide "
+"accumulator data type down to a data format that matches the input "
+"activation data type. This means that in the context of neural network "
+"inference, the outputs of a given layer after activation can be consumed "
+"directly by the next layer."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:263
+msgid ""
+"We perform one last typecast operation to the narrow input activation "
+"data format."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:279
+msgid "This concludes the computation declaration part of this tutorial."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:284
+msgid "Scheduling the Computation"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:285
+msgid ""
+"While the above lines describes the computation rule, we can obtain "
+":code:`C` in many ways. TVM asks the user to provide an implementation of"
+" the computation called *schedule*."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:290
+msgid ""
+"A schedule is a set of transformations to an original computation that "
+"transforms the implementation of the computation without affecting "
+"correctness. This simple VTA programming tutorial aims to demonstrate "
+"basic schedule transformations that will map the original schedule down "
+"to VTA hardware primitives."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:300
+msgid "Default Schedule"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:301
+msgid ""
+"After we construct the schedule, by default the schedule computes "
+":code:`C` in the following way:"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:316
+msgid ""
+"Although this schedule makes sense, it won't compile to VTA. In order to "
+"obtain correct code generation, we need to apply scheduling primitives "
+"and code annotation that will transform the schedule into one that can be"
+" directly lowered onto VTA hardware intrinsics. Those include:"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:322
+msgid ""
+"DMA copy operations which will take globally-scoped tensors and copy "
+"those into locally-scoped tensors."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:324
+msgid "Tensor operations that will perform the matrix multiplication."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:329
+msgid "Buffer Scopes"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:330
+msgid ""
+"First, we set the scope of the buffers to tell TVM that these buffers "
+"will be living in the VTA's on-chip SRAM caches. Below, we tell TVM that "
+":code:`A_buf`, :code:`B_buf`, :code:`C_buf` will respectively live in "
+"VTA's on-chip input, weight and accumulator memory."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:340
+msgid "**VTA's On-Chip SRAMs**"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:342
+msgid ""
+"VTA has three different memory scopes, each corresponding to different "
+"on-chip SRAM buffers."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:345
+msgid ""
+":code:`env.inp_scope`: Input buffer, which is a read-only SRAM buffer "
+"that stores input matrices of shape :code:`(env.BATCH, env.BLOCK_IN)` of "
+"type :code:`env.inp_dtype`. The input buffer contains `2 ^ "
+"LOG_INP_BUFF_SIZE` matrix elements (as specified in the "
+":code:`vta_config.json` file)."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:350
+msgid ""
+":code:`env.wgt_scope`: Weight buffer, which is a read-only SRAM buffer "
+"that stores weight matrices of shape :code:`(env.BLOCK_OUT, "
+"env.BLOCK_IN)` of type :code:`env.wgt_dtype`. The weight buffer contains "
+"`2 ^ LOG_WGT_BUFF_SIZE` matrix elements."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:354
+msgid ""
+":code:`env.acc_scope`: Accumulator buffer, which is a read/write SRAM "
+"buffer that stores accumulator matrices of shape :code:`(env.BATCH, "
+"env.BLOCK_OUT)` of type :code:`env.acc_dtype`. The accumulator buffer is "
+"VTA's general purpose register file: it holds both intermediate results "
+"of convolutions and matrix multiplications as well as intermediate "
+"results of pooling, batch normalization, and activation layers. The "
+"accumulator buffer contains `2 ^ LOG_ACC_BUFF_SIZE` matrix elements."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:377
+msgid "DMA Transfers"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:378
+msgid ""
+"We need to schedule DMA transfers to move data living in DRAM to and from"
+" the VTA on-chip buffers. This can be achieved using the "
+":code:`compute_at` schedule primitive which nests the copying of the "
+"buffers into the computation loop that performs the matrix "
+"multiplication."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:384
+msgid ""
+"We insert :code:`dma_copy` pragmas to indicate to the compiler that the "
+"copy operations will be performed in bulk via DMA, which is common in "
+"hardware accelerators. Finally, we print the temporary schedule to "
+"observe the effects of moving the copy operations into the matrix "
+"multiplication loop."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:411
+msgid "Tensorization"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:412
+msgid ""
+"The last step of the schedule transformation consists in applying "
+"*tensorization* to our schedule. Tensorization is analogous to "
+"vectorization, but extends the concept to a higher-dimensional unit of "
+"computation. Consequently, tensorization imposes data layout constraints "
+"as discussed earlier when declaring the data layout input placeholders. "
+"We've already arranged our tensors in a tiled format, so the next thing "
+"we need to perform is loop reordering to accommodate for tensorization."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:421
+msgid ""
+"Here we choose to move the outermost reduction axis all the way out. This"
+" dictates that we first iterate over input channels, then batch "
+"dimensions, and finally output channels. Lastly, we apply the "
+"tensorization scheduling primitive :code:`tensorize` along the outer axis"
+" of the inner-most matrix matrix multiplication tensor block. We print "
+"the finalized schedule that is ready for code-generation by the VTA "
+"runtime JIT compiler."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:446
+msgid "This concludes the scheduling portion of this tutorial."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:451
+msgid "TVM Compilation"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:452
+msgid ""
+"After we have finished specifying the schedule, we can compile it into a "
+"TVM function."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:479
+msgid "Running the Function"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:480
+msgid ""
+"The compiled TVM function uses a concise C API and can be invoked from "
+"code language."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:483
+msgid ""
+"TVM provides an array API in python to aid quick testing and prototyping."
+" The array API is based on `DLPack <https://github.com/dmlc/dlpack>`_ "
+"standard."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:486
+msgid "We first create a remote context (for remote execution on the Pynq)."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:487
+msgid "Then :code:`tvm.nd.array` formats the data accordingly."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:488
+msgid ":code:`f()` runs the actual computation."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:489
+msgid ""
+":code:`numpy()` copies the result array back in a format that can be "
+"interpreted."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:525
+msgid "Verifying Correctness"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:526
+msgid ""
+"Compute the reference result with numpy and assert that the output of the"
+" matrix multiplication indeed is correct"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:552
+msgid "Summary"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:553
+msgid ""
+"This tutorial showcases the TVM workflow to implement a simple matrix "
+"multiplication example on VTA. The general workflow includes:"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:557
+msgid "Programming the FPGA with the VTA bitstream over RPC."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:558
+msgid "Describing matrix multiplication via a series of computations."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:559
+msgid ""
+"Describing how we want to perform the computation using schedule "
+"primitives."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:560
+msgid "Compiling the function to the VTA target."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:561
+msgid ""
+"Running the compiled module and verifying it against a numpy "
+"implementation."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:577
+msgid ""
+":download:`Download Python source code: matrix_multiply.py "
+"<matrix_multiply.py>`"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:583
+msgid ""
+":download:`Download Jupyter notebook: matrix_multiply.ipynb "
+"<matrix_multiply.ipynb>`"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/matrix_multiply.rst:590
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

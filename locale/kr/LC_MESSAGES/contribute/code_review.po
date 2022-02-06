@@ -1,91 +1,337 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, Apache Software Foundation
+# Copyright (C) 2020 - 2021, Apache Software Foundation
 # This file is distributed under the same license as the tvm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: tvm 0.8.dev0\n"
+"Project-Id-Version: tvm 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: ../../contribute/code_review.rst:21
+#: ../../_staging/contribute/code_review.rst:22
 msgid "Perform Code Reviews"
-msgstr "코드 리뷰 수행"
-
-#: ../../contribute/code_review.rst:23
-msgid ""
-"This is a general guideline for code reviewers. First of all, while it is"
-" great to add new features to a project, we must also be aware that each "
-"line of code we introduce also brings **technical debt** that we may have"
-" to eventually pay."
 msgstr ""
-"이 페이지에서는 코드 리뷰어들을 위한 일반적인 가이드라인을 기술합니다. 프로젝트에 새로운 기능이 "
-"추가되는 것은 멋진 일이긴 하지만, 우리는 새롭게 소개되는 코드가 훗날 대가를 치뤄야 할 **기술 부채** "
-"를 떠안길 수 있음을 항상 유념해야 합니다. "
 
-#: ../../contribute/code_review.rst:25
+#: ../../_staging/contribute/code_review.rst:25
 msgid ""
-"Open source code is maintained by a community with diverse background, "
-"and hence it is even more important to provide clear, documented and "
-"maintainable code. Code reviews are a shepherding process to spot "
-"potential problems, improve quality of the code. We should, however, not "
-"rely on the code review process to get the code into a ready state. "
-"Contributors are encouraged to polish the code to a ready state before "
-"requesting reviews. This is especially expected for code owner and "
-"committer candidates."
+"Open source code is maintained by a community with diverse backgrounds, "
+"interests, and goals. Hence it is important to provide clear, documented "
+"and maintainable code and processes. Code reviews are a shepherding "
+"process used to collectively spot potential problems, improve quality of "
+"the code, and educate both contributors and reviewers about the code base"
+" and its assumptions. It is also one mechanism to ensure there are "
+"multiple people who can maintain a related piece of code together. "
+"Contributors are encouraged to polish the code to a reviewable state "
+"before requesting reviews. This is especially important for committer "
+"candidates, as committers are expected to participate in not only writing"
+" code but also reviewing it."
 msgstr ""
-"오픈소스 코드는 다양한 배경의 구성원들에 의해 유지되는만큼, "
-"명확하고, 문서화되어 있으며, 관리 가능한 코드를 제안하는 것이 보다 더 중요합니다. "
-"코드 리뷰는 잠재적인 문제점을 걸러내고 코드의 질을 개선하기 위한 셰퍼딩 프로세스입니다. "
-"그럼에도 불구하고, 코드의 완성도를 높이는 데에 코드 리뷰 프로세스에만 의존하면 안 될 것입니다. "
-"기여자들께는 리뷰 요청 전에 코드를 충분히 다듬기를 권장드립니다. 이는 특히 코드 소유자와 "
-"커미터 후보들께 요구되는 사항입니다. "
 
-#: ../../contribute/code_review.rst:27
+#: ../../_staging/contribute/code_review.rst:33
 msgid ""
-"Here are some checklists for code reviews, it is also helpful reference "
-"for contributors."
+"This document is a living guideline for code review in open source. "
+"Please also take sometime to read :ref:`community_guide` about the "
+"general development process."
 msgstr ""
-"코드 리뷰를 위한 일련의 체크리스트가 이어집니다. 이는 기여자들에게도 유용한 참고자료이기도 합니다. "
 
-#: ../../contribute/code_review.rst:32
-msgid "Hold the Highest Standard"
-msgstr "최고 수준의 기준 유지"
+#: ../../_staging/contribute/code_review.rst:37
+msgid "Building Trust"
+msgstr ""
 
-#: ../../contribute/code_review.rst:33
+#: ../../_staging/contribute/code_review.rst:39
 msgid ""
-"The first rule for code reviewers is to always keep the highest standard,"
-" and do not approve code just to \"be friendly\". Good, informative "
-"critics each other learn and prevent technical debt in early stages."
+"First and foremost, we are building a community that based on trust, "
+"which takes time and effort to both build and maintain.  We expect our "
+"community members to work together in a constructive way and work "
+"together with common sense. Although we all have different sets of "
+"backgrounds, interests and goals we must work together to find solutions "
+"that work for the larger community. Trust-based collaboration is also a "
+"key tenant of the Apache way and an important factor to consider in "
+"growing the community, and promoting members to official roles."
 msgstr ""
-"코드 리뷰어들을 위한 제 1 법칙은 언제나 최고 수준의 기준을 유지하는 것입니다. "
-"\"친근한 사람이 되기 위해\" 코드를 승인하지 마세요. 곱씹을 게 많은 좋은 비평은 서로 배우게 하며 "
-"기술 부채를 조기에 막을 수 있습니다. "
 
-#: ../../contribute/code_review.rst:36
+#: ../../_staging/contribute/code_review.rst:47
+msgid "Community Participation"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:49
+msgid ""
+"Everyone is welcomed to comment on PRs. We encourage committers to wait "
+"for some period of time(e.g. three days) before merging PR that contains "
+"a major architecture change. The goal is to give people time to speak up "
+"and express interest in reviewing and participate."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:53
+msgid ""
+"Remembering that we are all coming from different backgrounds is "
+"important here. For example some community members work in different time"
+" zones, only work on open source during work hours, or may be traveling "
+"or having other events going on in their lives. An important part of "
+"working in a large project is ensuring there is collective understanding,"
+" so no one person is a bottleneck. While it is important to allow time "
+"for participation in code review we also can not block all changes on all"
+" reviewers. Remember that helping people land PRs is a great way to "
+"encourage broader participation, especially for those who volunteer their"
+" time to contribute."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:60
+msgid ""
+"Part of this is trusting and communicating with fellow maintainers that "
+"if changes need to be applied in the future that PR authors will later "
+"follow through on their promises. It is the responsibility of committers "
+"to listen to all feedback whether from PMC members or new contributors "
+"and consider what actions need to be taken."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:65
+msgid "Read the code carefully"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:67
+msgid ""
+"Sometimes we may quickly read through the code and only pick up on a "
+"selective aspects of the code. These type of comments are usually helpful"
+" and should be welcomed in the community. However,  they are only part of"
+" performing code review and should be part of more comprehensive "
+"feedback. A good and careful code review is a large time investment and "
+"sometimes can be longer than writing the actual contribution."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:72
+msgid ""
+"For example receiving only highly critical feedback on minor aspects of "
+"your PR rarely feels good, and it can be discouraging if your time and "
+"effort was not reciprocated during review. Practicing empathy when acting"
+" both as a contributor and committer is important and can help make you a"
+" more effective code reviewer and contributor."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:76
+msgid ""
+"We expect that all committers carefully read and understand the code "
+"before signing off. There is a lot of trust involved when a committer "
+"hits the merge button. In the meantime, we acknowledge that sometimes "
+"problems slip through, in that case, the merger is responsible for "
+"ensuring the correct follow up actions are taken."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:81
+msgid "Be Respectful"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:83
+msgid ""
+"To everyone who are making comments: making constructive comment will "
+"help new contributors to land their PRs timely and help us welcome new "
+"members to the community."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:86
+msgid ""
+"To authors: reviewers should spend significant time reading the code, and"
+" a careful review could be as time intensive as writing the code from "
+"scratch. Respectfully address review comments and reciprocate the review "
+"by helping review others changes in the future."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:90
+msgid ""
+"Most importantly focus on having a constructive conversation, and try to "
+"assume best intentions when interacting as a reviewer. If there is "
+"something in the process not working, consider getting some face time "
+"with the other contributors and discussing how to improve the process or "
+"communication."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:95
+msgid "Factors to Consider about Code Quality"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:97
+msgid ""
+"High quality code is critical to the long term success of the project. "
+"There are many factors of code quality to consider during a code review:"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:100
+msgid ""
+"F0: Overall architecture. This includes the definition of public modules,"
+" key data structures and public interfaces. Good architectural choices "
+"are critical to the success of the project in the long run."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:102
+msgid ""
+"F1: Architectural consistency. There are usually multiple ways to "
+"implement a new feature. We must ensure new features are consistent with "
+"previous overall architectural choices and interact well with the "
+"existing code. Every new feature increases the complexity of the project,"
+" and a consistent design ideally minimizes the increase in complexity "
+"bought by a new feature, making it easier to maintain code in the long "
+"run."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:106
+msgid ""
+"F2: Code robustness and test coverage. Ensure code runs correctly in all "
+"possible settings(platforms), ensure test coverage of the new feature. "
+"Clear error messages for user facing errors."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:108
+msgid ""
+"F3: User facing API documentation: documentation of public user facing "
+"APIs and key module interfaces are mandatory. This includes the API, data"
+" structures that appears in the public interface (i.e., `include/tvm` and"
+" user facing python APIs). We generally encourage well documented code "
+"and include some form of documentations for internal APIs that are used "
+"in multiple places, see also F4."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:112
+msgid ""
+"F4: Code readability. Readability involves multiple aspects: instructive "
+"and consistent function names, clear implementation of the overall flow, "
+"descriptive comments for complex code logic and internal functions. "
+"Readable code is easier to maintain."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:115
+msgid ""
+"Architectural design and consistency are the most important factors since"
+" they are likely to introduce the most long term technical debt. As a "
+"result, committers should most carefully consider these factors before "
+"merging the code."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:118
+msgid "Test coverage and API documentation are expected for code contributions."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:120
+msgid ""
+"Code readability is relatively a subjective matter compared to the other "
+"ones. Different people have different thoughts on how to best write code."
+" Reviewers should make constructive and actionable comments. In the "
+"meantime, code review should not be used as a way to get others to write "
+"code exactly the way you would. Conversely you should also consider that "
+"what you may easily understand, or find acceptable might not work for the"
+" larger community or other members. Use your judgment on what is "
+"appropriate based on the content and the scope of the contribution and "
+"where the contributor is coming from."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:127
+msgid ""
+"We follow common :ref:`code_guide` when writing code. Style guides help "
+"ensure that code is readable and maintainable by others, long after the "
+"original author has moved on. Style guides are more than about code "
+"formatting — they also pertain to the correct way to document code, "
+"variable naming, and other conventions that are not enforced by automatic"
+" formatters."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:132
+msgid "Consensus Building"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:134
+msgid ""
+"Disagreements can happen during code reviews. We encourage building "
+"consensus among the people involved. We are working together and building"
+" trust with each other in OSS. The nature of OSS means sometimes we make "
+"compromises on less significant issues to make steady progress and "
+"welcome broader participation in the community. Compromise unfortunately "
+"means sometimes the world will not be exactly as we would like, this true"
+" even for leaders of the community."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:139
+msgid ""
+"Be civil and build consensus through constructive technical-based "
+"conversations."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:140
+msgid ""
+"A committer who owns the area can serve as a shepherd to drive the "
+"discussion by taking all the conversations into consideration, and "
+"suggest a resolution with to move forward."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:142
+msgid ""
+"Because a lot of trust is involved on the committer(shepherd), they "
+"should read the PR carefully before sign off. Additionally, the merger "
+"should also take the responsibility to followup in case there are "
+"problems caused by the merge."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:146
+msgid "Consistency"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:148
+msgid ""
+"A final remark is that we are all human and its hard to always be "
+"perfectly consistent. If contributors feel that you didn't apply these "
+"guidelines in a consistent way it is important to listen and hear folks "
+"out. We will constantly have to iterate on processes and guidelines as we"
+" evolve as a community. Our goal is to strive to be consistent and "
+"objective but all of us are unfortunately human and imperfect and will "
+"need to adjust and learn."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:153
+msgid "Additional Recommendations"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:156
+msgid "Scope the PRs"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:158
+msgid ""
+"We recommend authors to send well scoped PRs that are easy to review and "
+"revert in case there is a problem. Authors avoid merging multiple "
+"unrelated changes into a single PR and split them into separate PRs."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:162
+msgid "Label the PRs with Area Prefix"
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:163
+msgid ""
+"When sending pull requests, it is helpful to prefix the PR title with the"
+" areas related PR(e.g. use [TIR] for TIR-related changes). This would "
+"help people recognize the related areas and find PRs they are interested "
+"in."
+msgstr ""
+
+#: ../../_staging/contribute/code_review.rst:168
 msgid "Deliberate on API and Data Structures"
-msgstr "API와 데이터 구조에 대한 숙고"
+msgstr ""
 
-#: ../../contribute/code_review.rst:37
+#: ../../_staging/contribute/code_review.rst:169
 msgid ""
 "A minimum and stable API is critical to the project’s life. A good API "
 "makes a huge difference. Always think very carefully about all the "
 "aspects including naming, argument definitions and behavior."
 msgstr ""
-"최소한으로 집약된 안정적인 API는 프로젝트의 수명을 좌우합니다. 좋은 API는 거대한 차이를 "
-"만들어 냅니다. 네이밍과 매개변수 정의, 동작에 이르기까지의 모든 면에 대해 "
-"항상 사려깊게 생각하세요."
 
-#: ../../contribute/code_review.rst:39
+#: ../../_staging/contribute/code_review.rst:171
 msgid ""
 "When possible, pay more attention still to the proposed API design during"
 " code reviews. Remember, it is easier to improve code implementation, but"
@@ -94,34 +340,26 @@ msgid ""
 " If/when uncertain, start a conversation with more developers before "
 "committing."
 msgstr ""
-"가능하다면, 제안된 API 디자인에 대해 코드 리뷰 과정에서 더 주의를 기울여 주세요. "
-"코드 구현을 개선하는 쪽이 쉽지, 한번 받아들여진 API를 바꾸기는 엄청나게 어렵다는 걸 기억하세요. "
-"모듈 간 공유(e.g. AST)되는 데이터 구조 역시 마찬가지로 다뤄야 합니다. "
-"확실치 않다면, 커밋하기 전에 더 많은 개발자들과 대화를 시작하세요. "
 
-#: ../../contribute/code_review.rst:44
+#: ../../_staging/contribute/code_review.rst:176
 msgid "Here are some useful principles for designing APIs:"
-msgstr "API 디자인을 위한 몇가지 유용한 원칙들입니다: "
+msgstr ""
 
-#: ../../contribute/code_review.rst:46
+#: ../../_staging/contribute/code_review.rst:178
 msgid ""
 "Be consistent with existing well-known package’s APIs if the features "
 "overlap. For example, tensor operation APIs should always be consistent "
 "with the numpy API."
 msgstr ""
-"잘 알려진 패키지와 기능이 겹칠 경우 해당 API와 일관성을 유지할 것. 예컨대, 텐서 연산 API는 "
-"항상 numpy API와 호환됩니다. "
 
-#: ../../contribute/code_review.rst:48
+#: ../../_staging/contribute/code_review.rst:180
 msgid ""
 "Be consistent with existing APIs in the same project. For example, we "
 "should use the same argument ordering across all the optimization passes,"
 " so there is no \"surprise\" when using them."
 msgstr ""
-"동일 프로젝트 내에서는 기존의 API와의 일관성을 유지할 것. 예컨대, 최적화 패스 전체를 망라해 "
-"동일한 매개변수 순서를 준용하며, 사용에 있어 아무런 \"놀라움\" 이 없습니다. "
 
-#: ../../contribute/code_review.rst:51
+#: ../../_staging/contribute/code_review.rst:183
 msgid ""
 "Think about whether the API will change in the future. For example, we "
 "will have more options like loop_unrolling and device placement policy as"
@@ -129,150 +367,70 @@ msgid ""
 "into a build configuration object. In this way, the build API is stable "
 "over time, even though it may be enriched."
 msgstr ""
-"미래에 이 API가 변화할 수 있을지 생각할 것. 예컨대, 우리가 빌드에 더 많은 최적화 과정을 "
-"추가할수록, 루프 언롤링이나 장치 배치 정책과 같은 새 옵션을 필요로 할 수 있습니다. "
-"우리는 최적화 선택지들을 빌드 설정 객체 내에 함께 패키징함으로써, 빌드 과정은 풍성해지더라도 "
-"빌드 API 자체의 항상성을 유지할 수 있습니다. "
 
-#: ../../contribute/code_review.rst:55
+#: ../../_staging/contribute/code_review.rst:187
 msgid ""
 "Write documentation. Documentation is mandatory for APIs and sometimes "
 "writing documents helps us to think further about the design as well as "
 "whether we need to add further clarifications."
 msgstr ""
-"문서를 쓸 것. 문서화는 API 작성에 있어 필수이며, 때로는 문서 작성 자체가 디자인에 대한 심층적인 "
-"검토와 명확성의 제고에 도움을 줍니다. "
 
-#: ../../contribute/code_review.rst:57
+#: ../../_staging/contribute/code_review.rst:189
 msgid ""
 "Minimum. Think about how many lines of code a user has to write to use "
 "the API. Remove layers of abstraction when possible."
 msgstr ""
-"최소화. 사용자가 이 API를 활용하려면 몇 줄의 코드를 써야 하는지 생각할 것. "
-"가능하다면 추상화 계층을 제거하세요. "
 
-#: ../../contribute/code_review.rst:62
-msgid "Ensure Test Coverage"
-msgstr "테스트 범위 확인"
-
-#: ../../contribute/code_review.rst:63
-msgid ""
-"Each new change of features should introduce test cases. Bug fixes should"
-" include regression tests that prevent the problem from happening again."
+#: ../../_staging/contribute/code_review.rst:193
+msgid "Minimize Dependencies"
 msgstr ""
-"각각의 새로운 기능은 테스트 케이스들을 제시해야 합니다. 버그 수정의 경우엔 문제가 제발되지 않도록 "
-"회귀 테스트들을 포함해야 합니다. "
 
-#: ../../contribute/code_review.rst:67
-msgid "Documentation is Mandatory"
-msgstr "문서화는 필수"
-
-#: ../../contribute/code_review.rst:68
-msgid ""
-"Documentation is often overlooked. When adding new functions or changing "
-"an existing function, the documentation should be directly updated. A new"
-" feature is meaningless without documentation to make it accessible. See "
-"more at :ref:`doc_guide`"
-msgstr ""
-"문서화는 자주 간과됩니다. 새로운 기능을 추가하거나 기존의 기능을 변경할 때, 문서는 곧바로 "
-"업데이트되어야 합니다. 활용법을 알려주는 문서가 없는 새로운 기능에 무슨 의미가 있을까요. "
-":ref:`doc_guide` 에서 더 자세한 사항을 확인하세요. "
-
-#: ../../contribute/code_review.rst:71
-msgid "Minimum Dependency"
-msgstr "최소 의존성"
-
-#: ../../contribute/code_review.rst:72
+#: ../../_staging/contribute/code_review.rst:194
 msgid ""
 "Always be cautious in introducing dependencies. While it is important to "
 "reuse code and avoid reinventing the wheel, dependencies can increase "
 "burden of users in deployment. A good design principle is that a feature "
 "or function should only have a dependecy if/when a user actually use it."
 msgstr ""
-"추가되는 의존성에는 항상 유의하세요. 무의미한 작업을 피하고 코드를 재활용하는 것이 중요하긴 "
-"하지만, 늘어나는 의존성은 사용자들에게 제품 탑제에 있어 부담일 수 있습니다. "
-"좋은 디자인 원칙 하나는, 어떤 기능이나 함수로 하여금 사용자가 실제로 사용할 때에만 의존성을 갖게 "
-"하는 것입니다. "
 
-#: ../../contribute/code_review.rst:75
-msgid "Ensure Readability"
-msgstr "가독성 확보"
-
-#: ../../contribute/code_review.rst:76
-msgid ""
-"While it is hard to implement a new feature, it is even harder to make "
-"others understand and maintain the code you wrote. It is common for a PMC"
-" or committer to not be able to understand certain contributions. In such"
-" case, a reviewer should say \"I don’t understand\" and ask the "
-"contributor to clarify. We highly encourage code comments which explain "
-"the code logic along with the code."
-msgstr ""
-"새로운 기능을 구현하는 것은 어렵지만, 당신이 작성한 코드를 남에게 이해시키고 관리하게 하는 것이 "
-"훨씬 더 어렵습니다. "
-"제출된 코드가 잘 이해되지 않는 것은 PMC나 커미터들도 흔히 겪는 일입니다. 그런 경우엔, "
-"리뷰어는 \"이해가 안돼\" 라고 말하고 제출자에게 설명을 요구해야 합니다. "
-"우리는 코드와 더불어 코드 작동을 설명하는 주석의 작성을 강력하게 권고합니다. "
-
-#: ../../contribute/code_review.rst:80
+#: ../../_staging/contribute/code_review.rst:199
 msgid "Concise Implementation"
-msgstr "간략한 구현"
+msgstr ""
 
-#: ../../contribute/code_review.rst:81
+#: ../../_staging/contribute/code_review.rst:200
 msgid ""
 "Some basic principles applied here: favor vectorized array code over "
 "loops, use existing APIs that solve the problem."
 msgstr ""
-"여기 적용되는 몇가지 기본 원칙이 있습니다: 루프에서는 벡터화된 배열 코드를 선호하고, "
-"문제를 푸는 기존의 API부터 찾아 활용하라. "
 
-#: ../../contribute/code_review.rst:84
+#: ../../_staging/contribute/code_review.rst:203
 msgid "Document Lessons in Code Reviews"
-msgstr "코드 리뷰의 교훈을 기록하기"
+msgstr ""
 
-#: ../../contribute/code_review.rst:85
+#: ../../_staging/contribute/code_review.rst:204
 msgid ""
 "When you find there are some common or recurring lessons that can be "
 "summarized, add it to the :ref:`code_guide`. It is always good to refer "
 "to the guideline document when requesting changes, so the lessons can be "
 "shared to all the community."
 msgstr ""
-"당신이 보편적 혹은 반복적으로 깨달은 교훈이 있다면, :ref:`code_guide` 에 간추려 추가해 주세요. "
-"변화를 요구할 때 참고할 수 있는 가이드라인 문서의 존재는 언제나 옳습니다. 이를 통해 그 교훈이 "
-"커뮤니티 전체에 공유될 수 있죠. "
 
-#: ../../contribute/code_review.rst:91
-msgid "Respect each other"
-msgstr "타인을 존중"
-
-#: ../../contribute/code_review.rst:92
-msgid ""
-"The code reviewers and contributors are paying the most precious currency"
-" in the world -- time. We are volunteers in the community to spend the "
-"time to build good code, help each other, learn and have fun hacking."
-msgstr ""
-"코드 리뷰어들과 기여자들은 세상에서 가장 귀중한 화폐를 지불하고 있습니다. 바로 시간이죠. "
-"우리는 모두, 좋은 코드를 쌓아 올리고, 서로 돕고 배우며, 해킹을 즐기는 데에 기꺼이 시간을 쏟는 "
-"커뮤니티의 자원봉사자들입니다. "
-
-#: ../../contribute/code_review.rst:95
+#: ../../_staging/contribute/code_review.rst:211
 msgid "Learn from other Code Reviews"
-msgstr "다른 코드 리뷰로부터 배우기"
+msgstr ""
 
-#: ../../contribute/code_review.rst:96
+#: ../../_staging/contribute/code_review.rst:212
 msgid ""
 "There can be multiple reviewers reviewing the same changes. Many times "
 "other reviewers may spot things you did not find. Try to learn from other"
 " code reviews, when possible, document these lessons."
 msgstr ""
-"하나의 수정 사항을 리뷰하는 여러명의 리뷰어가 있을 수 있습니다. 당신이 미처 알아채지 못한 부분을 "
-"다른 리뷰어들이 찾아내는 경우는 심심치 않게 벌어집니다. 다른 코드 리뷰로부터 배우도록 노력하고, "
-"가능하다면 그런 교훈들을 문서에 남겨주세요. "
 
-#: ../../contribute/code_review.rst:100
+#: ../../_staging/contribute/code_review.rst:216
 msgid "Approve and Request Changes Explicitly"
-msgstr "승인과 변경 요청은 명확하게"
+msgstr ""
 
-#: ../../contribute/code_review.rst:101
+#: ../../_staging/contribute/code_review.rst:217
 msgid ""
 "The contributor and code owner can request code reviews from multiple "
 "reviewers. Remember to approve changes when your comments are addressed "
@@ -282,9 +440,4 @@ msgid ""
 "if some of the reviewers did not respond in time(e.g. a week) and "
 "existing reviews are sufficient."
 msgstr ""
-"기여자들이나 코드 소유자들은 다수의 리뷰어에게 코드 리뷰를 부탁할 수 있습니다. "
-"당신의 코멘트가 코드 리뷰에 게시되었다면, 변경점 승인을 잊지 마세요. "
-"이를 위해, Pull Request 페이지에서 File Changed 탭을 클릭하고, 승인을 고르거나 코드에 대한 "
-"코멘트를 하고 변경 요청을 진행하세요. 코드 소유자는, 일부 리뷰어들이 제 때(e.g. 일주일 내) 답변을 하지 않고 "
-"기존의 리뷰들로 충분한 경우 등, 상황에 따라 코드의 반영 가능 여부를 결정할 수 있습니다. "
 

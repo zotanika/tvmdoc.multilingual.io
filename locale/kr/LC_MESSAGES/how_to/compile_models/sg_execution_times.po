@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 - 2021, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:7
+msgid "Computation times"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:8
+msgid "**00:18.691** total execution time for **how_to_compile_models** files:"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:11
+msgid ":ref:`sphx_glr_how_to_compile_models_from_mxnet.py` (``from_mxnet.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:11
+msgid "00:16.893"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:11
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:13
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:15
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:17
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:19
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:21
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:23
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:25
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:27
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:29
+msgid "0.0 MB"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:13
+msgid ":ref:`sphx_glr_how_to_compile_models_from_keras.py` (``from_keras.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:13
+msgid "00:00.948"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:15
+msgid ":ref:`sphx_glr_how_to_compile_models_from_caffe2.py` (``from_caffe2.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:15
+msgid "00:00.848"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:17
+msgid ":ref:`sphx_glr_how_to_compile_models_from_paddle.py` (``from_paddle.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:17
+msgid "00:00.001"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:19
+msgid ":ref:`sphx_glr_how_to_compile_models_from_coreml.py` (``from_coreml.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:19
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:21
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:23
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:25
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:27
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:29
+msgid "00:00.000"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:21
+msgid ""
+":ref:`sphx_glr_how_to_compile_models_from_darknet.py` "
+"(``from_darknet.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:23
+msgid ":ref:`sphx_glr_how_to_compile_models_from_onnx.py` (``from_onnx.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:25
+msgid ""
+":ref:`sphx_glr_how_to_compile_models_from_pytorch.py` "
+"(``from_pytorch.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:27
+msgid ""
+":ref:`sphx_glr_how_to_compile_models_from_tensorflow.py` "
+"(``from_tensorflow.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/sg_execution_times.rst:29
+msgid ":ref:`sphx_glr_how_to_compile_models_from_tflite.py` (``from_tflite.py``)"
+msgstr ""
+

@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../contribute/index.rst:19
+msgid "Contribute to TVM"
+msgstr "TVM에 기여하기"
+
+#: ../../contribute/index.rst:21
+msgid ""
+"TVM has been developed by community members. Everyone is welcomed to "
+"contribute. We value all forms of contributions, including, but not "
+"limited to:"
+msgstr ""
+"TVM은 커뮤니티 구성원들에 의해 개발되어 왔습니다. 커뮤니티에 기여하는 누구든 "
+"환영합니다. 우리는 어떤 형태의 기여에도 감사하며, 예컨대 아래와 같은 내용들이 "
+"될 수 있습니다(물론 여기에 국한되지 않습니다): "
+
+#: ../../contribute/index.rst:25
+msgid "Code reviewing of the existing patches."
+msgstr "기존 패치의 코드 리뷰"
+
+#: ../../contribute/index.rst:26
+msgid "Documentation and usage examples"
+msgstr "문서화 및 사용 예제"
+
+#: ../../contribute/index.rst:27
+msgid "Community participation in forums and issues."
+msgstr "커뮤니티 포럼 참여 및 문제점 보고"
+
+#: ../../contribute/index.rst:28
+msgid "Code readability and developer guide"
+msgstr "코드 시인성 개선 및 개발자 가이드"
+
+#: ../../contribute/index.rst:30
+msgid "We welcome contributions that add code comments to improve readability"
+msgstr "시인성을 개선하기 위한 주석 추가를 환영합니다."
+
+#: ../../contribute/index.rst:32
+msgid ""
+"We also welcome contributions to docs to explain the design choices of "
+"the internal."
+msgstr ""
+"또한 내부적인 디자인 선택의 이유를 해설하는 문서 작성을 환영합니다."
+
+#: ../../contribute/index.rst:35
+msgid "Test cases to make the codebase more robust"
+msgstr "코드베이스를 더욱 탄탄하게 하는 테스트 케이스 작성"
+
+#: ../../contribute/index.rst:36
+msgid "Tutorials, blog posts, talks that promote the project."
+msgstr "튜토리얼, 블로그 포스팅, 프로젝트의 홍보"
+
+#: ../../contribute/index.rst:38
+msgid "Here are guidelines for contributing to various aspect of the project:"
+msgstr "다양한 측면에서 프로젝트에 기여할 때 필요한 가이드라인들은 여기 있습니다:"
+

@@ -1,84 +1,60 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, Apache Software Foundation
+# Copyright (C) 2020 - 2021, Apache Software Foundation
 # This file is distributed under the same license as the tvm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: tvm 0.8.dev0\n"
+"Project-Id-Version: tvm 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: ../../index.rst:38
-msgid "How to"
-msgstr "入门"
-
-#: ../../index.rst:48
-msgid "Tutorials"
-msgstr "教程"
-
-#: ../../index.rst:56
-msgid "References"
-msgstr "参考"
-
-#: ../../index.rst:65
-msgid "Deep Dive"
-msgstr "深入理解"
-
-#: ../../index.rst:72
-msgid "MISC"
-msgstr "其他"
-
-#: ../../index.rst:19
-msgid "TVM Documentation"
-msgstr "TVM 文档"
-
-#: ../../index.rst:21
-msgid ""
-"TVM is an open deep learning compiler stack for CPUs, GPUs, and "
-"specialized accelerators. It aims to close the gap between the "
-"productivity-focused deep learning frameworks, and the performance- or "
-"efficiency-oriented hardware backends."
+#: ../../_staging/index.rst:31
+msgid "Getting Started"
 msgstr ""
-"TVM 是一个为 CPUs，GPUs 以及各类加速器而生的深度学习编译栈。"
-"TVM 致力于缩短从深度学习框架到各类硬件后端之间的距离。"
-""
 
-#: ../../index.rst:25
-msgid "Get Started"
-msgstr "开始"
+#: ../../_staging/index.rst:38
+msgid "User Guide"
+msgstr ""
 
-#: ../../index.rst:27
-msgid "Follow the :doc:`instructions <install/index>` to install TVM."
-msgstr "根据 :doc:`instructions <install/index>` 安装 TVM"
+#: ../../_staging/index.rst:45
+msgid "Developer Guide"
+msgstr ""
 
-#: ../../index.rst:28
-msgid "Checkout the :doc:`tutorials <tutorials/index>`."
-msgstr "查看教程 :doc:`tutorials <tutorials/index>`"
+#: ../../_staging/index.rst:52
+msgid "Architecture  Guide"
+msgstr ""
 
-#: ../../index.rst:31
-msgid "For Developers"
-msgstr "开发者频道"
+#: ../../_staging/index.rst:58
+msgid "Topic Guides"
+msgstr ""
 
-#: ../../index.rst:33
+#: ../../_staging/index.rst:65
+msgid "Reference Guide"
+msgstr ""
+
+#: ../../_staging/index.rst:19
+msgid "Apache TVM Documentation"
+msgstr ""
+
+#: ../../_staging/index.rst:21
 msgid ""
-":doc:`dev/index` is useful for developers who want to understand the "
-"architecture of TVM and/or actively develop on the project."
-msgstr ":doc:`dev/index` 对于希望理解 TVM 架构并参与本项目的开发者很有帮助"
-
-#: ../../index.rst:35
-msgid ":doc:`dev/how_to` gives quick development tips on various topics."
-msgstr ":doc:`dev/how_to` 包含一系列开发指南"
-
-#: ../../index.rst:82
-msgid "Index"
-msgstr "索引"
+"Welcome to the the documentation for Apache TVM, a deep learning compiler"
+" that enables access to high-performance machine learning anywhere for "
+"everyone. TVM's diverse community of hardware vendors, compiler engineers"
+" and ML researchers work together to build a unified, programmable "
+"software stack, that enriches the entire ML technology ecosystem and make"
+" it accessible to the wider ML community. TVM empowers users to leverage "
+"community-driven ML-based optimizations to push the limits and amplify "
+"the reach of their research and development, which in turn raises the "
+"collective performance of all ML, while driving its costs down."
+msgstr ""
 

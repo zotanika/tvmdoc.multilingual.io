@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 - 2021, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-06 10:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:13
+msgid ""
+"Click :ref:`here <sphx_glr_download_tutorial_tensor_ir_blitz_course.py>` "
+"to download the full example code"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:24
+msgid "Blitz Course to TensorIR"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:25
+msgid "**Author**: `Siyuan Feng <https://github.com/Hzfengsy>`_"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:27
+msgid ""
+"TensorIR is a domain specific language for deep learning programs serving"
+" two broad purposes:"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:29
+msgid ""
+"An implementation for transforming and optimizing programs on various "
+"hardware backends."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:31
+msgid "An abstraction for automatic tensorized program optimization."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:47
+msgid "IRModule"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:48
+msgid ""
+"An IRModule is the central data structure in TVM, which contains deep "
+"learning programs. It is the basic object of interest of IR "
+"transformation and model building."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:55
+msgid ""
+"This is the life cycle of an IRModule, which can be created from "
+"TVMScript. TensorIR schedule primitives and passes are two major ways to "
+"transform an IRModule. Also, a sequence of transformations on an IRModule"
+" is acceptable. Note that we can print an IRModule at **ANY** stage to "
+"TVMScript. After all transformations and optimizations are complete, we "
+"can build the IRModule to a runnable module to deploy on target devices."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:61
+msgid ""
+"Based on the design of TensorIR and IRModule, we are able to create a new"
+" programming method:"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:63
+msgid "Write a program by TVMScript in a python-AST based syntax."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:65
+msgid "Transform and optimize a program with python api."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:67
+msgid ""
+"Interactively inspect and try the performance with an imperative style "
+"transformation API."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:72
+msgid "Create an IRModule"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:73
+msgid ""
+"IRModule can be created by writing TVMScript, which is a round-trippable "
+"syntax for TVM IR."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:75
+msgid ""
+"Different than creating a computational expression by Tensor Expression "
+"(:ref:`tutorial-tensor-expr-get-started`), TensorIR allow users to "
+"program through TVMScript, a language embedded in python AST. The new "
+"method makes it possible to write complex programs and further schedule "
+"and optimize it."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:80
+msgid "Following is a simple example for vector addition."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:113
+msgid ""
+"Besides, we can also use tensor expression DSL to write simple operators,"
+" and convert them to an IRModule."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:135
+msgid "Build and Run an IRModule"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:136
+msgid ""
+"We can build the IRModule into a runnable module with specific target "
+"backends."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:150
+msgid "Prepare the input array and output array, then run the module."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:169
+msgid "Transform an IRModule"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:170
+msgid ""
+"The IRModule is the central data structure for program optimization, "
+"which can be transformed by :code:`Schedule`. A schedule contains "
+"multiple primitive methods to interactively transform the program. Each "
+"primitive transforms the program in certain ways to bring additional "
+"performance optimizations."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:179
+msgid ""
+"The image above is a typical workflow for optimizing a tensor program. "
+"First, we need to create a schedule on the initial IRModule created from "
+"either TVMScript or Tensor Expression. Then, a sequence of schedule "
+"primitives will help to improve the performance. And at last, we can "
+"lower and build it into a runnable module."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:184
+msgid ""
+"Here we just demostrate a very simple tranformation. First we create "
+"schedule on the input `ir_module`."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:197
+msgid "Tile the loop into 3 loops and print the result."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:216
+msgid "We can also reorder the loops. Now we move loop `i_2` to outside of `i_1`."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:230
+msgid "Transform to a GPU program"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:231
+msgid ""
+"If we want to deploy models on GPUs, thread binding is necessary. "
+"Fortunately, we can also use primitives and do incrementally "
+"transformation."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:248
+msgid ""
+"After binding the threads, now build the IRModule with :code:`cuda` "
+"backends."
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:275
+msgid ""
+":download:`Download Python source code: tensor_ir_blitz_course.py "
+"<tensor_ir_blitz_course.py>`"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:281
+msgid ""
+":download:`Download Jupyter notebook: tensor_ir_blitz_course.ipynb "
+"<tensor_ir_blitz_course.ipynb>`"
+msgstr ""
+
+#: ../../_staging/tutorial/tensor_ir_blitz_course.rst:288
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 - 2021, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-06 10:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_topic_vta_tutorials_frontend_deploy_detection.py>` to "
+"download the full example code"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:22
+msgid "Deploy Pretrained Vision Detection Model from Darknet on VTA"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:23
+msgid "**Author**: `Hua Jiang <https://github.com/huajsj>`_"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:25
+msgid ""
+"This tutorial provides an end-to-end demo, on how to run Darknet "
+"YoloV3-tiny inference onto the VTA accelerator design to perform Image "
+"detection tasks. It showcases Relay as a front end compiler that can "
+"perform quantization (VTA only supports int8/32 inference) as well as "
+"graph packing (in order to enable tensorization in the core) to massage "
+"the compute graph for the hardware target."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:34
+msgid "Install dependencies"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:35
+msgid ""
+"To use the autotvm package in tvm, we need to install some extra "
+"dependencies. (change \"3\" to \"2\" if you use python2):"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:42
+msgid ""
+"YOLO-V3-tiny Model with Darknet parsing have dependancy with CFFI and CV2"
+" library, we need to install CFFI and CV2 before executing this script."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:50
+msgid "Now return to the python code. Import packages."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:80
+msgid ""
+"Download yolo net configure file, weight file, darknet library file based"
+" on Model Name "
+"----------------------------------------------------------------------------"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:119
+msgid "Download yolo categories and illustration front."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:139
+msgid "Define the platform and model targets."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:140
+msgid "Execute on CPU vs. VTA, and define the model."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:174
+msgid "Obtain an execution remote."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:175
+msgid ""
+"When target is 'pynq' or other FPGA backend, reconfigure FPGA and "
+"runtime. Otherwise, if target is 'sim', execute locally."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:220
+msgid "Build the inference graph executor."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:221
+msgid ""
+"Using Darknet library load downloaded vision model and compile with "
+"Relay. The compilation steps are:"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:224
+msgid "Front end translation from Darknet into Relay module."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:225
+msgid ""
+"Apply 8-bit quantization: here we skip the first conv layer, and dense "
+"layer which will both be executed in fp32 on the CPU."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:227
+msgid "Perform graph packing to alter the data layout for tensorization."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:228
+msgid ""
+"Perform constant folding to reduce number of operators (e.g. eliminate "
+"batch norm multiply)."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:229
+msgid "Perform relay build to object file."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:230
+msgid "Load the object file onto remote (FPGA device)."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:231
+msgid "Generate graph executor, `m`."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:300
+msgid "Perform image detection inference."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:301
+msgid "We run detect on an downloaded image Download test image"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:387
+msgid ""
+":download:`Download Python source code: deploy_detection.py "
+"<deploy_detection.py>`"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:393
+msgid ""
+":download:`Download Jupyter notebook: deploy_detection.ipynb "
+"<deploy_detection.ipynb>`"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/frontend/deploy_detection.rst:400
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

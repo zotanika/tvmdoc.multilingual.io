@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 20:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../install/nnpack.rst:20
+msgid "NNPACK Contrib Installation"
+msgstr "NNPACK 배포판 설치"
+
+#: ../../install/nnpack.rst:22
+msgid ""
+"`NNPACK <https://github.com/Maratyszcza/NNPACK>`_ is an acceleration "
+"package for neural network computations, which can run on x86-64, ARMv7, "
+"or ARM64 architecture CPUs. Using NNPACK, higher-level libraries like "
+"_MXNet_ can speed up the execution on multi-core CPU computers, including"
+" laptops and mobile devices."
+msgstr ""
+"`NNPACK <https://github.com/Maratyszcza/NNPACK>`_ 은 신경망의 계산을 가속하는 "
+"소프트웨어 패키지로 x86-64,ARMv7, ARM64 아키텍쳐 CPU에서 동작합니다. "
+"NNPACK을 활용함으로써, _MXNet_ 같은 고수준 라이브러리를 랩탑이나 모바일 장치를 포함한 "
+"멀티코어 CPU 컴퓨터에서 실행 속도를 향상시킬 수 있습니다. "
+
+#: ../../install/nnpack.rst:29
+msgid ""
+"AS TVM already has natively tuned schedules, NNPACK is here mainly for "
+"reference and comparison purpose. For regular use prefer native tuned TVM"
+" implementation."
+msgstr ""
+"AS TVM already has natively tuned schedules, NNPACK is here mainly for "
+"reference and comparison purpose. For regular use prefer native tuned TVM"
+" implementation."
+
+#: ../../install/nnpack.rst:32
+msgid ""
+"TVM supports NNPACK for forward propagation (inference only) in "
+"convolution, max-pooling, and fully-connected layers. In this document, "
+"we give a high level overview of how to use NNPACK with TVM."
+msgstr ""
+
+#: ../../install/nnpack.rst:36
+msgid "Conditions"
+msgstr ""
+
+#: ../../install/nnpack.rst:38
+msgid ""
+"The underlying implementation of NNPACK utilizes several acceleration "
+"methods, including fft and winograd. These algorithms work better on some"
+" special `batch size`, `kernel size`, and `stride` settings than on "
+"other, so depending on the context, not all convolution, max-pooling, or "
+"fully-connected layers can be powered by NNPACK. When favorable "
+"conditions for running NNPACKS are not met,"
+msgstr ""
+
+#: ../../install/nnpack.rst:44
+msgid ""
+"NNPACK only supports Linux and OS X systems. Windows is not supported at "
+"present."
+msgstr ""
+
+#: ../../install/nnpack.rst:47
+msgid "Build/Install NNPACK"
+msgstr ""
+
+#: ../../install/nnpack.rst:49
+msgid ""
+"If the trained model meets some conditions of using NNPACK, you can build"
+" TVM with NNPACK support. Follow these simple steps:"
+msgstr ""
+
+#: ../../install/nnpack.rst:53
+msgid ""
+"uild NNPACK shared library with the following commands. TVM will link "
+"NNPACK dynamically."
+msgstr ""
+
+#: ../../install/nnpack.rst:55
+msgid ""
+"Note: The following NNPACK installation instructions have been tested on "
+"Ubuntu 16.04."
+msgstr ""
+
+#: ../../install/nnpack.rst:58
+msgid "Build Ninja"
+msgstr ""
+
+#: ../../install/nnpack.rst:60
+msgid ""
+"NNPACK need a recent version of Ninja. So we need to install ninja from "
+"source."
+msgstr ""
+
+#: ../../install/nnpack.rst:69
+msgid ""
+"Set the environment variable PATH to tell bash where to find the ninja "
+"executable. For example, assume we cloned ninja on the home directory ~. "
+"then we can added the following line in ~/.bashrc."
+msgstr ""
+
+#: ../../install/nnpack.rst:78
+msgid "Build NNPACK"
+msgstr ""
+
+#: ../../install/nnpack.rst:80
+msgid ""
+"The new CMAKE version of NNPACK download `Peach "
+"<https://github.com/Maratyszcza/PeachPy>`_ and other dependencies alone"
+msgstr ""
+
+#: ../../install/nnpack.rst:82
+msgid ""
+"Note: at least on OS X, running `ninja install` below will overwrite "
+"googletest libraries installed in `/usr/local/lib`. If you build "
+"googletest again to replace the nnpack copy, be sure to pass "
+"`-DBUILD_SHARED_LIBS=ON` to `cmake`."
+msgstr ""
+
+#: ../../install/nnpack.rst:104
+msgid "Build TVM with NNPACK support"
+msgstr ""
+
+#: ../../install/nnpack.rst:110
+msgid "Set `set(USE_NNPACK ON)` in config.cmake."
+msgstr ""
+
+#: ../../install/nnpack.rst:111
+msgid "Set `NNPACK_PATH` to the $(YOUR_NNPACK_INSTALL_PATH)"
+msgstr ""
+
+#: ../../install/nnpack.rst:113
+msgid "after configuration use `make` to build TVM"
+msgstr ""
+

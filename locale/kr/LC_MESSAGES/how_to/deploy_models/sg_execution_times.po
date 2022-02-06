@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 - 2021, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:7
+msgid "Computation times"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:8
+msgid "**00:59.133** total execution time for **how_to_deploy_models** files:"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:11
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_quantized.py` "
+"(``deploy_quantized.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:11
+msgid "00:42.719"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:11
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:13
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:15
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:17
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:19
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:21
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:23
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:25
+msgid "0.0 MB"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:13
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_object_detection_pytorch.py` "
+"(``deploy_object_detection_pytorch.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:13
+msgid "00:16.412"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:15
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_model_on_android.py` "
+"(``deploy_model_on_android.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:15
+msgid "00:00.002"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:17
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_model_on_rasp.py` "
+"(``deploy_model_on_rasp.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:17
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:19
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:21
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:23
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:25
+msgid "00:00.000"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:19
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_prequantized.py` "
+"(``deploy_prequantized.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:21
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_prequantized_tflite.py` "
+"(``deploy_prequantized_tflite.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:23
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_sparse.py` "
+"(``deploy_sparse.py``)"
+msgstr ""
+
+#: ../../_staging/how_to/deploy_models/sg_execution_times.rst:25
+msgid ""
+":ref:`sphx_glr_how_to_deploy_models_deploy_ssd_gluoncv.py` "
+"(``deploy_ssd_gluoncv.py``)"
+msgstr ""
+

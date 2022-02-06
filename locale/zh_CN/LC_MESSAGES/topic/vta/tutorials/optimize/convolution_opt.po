@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 - 2021, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-06 10:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_topic_vta_tutorials_optimize_convolution_opt.py>` to "
+"download the full example code"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:22
+msgid "2D Convolution Optimization"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:23
+msgid "**Author**: `Thierry Moreau <https://homes.cs.washington.edu/~moreau/>`_"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:25
+msgid ""
+"This tutorial provides an overview on how to use TVM to map a 2D "
+"convolution workload efficiently on the VTA design. We recommend covering"
+" the :ref:`vta-mat-mult-opt` tutorial first."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:29
+msgid ""
+"2D convolution is dominant in most computer vision deep neural networks. "
+"In this tutorial, we will demonstrate TVM schedule optimizations to map "
+"2D convolution operators in NCHW layout onto VTA. We also introduce the "
+"notion of latency hiding, which allows us to maximize VTA's compute and "
+"memory resource utilization."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:38
+msgid "RPC Setup"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:39
+msgid "We start by programming the Pynq's FPGA and building its RPC runtime."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:90
+msgid "Computation Declaration"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:91
+msgid ""
+"As a first step, we need to describe our 2D convolution computation in "
+"NCHW format."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:94
+msgid ""
+"We define the 2D convolution shape by the batch size, spatial dimensions,"
+" input channels, output channels, kernel dimensions, kernel dimensions, "
+"padding dimensions, and stride dimensions."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:98
+msgid ""
+"We pick the shape of the 9th convolutional layer of the ResNet-18 "
+"architecture as our convolution workload parameters."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:101
+msgid ""
+"We've added extra operators to the 2D convolution that apply shifting and"
+" clipping to the output in order to mimic a fixed-point convolution "
+"followed by a rectified linear activation. We describe the TVM dataflow "
+"graph of the 2D convolution layer below:"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:109
+msgid ""
+"This computation is intentionally too large to fit onto VTA's on-chip "
+"buffers all at once. Therefore in the scheduling phase we'll rely on "
+"computation blocking strategies to break the computation down into "
+"manageable chunks."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:116
+msgid "*Spatial padding*"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:118
+msgid ""
+"Note that we'll need to import the TOPI library to apply spatial padding "
+"on the input feature map tensor. Spatial padding facilitates blocking in "
+"the context of 2D convolutions due to the fact that the same (x, y) "
+"spatial location of the input feature map of any given layer is read more"
+" than once if the convolution kernel window size is greater than one. On "
+"CPUs, and GPUs, one way to increase efficiency of memory accesses when "
+"parallelizing work is spatial packing, which requires data re-layout. VTA"
+" load DMA engine can insert padding automatically so that the original "
+"input feature map does not have to be re-packed in memory."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:129
+msgid ""
+"We show the effect of VTA's on the fly spatial padding when data is being"
+" loaded from DRAM into VTA's SRAM, following a 2D strided and padded "
+"memory read."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:234
+msgid "Scheduling the Computation"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:235
+msgid ""
+"We'll look at a set of schedule transformations necessary to map the 2D "
+"convolution onto VTA in an efficient fashion. Those include:"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:239
+msgid "Computation blocking"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:240
+msgid "Virtual threading to increase compute utilization"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:241
+msgid "Lowering to VTA hardware intrinsics"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:257
+msgid "Blocking the Computation"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:258
+msgid ""
+"The 2D convolution is by default too large for activations or kernel "
+"weights to fit on VTA's on-chip buffers all at once. We apply blocking "
+"along input channels, output channels, and along the height spatial "
+"dimensions. We don't apply blocking along the width spatial dimension "
+"since it's the innermost dimension in the NCHW layout (and consequently "
+"to increase locality, it's best not to block along the innermost "
+"dimension)."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:315
+msgid "Virtual Threading"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:316
+msgid ""
+"Virtual threading is a mechanism that increases task-level pipeline "
+"parallelism in the VTA hardware design. Put it another way, it increases "
+"compute resource utilization by hiding memory access latency."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:321
+msgid ""
+"In the implementation below, virtual threading distributes work across "
+"two threads split along the output channel axis. We show how work is "
+"split when computing the 2D convolution in the figure below."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:350
+msgid "Lowering Copies to DMA Transfers"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:351
+msgid ""
+"Next we set the buffer scopes to the corresponding on-chip VTA SRAM "
+"buffers. We move the load loops into the 2D convolution computation loop "
+"to stage memory loads such that they fit in the on-chip SRAM buffers. "
+"Finally we annotate the load/store loop outer axes with the DMA copy "
+"pragma to perform bulk memory transfers on VTA."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:387
+msgid "Lowering Computation to VTA Compute Intrinsics"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:388
+msgid ""
+"The last phase is to lower the computation loops down to VTA hardware "
+"intrinsics by mapping the 2D convolution to tensor intrinsics, and "
+"mapping the shift, and clipping computation to the vector ALU."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:414
+msgid "TVM Compilation and Verification"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:415
+msgid ""
+"After specifying the schedule, we can compile it into a TVM function. We "
+"save the module so we can send it over RPC. We run the function and "
+"verify it against a numpy implementation to ensure correctness."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:511
+msgid "Summary"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:512
+msgid ""
+"This tutorial demonstrates how TVM scheduling primitives can be used to "
+"lower 2D convolution onto hardware accelerator intrinsics, making use of "
+"hardware specific optimizations, such as latency hiding with virtual "
+"threading."
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:531
+msgid ""
+":download:`Download Python source code: convolution_opt.py "
+"<convolution_opt.py>`"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:537
+msgid ""
+":download:`Download Jupyter notebook: convolution_opt.ipynb "
+"<convolution_opt.ipynb>`"
+msgstr ""
+
+#: ../../_staging/topic/vta/tutorials/optimize/convolution_opt.rst:544
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+

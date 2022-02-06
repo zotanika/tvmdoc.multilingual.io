@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020 - 2021, Apache Software Foundation
+# This file is distributed under the same license as the tvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm 0.8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-06 10:20+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:13
+msgid ""
+"Click :ref:`here "
+"<sphx_glr_download_how_to_compile_models_from_tensorflow.py>` to download"
+" the full example code"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:22
+msgid "Compile Tensorflow Models"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:23
+msgid ""
+"This article is an introductory tutorial to deploy tensorflow models with"
+" TVM."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:25
+msgid ""
+"For us to begin with, tensorflow python module is required to be "
+"installed."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:27
+msgid "Please refer to https://www.tensorflow.org/install"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:86
+msgid "Tutorials"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:87
+msgid ""
+"Please refer docs/frontend/tensorflow.md for more details for various "
+"models from tensorflow."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:125
+msgid "Download required files"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:126
+msgid "Download files listed above."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:149
+msgid "Import model"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:150
+msgid "Creates tensorflow graph definition from protobuf file."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:177
+msgid "Decode image"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:180
+msgid ""
+"tensorflow frontend import doesn't support preprocessing ops like "
+"JpegDecode. JpegDecode is bypassed (just return source node). Hence we "
+"supply decoded frame to TVM instead."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:206
+msgid "Import the graph to Relay"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:207
+msgid "Import tensorflow graph definition to relay frontend."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:211
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:250
+msgid "Results:"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:210
+msgid ""
+"sym: relay expr for given tensorflow protobuf. params: params converted "
+"from tensorflow params (tensor protobuf)."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:228
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:325
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:407
+msgid "Out:"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:244
+msgid "Relay Build"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:245
+msgid "Compile the graph to llvm target with given input specification."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:248
+msgid ""
+"graph: Final graph after compilation. params: final params after "
+"compilation. lib: target library which can be deployed on target with TVM"
+" runtime."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:270
+msgid "Execute the portable graph on TVM"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:271
+msgid "Now we can try deploying the compiled model on target."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:299
+msgid "Process the output"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:300
+msgid "Process the model output to human readable text for InceptionV1."
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:341
+msgid "Inference on tensorflow"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:342
+msgid "Run the corresponding model on tensorflow"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:424
+msgid "**Total running time of the script:** ( 1 minutes  1.015 seconds)"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:439
+msgid ""
+":download:`Download Python source code: from_tensorflow.py "
+"<from_tensorflow.py>`"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:445
+msgid ""
+":download:`Download Jupyter notebook: from_tensorflow.ipynb "
+"<from_tensorflow.ipynb>`"
+msgstr ""
+
+#: ../../_staging/how_to/compile_models/from_tensorflow.rst:452
+msgid "`Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_"
+msgstr ""
+
